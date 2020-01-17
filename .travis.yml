@@ -1,4 +1,6 @@
 language: ruby
+services:
+  - postgresql
 script:
   - bundle install
   - bundle exec rails db:create
