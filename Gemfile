@@ -66,8 +66,16 @@ group :development do
 end
 
 group :test do
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+
   # Should Matchers adds many useful RSpec matchers
   gem 'shoulda-matchers'
   # Pundit Matchers adds RSpec matchers for Pundit authorization policies
   gem 'pundit-matchers'
+  # Capybara is used to write system tests by simulating how a real user would interact with the app
+  gem 'capybara'
+  # Capybara Screenshot automatically stores screenshots of failing Capybara tests in tmp/capybara
+  gem 'capybara-screenshot'
 end
