@@ -4,3 +4,7 @@ require:
   - rubocop-rspec
   - rubocop-thread_safety
   - rubocop-rake
+
+AllCops:
+  Exclude:
+    - vendor/bundle/**/*
