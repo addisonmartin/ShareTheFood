@@ -59,4 +59,6 @@ group :development do
   gem 'awesome_print'
   # Annotate automatically adds database schema information as a comment to the top of models, tests, and routes files.
   gem 'annotate'
+  # Letter Opener sends emails directly to the web browser, so an email server is not required in the development environment.
+  gem 'letter_opener'
 end
