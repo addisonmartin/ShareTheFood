@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -28,7 +31,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
+  # Store uploaded files on the local file system (see config/storage.yml
+  # for options).
   config.active_storage.service = :local
 
   # Send emails directly to the web browser.
@@ -56,7 +60,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Configuration for Bullet, which detects when eager loading should/should not be used.
+  # Configuration for Bullet, which detects when eager loading should/should
+  # not be used.
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true

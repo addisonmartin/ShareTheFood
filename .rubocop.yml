@@ -10,3 +10,13 @@ AllCops:
     - vendor/bundle/**/*
     - bin/**/*
     - node_modules/**/*
+    - db/schema.rb
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false

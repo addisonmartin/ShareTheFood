@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -11,31 +13,38 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# Turbolinks makes navigating your web application faster.
+# Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger
+  # console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # Rubocop is a Ruby static code analyzer and code formatter
   gem 'rubocop', require: false
-  # Rubocop Rails is a Rubocop extension focused on enforcing Rails best practices and coding conventions
+  # Rubocop Rails is a Rubocop extension focused on enforcing Rails best
+  # practices and coding conventions
   gem 'rubocop-rails', require: false
-  # Rubocop Performance is a Rubocop extension focused on performance optimization analysis
+  # Rubocop Performance is a Rubocop extension focused on performance
+  # optimization analysis
   gem 'rubocop-performance', require: false
-  # Rubocop RSpec is a Rubocop extension focused on RSpec tests specific analysis
+  # Rubocop RSpec is a Rubocop extension focused on RSpec tests specific
+  # analysis
   gem 'rubocop-rspec', require: false
-  # Rubocop Thread Safety is a Rubocop extension focused on thread-safety analysis
+  # Rubocop Thread Safety is a Rubocop extension focused on thread-safety
+  # analysis
   gem 'rubocop-thread_safety', require: false
   # Rubocop Rake is a Rubocop extension focused on Rake tasks specific analysis
   gem 'rubocop-rake', require: false
   # RSpec replaces Rail's default testing framework
-  # Bundle RSpec and its dependencies directly from Github, as the latest version released on RubyGems.org does not work with Rails 6
+  # Bundle RSpec and its dependencies directly from Github, as the latest
+  # version released on RubyGems.org does not work with Rails 6
   gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
   gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
   gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
@@ -56,34 +65,43 @@ group :development, :test do
   gem 'bundler-audit'
   # Isolator detects non-atomic database transactions
   gem 'isolator'
-  # Database Consistency checks the consistency of database constraints with model validations
+  # Database Consistency checks the consistency of database constraints with
+  # model validations
   gem 'database_consistency', require: false
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code
+  # Access an interactive console on exception pages or by calling 'console'
+  # anywhere in the code
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # Better Errors replaces the standard Rails error page with an improved, interactive error page
+  # Better Errors replaces the standard Rails error page with an improved,
+  # interactive error page
   gem 'better_errors'
-  # Binding of Caller is used by Better Errors to enable REPL, local/instance variable inspection, and pretty stack frame names
+  # Binding of Caller is used by Better Errors to enable REPL, local/instance
+  # variable inspection, and pretty stack frame names
   gem 'binding_of_caller'
   # Meta Request allows the Rails Panel Chrome/Firefox plugin to work
-  # Rails Panel adds a panel within browser Development Tools that enables viewing the development log, application requests, and more
+  # Rails Panel adds a panel within browser Development Tools that enables
+  # viewing the development log, application requests, and more
   gem 'meta_request'
   # Pry is a more powerful IRB (interactive Ruby) alternative
   gem 'pry'
   # Pry Rails changes the Rails console to use Pry
   gem 'pry-rails'
-  # Awesome Print pretty prints Ruby objects in full color with proper indentation
+  # Awesome Print pretty prints Ruby objects in full color with proper
+  # indentation
   gem 'awesome_print'
-  # Annotate automatically adds database schema information as a comment to the top of models, tests, and routes files
+  # Annotate automatically adds database schema information as a comment to the
+  # top of models, tests, and routes files
   gem 'annotate'
-  # Letter Opener sends emails directly to the web browser, so an email server is not required in the development environment
+  # Letter Opener sends emails directly to the web browser, so an email server
+  # is not required in the development environment
   gem 'letter_opener'
 end
 
@@ -96,9 +114,11 @@ group :test do
   gem 'shoulda-matchers'
   # Pundit Matchers adds RSpec matchers for Pundit authorization policies
   gem 'pundit-matchers'
-  # Capybara is used to write system tests by simulating how a real user would interact with the app
+  # Capybara is used to write system tests by simulating how a real user would
+  # interact with the app
   gem 'capybara'
-  # Capybara Screenshot automatically stores screenshots of failing Capybara tests in tmp/capybara
+  # Capybara Screenshot automatically stores screenshots of failing Capybara
+  # tests in tmp/capybara
   gem 'capybara-screenshot'
   # SimpleCov calculates test coverage
   gem 'simplecov', require: false

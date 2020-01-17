@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # SimpleCov must be started before anything else!
 require 'simplecov'
 SimpleCov.start 'rails'
@@ -9,7 +11,9 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+if Rails.env.production?
+  abort('The Rails environment is running in production mode!')
+end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
@@ -72,11 +76,11 @@ RSpec.configure do |config|
 
   # Enables Bullet, which detects if eager loading should/should not be used.
   if Bullet.enable?
-    config.before(:each) do
+    config.before do
       Bullet.start_request
     end
 
-    config.after(:each) do
+    config.after do
       Bullet.perform_out_of_channel_notifications if Bullet.notification?
       Bullet.end_request
     end
