@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# The default policy for the application, that all other policies inherit from.
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -34,6 +37,7 @@ class ApplicationPolicy
     true
   end
 
+  # Configures the policy to have access to the user.
   class Scope
     attr_reader :user, :scope
 

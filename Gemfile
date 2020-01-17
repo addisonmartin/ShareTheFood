@@ -25,6 +25,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 # Pundit is used for user authorization
 gem 'pundit'
+# Paper Trail tracks changes to models, and stores each version of the model.
+gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger

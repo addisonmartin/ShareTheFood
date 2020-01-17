@@ -32,6 +32,9 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
+  # Tracks changes to this model.
+  has_paper_trail
+
   # Include devise modules. Other available is: :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
 
   # Enables protection against cross-site request forgery (CSRF) attacks.
   protect_from_forgery with: :exception
+
+  # Tracks which user made each change to models.
+  before_action :set_paper_trail_whodunnit
 end
