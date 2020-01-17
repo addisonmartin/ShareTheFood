@@ -42,6 +42,10 @@ group :development, :test do
   gem 'faker'
   # Bullet automatically detects when eager loading should/should not be used
   gem 'bullet'
+  # Brakeman is a static analysis tool which checks for security vulnerabilities
+  gem 'brakeman'
+  # Bundler Audit checks for vulnerable versions of gems in Gemfile.lock
+  gem 'bundler-audit'
 end
 
 group :development do
