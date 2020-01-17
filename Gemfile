@@ -34,10 +34,12 @@ group :development, :test do
   gem 'rubocop-thread_safety', require: false
   # Rubocop Rake is a Rubocop extension focused on Rake tasks specific analysis
   gem 'rubocop-rake', require: false
+  # RSpec replaces Rail's default testing framework
+  gem 'rspec-rails'
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -53,12 +55,19 @@ group :development do
   gem 'meta_request'
   # Pry is a more powerful IRB (interactive Ruby) alternative
   gem 'pry'
-  # Pry Rails changes the Rails console to use Pry.
+  # Pry Rails changes the Rails console to use Pry
   gem 'pry-rails'
-  # Awesome Print pretty prints Ruby objects in full color with proper indentation.
+  # Awesome Print pretty prints Ruby objects in full color with proper indentation
   gem 'awesome_print'
-  # Annotate automatically adds database schema information as a comment to the top of models, tests, and routes files.
+  # Annotate automatically adds database schema information as a comment to the top of models, tests, and routes files
   gem 'annotate'
-  # Letter Opener sends emails directly to the web browser, so an email server is not required in the development environment.
+  # Letter Opener sends emails directly to the web browser, so an email server is not required in the development environment
   gem 'letter_opener'
+end
+
+group :test do
+  # Should Matchers adds many useful RSpec matchers
+  gem 'shoulda-matchers'
+  # Pundit Matchers adds RSpec matchers for Pundit authorization policies
+  gem 'pundit-matchers'
 end
