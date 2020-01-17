@@ -8,3 +8,5 @@ require:
 AllCops:
   Exclude:
     - vendor/bundle/**/*
+    - bin/**/*
+    - node_modules/**/*
