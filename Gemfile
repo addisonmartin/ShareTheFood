@@ -48,4 +48,13 @@ group :development do
   gem 'better_errors'
   # Binding of Caller is used by Better Errors to enable REPL, local/instance variable inspection, and pretty stack frame names
   gem 'binding_of_caller'
+  # Meta Request allows the Rails Panel Chrome/Firefox plugin to work
+  # Rails Panel adds a panel within browser Development Tools that enables viewing the development log, application requests, and more
+  gem 'meta_request'
+  # Pry is a more powerful IRB (interactive Ruby) alternative
+  gem 'pry'
+  # Pry Rails changes the Rails console to use Pry.
+  gem 'pry-rails'
+  # Awesome Print pretty prints Ruby objects in full color with proper indentation.
+  gem 'awesome_print'
 end
