@@ -35,7 +35,15 @@ group :development, :test do
   # Rubocop Rake is a Rubocop extension focused on Rake tasks specific analysis
   gem 'rubocop-rake', require: false
   # RSpec replaces Rail's default testing framework
-  gem 'rspec-rails'
+  # Bundle RSpec and its dependencies directly from Github, as the latest version released on RubyGems.org does not work with Rails 6
+  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
+  gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
+  gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails'
+  gem 'rspec-support', git: 'https://github.com/rspec/rspec-support'
+  # Required by RSpec
+  gem 'rails-controller-testing'
+
   # Factory Bot replaces Rail's default test fixtures
   gem 'factory_bot_rails'
   # Faker is used to generate pseudo-realistic data
