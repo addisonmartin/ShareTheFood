@@ -57,4 +57,6 @@ group :development do
   gem 'pry-rails'
   # Awesome Print pretty prints Ruby objects in full color with proper indentation.
   gem 'awesome_print'
+  # Annotate automatically adds database schema information as a comment to the top of models, tests, and routes files.
+  gem 'annotate'
 end
