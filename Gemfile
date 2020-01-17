@@ -40,6 +40,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Faker is used to generate pseudo-realistic data
   gem 'faker'
+  # Bullet automatically detects when eager loading should/should not be used
+  gem 'bullet'
 end
 
 group :development do
