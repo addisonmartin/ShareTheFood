@@ -23,6 +23,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Devise is used for user authentication
 gem 'devise'
+# Pundit is used for user authorization
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
