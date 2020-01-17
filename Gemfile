@@ -78,4 +78,6 @@ group :test do
   gem 'capybara'
   # Capybara Screenshot automatically stores screenshots of failing Capybara tests in tmp/capybara
   gem 'capybara-screenshot'
+  # SimpleCov calculates test coverage
+  gem 'simplecov', require: false
 end

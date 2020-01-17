@@ -26,3 +26,6 @@ yarn-debug.log*
 
 # Ignore IntelliJ Rubymine configuration files.
 .idea/
+
+# Ignore test coverage results.
+coverage/
