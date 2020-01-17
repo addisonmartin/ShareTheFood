@@ -1,0 +1,6 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-thread_safety
+  - rubocop-rake

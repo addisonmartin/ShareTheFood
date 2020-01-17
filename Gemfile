@@ -21,6 +21,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Rubocop is a Ruby static code analyzer and code formatter
+  gem 'rubocop', require: false
+  # Rubocop Rails is a Rubocop extension focused on enforcing Rails best practices and coding conventions
+  gem 'rubocop-rails', require: false
+  # Rubocop Performance is a Rubocop extension focused on performance optimization analysis
+  gem 'rubocop-performance', require: false
+  # Rubocop RSpec is a Rubocop extension focused on RSpec tests specific analysis
+  gem 'rubocop-rspec', require: false
+  # Rubocop Thread Safety is a Rubocop extension focused on thread-safety analysis
+  gem 'rubocop-thread_safety', require: false
+  # Rubocop Rake is a Rubocop extension focused on Rake tasks specific analysis
+  gem 'rubocop-rake', require: false
 end
 
 group :development do
