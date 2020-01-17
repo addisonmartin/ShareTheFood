@@ -43,4 +43,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Better Errors replaces the standard Rails error page with an improved, interactive error page
+  gem 'better_errors'
+  # Binding of Caller is used by Better Errors to enable REPL, local/instance variable inspection, and pretty stack frame names
+  gem 'binding_of_caller'
 end
