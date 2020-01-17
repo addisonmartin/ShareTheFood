@@ -9,4 +9,4 @@ script:
   - bundle exec brakeman
   - bundle exec bundle-audit check --update
   - bundle exec database_consistency
-  - rails spec
+  - bundle exec rspec
