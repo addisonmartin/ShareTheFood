@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rubocop-rake', require: false
   # RSpec replaces Rail's default testing framework
   gem 'rspec-rails'
+  # Factory Bot replaces Rail's default test fixtures
+  gem 'factory_bot_rails'
 end
 
 group :development do
