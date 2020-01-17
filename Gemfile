@@ -46,6 +46,10 @@ group :development, :test do
   gem 'brakeman'
   # Bundler Audit checks for vulnerable versions of gems in Gemfile.lock
   gem 'bundler-audit'
+  # Isolator detects non-atomic database transactions
+  gem 'isolator'
+  # Database Consistency checks the consistency of database constraints with model validations
+  gem 'database_consistency', require: false
 end
 
 group :development do
