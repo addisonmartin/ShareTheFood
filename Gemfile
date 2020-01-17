@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails'
   # Factory Bot replaces Rail's default test fixtures
   gem 'factory_bot_rails'
+  # Faker is used to generate pseudo-realistic data
+  gem 'faker'
 end
 
 group :development do
