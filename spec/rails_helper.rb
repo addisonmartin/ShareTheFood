@@ -74,6 +74,9 @@ RSpec.configure do |config|
   # Enables Factory Bot methods within the tests.
   config.include FactoryBot::Syntax::Methods
 
+  # Required to load Devise and Warden during tests, otherwise they all fail.
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   # Enables Bullet, which detects if eager loading should/should not be used.
   if Bullet.enable?
     config.before do
