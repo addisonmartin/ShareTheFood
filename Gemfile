@@ -78,6 +78,8 @@ group :development, :test do
   # Database Consistency checks the consistency of database constraints with
   # model validations
   gem 'database_consistency', require: false
+  # Strong Migrations catches unsafe database migrations
+  gem 'strong_migrations'
 end
 
 group :development do
