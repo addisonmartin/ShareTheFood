@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Devise's user authentication controllers.
-class Users
+module Users
   # Only devise's registration controller is overridden, to make it so user's
   # accounts are soft deleted, not permanently deleted.
   class RegistrationsController < Devise::RegistrationsController
