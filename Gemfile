@@ -33,7 +33,11 @@ gem 'discard'
 # Bootstrap Form makes it super easy to integrate Bootstrap's form styling with
 # Rail's forms.
 gem 'bootstrap_form'
-# Ahoy tracks visits and events and stores that data in the database.
+# Pagy is used to paginate models
+gem 'pagy'
+# OJ is used by Pagy's Javascript views to speed up performance
+gem 'oj'
+# Ahoy tracks visits and events and stores that data in the database
 gem 'ahoy_matey'
 
 group :development, :test do

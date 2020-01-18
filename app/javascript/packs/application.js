@@ -16,7 +16,10 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 // Import Bootstrap's javascript.
-import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap'
 
 // Import all of the application's stylesheets.
 import '../stylesheets/application'
+
+// Import the pagination's Javascript.
+import '../src/pagy.js.erb'
