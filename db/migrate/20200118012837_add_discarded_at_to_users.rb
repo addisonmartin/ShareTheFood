@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Adds ability to soft delete this model with discard.
 class AddDiscardedAtToUsers < ActiveRecord::Migration[6.0]
   disable_ddl_transaction!
 

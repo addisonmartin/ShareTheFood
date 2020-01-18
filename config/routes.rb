@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   # Only the registrations controller is overridden, to make it so user's
   # accounts are soft deleted, not permanently deleted.
   devise_for :users,
-             :controllers => { :registrations => 'users/registrations' }
+             controllers: { registrations: 'users/registrations' }
 
   # Used to display web pages not backed by a database model.
   # See app/controllers/pages_controller.rb
