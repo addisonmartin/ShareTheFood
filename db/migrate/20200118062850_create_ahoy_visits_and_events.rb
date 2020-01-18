@@ -1,3 +1,10 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/AbcSize
+# rubocop:disable Rails/CreateTableWithTimestamps
+
+# Creates the database tables where analytics are stored.
 class CreateAhoyVisitsAndEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :ahoy_visits do |t|
@@ -52,7 +59,11 @@ class CreateAhoyVisitsAndEvents < ActiveRecord::Migration[6.0]
       t.timestamp :time
     end
 
-    add_index :ahoy_events, [:name, :time]
+    add_index :ahoy_events, %i[name time]
     add_index :ahoy_events, :properties, using: :gin, opclass: :jsonb_path_ops
   end
 end
+
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/AbcSize
+# rubocop:enable Rails/CreateTableWithTimestamps

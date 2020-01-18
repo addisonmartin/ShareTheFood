@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 # Pagy initializer file (3.7.2)
-# Customize only what you really need and notice that Pagy works also without any of the following lines.
-# Should you just cherry pick part of this file, please maintain the require-order of the extras
-
+# Customize only what you really need and notice that Pagy works also without
+# any of the following lines. Should you just cherry pick part of this file,
+# please maintain the require-order of the extras
 
 # Extras
 # See https://ddnexus.github.io/pagy/extras
 
-
 # Backend Extras
 
-# Array extra: Paginate arrays efficiently, avoiding expensive array-wrapping and without overriding
+# Array extra: Paginate arrays efficiently, avoiding expensive array-wrapping
+# and without overriding
 # See https://ddnexus.github.io/pagy/extras/array
 # require 'pagy/extras/array'
 
@@ -28,23 +28,22 @@
 # See https://ddnexus.github.io/pagy/extras/searchkick
 # require 'pagy/extras/searchkick'
 
-
 # Frontend Extras
 
-# Bootstrap extra: Add nav, nav_js and combo_nav_js helpers and templates for Bootstrap pagination
-# See https://ddnexus.github.io/pagy/extras/bootstrap
+# Bootstrap extra: Add nav, nav_js and combo_nav_js helpers and templates for
+# Bootstrap pagination. See https://ddnexus.github.io/pagy/extras/bootstrap
 require 'pagy/extras/bootstrap'
 
-# Bulma extra: Add nav, nav_js and combo_nav_js helpers and templates for Bulma pagination
-# See https://ddnexus.github.io/pagy/extras/bulma
+# Bulma extra: Add nav, nav_js and combo_nav_js helpers and templates for
+# Bulma pagination. See https://ddnexus.github.io/pagy/extras/bulma
 # require 'pagy/extras/bulma'
 
-# Foundation extra: Add nav, nav_js and combo_nav_js helpers and templates for Foundation pagination
-# See https://ddnexus.github.io/pagy/extras/foundation
+# Foundation extra: Add nav, nav_js and combo_nav_js helpers and templates for
+# Foundation pagination. See https://ddnexus.github.io/pagy/extras/foundation
 # require 'pagy/extras/foundation'
 
-# Materialize extra: Add nav, nav_js and combo_nav_js helpers for Materialize pagination
-# See https://ddnexus.github.io/pagy/extras/materialize
+# Materialize extra: Add nav, nav_js and combo_nav_js helpers for Materialize
+# pagination. See https://ddnexus.github.io/pagy/extras/materialize
 # require 'pagy/extras/materialize'
 
 # Navs extra: Add nav_js and combo_nav_js javascript helpers
@@ -53,8 +52,8 @@ require 'pagy/extras/bootstrap'
 # See https://ddnexus.github.io/pagy/extras/navs
 # require 'pagy/extras/navs'
 
-# Semantic extra: Add nav, nav_js and combo_nav_js helpers for Semantic UI pagination
-# See https://ddnexus.github.io/pagy/extras/semantic
+# Semantic extra: Add nav, nav_js and combo_nav_js helpers for Semantic UI
+# pagination. See https://ddnexus.github.io/pagy/extras/semantic
 # require 'pagy/extras/semantic'
 
 # UIkit extra: Add nav helper and templates for UIkit pagination
@@ -63,22 +62,22 @@ require 'pagy/extras/bootstrap'
 
 # Multi size var used by the *_nav_js helpers
 # See https://ddnexus.github.io/pagy/extras/navs#steps
-# Pagy::VARS[:steps] = { 0 => [2,3,3,2], 540 => [3,5,5,3], 720 => [5,7,7,5] }   # example
-
+# Pagy::VARS[:steps] = { 0 => [2,3,3,2], 540 => [3,5,5,3], 720 => [5,7,7,5] }
 
 # Feature Extras
 
-# Headers extra: http response headers (and other helpers) useful for API pagination
-# See http://ddnexus.github.io/pagy/extras/headers
+# Headers extra: http response headers (and other helpers) useful for API
+# pagination. See http://ddnexus.github.io/pagy/extras/headers
 # require 'pagy/extras/headers'
-# Pagy::VARS[:headers] = { page: 'Current-Page', items: 'Page-Items', count: 'Total-Count', pages: 'Total-Pages' }     # default
+# Pagy::VARS[:headers] ={ page: 'Current-Page', items: 'Page-Items',
+#                         count: 'Total-Count', pages: 'Total-Pages' } # default
 
-# Support extra: Extra support for features like: incremental, infinite, auto-scroll pagination
-# See https://ddnexus.github.io/pagy/extras/support
+# Support extra: Extra support for features like: incremental, infinite,
+# auto-scroll pagination. See https://ddnexus.github.io/pagy/extras/support
 # require 'pagy/extras/support'
 
-# Items extra: Allow the client to request a custom number of items per page with an optional selector UI
-# See https://ddnexus.github.io/pagy/extras/items
+# Items extra: Allow the client to request a custom number of items per page
+# with an optional selector UI. See https://ddnexus.github.io/pagy/extras/items
 require 'pagy/extras/items'
 Pagy::VARS[:items_param] = :items    # default
 Pagy::VARS[:max_items]   = 100       # default
@@ -86,41 +85,39 @@ Pagy::VARS[:max_items]   = 100       # default
 # Overflow extra: Allow for easy handling of overflowing pages
 # See https://ddnexus.github.io/pagy/extras/overflow
 # require 'pagy/extras/overflow'
-# Pagy::VARS[:overflow] = :empty_page    # default  (other options: :last_page and :exception)
+# Pagy::VARS[:overflow] = :empty_page    # default  (other options: :last_page
+#                                                               and :exception)
 
-# Metadata extra: Provides the pagination metadata to Javascript frameworks like Vue.js, react.js, etc.
-# See https://ddnexus.github.io/pagy/extras/metadata
-# you must require the shared internal extra (BEFORE the metadata extra) ONLY if you need also the :sequels
+# Metadata extra: Provides the pagination metadata to Javascript frameworks
+# like Vue.js, react.js, etc. See https://ddnexus.github.io/pagy/extras/metadata
+# you must require the shared internal extra (BEFORE the metadata extra) ONLY if
+# you need also the :sequels
 # require 'pagy/extras/shared'
 # require 'pagy/extras/metadata'
-# For performance reason, you should explicitly set ONLY the metadata you use in the frontend
-# Pagy::VARS[:metadata] = [:scaffold_url, :count, :page, :prev, :next, :last]    # example
+# For performance reason, you should explicitly set ONLY the metadata you use in
+# the frontend
+# Pagy::VARS[:metadata] = [:scaffold_url, :count, :page, :prev, :next, :last]
 
 # Trim extra: Remove the page=1 param from links
 # See https://ddnexus.github.io/pagy/extras/trim
 require 'pagy/extras/trim'
-
-
 
 # Pagy Variables
 # See https://ddnexus.github.io/pagy/api/pagy#variables
 # All the Pagy::VARS are set for all the Pagy instances but can be overridden
 # per instance by just passing them to Pagy.new or the #pagy controller method
 
-
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
-Pagy::VARS[:items] = 20                                   # default
-
+Pagy::VARS[:items] = 20 # default
 
 # Other Variables
 # See https://ddnexus.github.io/pagy/api/pagy#other-variables
-Pagy::VARS[:size]       = [1,4,4,1]
+Pagy::VARS[:size] = [1, 4, 4, 1]
 # Pagy::VARS[:page_param] = :page                           # default
 # Pagy::VARS[:params]     = {}                              # default
 # Pagy::VARS[:anchor]     = '#anchor'                       # example
 # Pagy::VARS[:link_extra] = 'data-remote="true"'            # example
-
 
 # Rails
 
@@ -129,13 +126,12 @@ Pagy::VARS[:size]       = [1,4,4,1]
 # See https://ddnexus.github.io/pagy/extras#javascript
 # Rails.application.config.assets.paths << Pagy.root.join('javascripts')
 
-
 # I18n
 
 # Pagy internal I18n: ~18x faster using ~10x less memory than the i18n gem
 # See https://ddnexus.github.io/pagy/api/frontend#i18n
-# Notice: No need to configure anything in this section if your app uses only "en"
-# or if you use the i18n extra below
+# Notice: No need to configure anything in this section if your app uses only
+# "en" or if you use the i18n extra below
 #
 # Examples:
 # load the "de" built-in locale:
@@ -159,9 +155,8 @@ Pagy::VARS[:size]       = [1,4,4,1]
 #                  filepath: 'path/to/pagy-xyz.yml',
 #                  pluralize: lambda{|count| ... } )
 
-
-# I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more memory
-# than the default pagy internal i18n (see above)
+# I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more
+# memory than the default pagy internal i18n (see above)
 # See https://ddnexus.github.io/pagy/extras/i18n
 # require 'pagy/extras/i18n'
 

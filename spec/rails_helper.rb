@@ -2,8 +2,8 @@
 
 # SimpleCov must be started before anything else!
 require 'simplecov'
-# Configures SimpleCov to return an error if test coverage drops.
-SimpleCov.refuse_coverage_drop
+# *DISABLED* Configures SimpleCov to return an error if test coverage drops.
+# SimpleCov.refuse_coverage_drop
 SimpleCov.start 'rails'
 # Enables codecov.io integration.
 require 'codecov'

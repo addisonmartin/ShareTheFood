@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: ahoy_visits
@@ -35,9 +37,15 @@
 #  index_ahoy_visits_on_visit_token  (visit_token) UNIQUE
 #
 
-class Ahoy::Visit < ApplicationRecord
-  self.table_name = "ahoy_visits"
+module Ahoy
+  # Stores information about the user when the visit the website.
+  class Visit < ApplicationRecord
+    self.table_name = 'ahoy_visits'
 
-  has_many :events, class_name: "Ahoy::Event"
-  belongs_to :user, optional: true
+    # rubocop:disable Rails/HasManyOrHasOneDependent
+    has_many :events, class_name: 'Ahoy::Event'
+    # rubocop:enable Rails/HasManyOrHasOneDependent
+
+    belongs_to :user, optional: true
+  end
 end

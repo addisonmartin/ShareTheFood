@@ -42,7 +42,9 @@ class User < ApplicationRecord
 
   # Enables viewing the visits for a given user.
   # e.g. User.first.visits
-  has_many :visits, class_name: "Ahoy::Visit"
+  # rubocop:disable Rails/HasManyOrHasOneDependent
+  has_many :visits, class_name: 'Ahoy::Visit'
+  # rubocop:enable Rails/HasManyOrHasOneDependent
 
   # Include devise modules. Other available is: :omniauthable
   devise :database_authenticatable, :registerable,
