@@ -45,6 +45,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable, :trackable
 
+  # Required to be consistent with user's database constraints.
+  validates :email, presence: true
+
   # Override devise's active for authentication method, to disable soft deleted
   # users from being able to sign in.
   def active_for_authentication?
