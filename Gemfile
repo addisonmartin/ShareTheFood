@@ -143,4 +143,6 @@ group :test do
   gem 'capybara-screenshot'
   # SimpleCov calculates test coverage
   gem 'simplecov', require: false
+  # Adds codecov.io integration
+  gem 'codecov', require: false
 end

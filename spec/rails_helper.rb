@@ -5,6 +5,9 @@ require 'simplecov'
 # Configures SimpleCov to return an error if test coverage drops.
 SimpleCov.refuse_coverage_drop
 SimpleCov.start 'rails'
+# Enables codecov.io integration.
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
