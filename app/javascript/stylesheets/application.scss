@@ -1,7 +1,6 @@
 @import '../stylesheets/shared/variables';
 @import '~bootstrap/scss/bootstrap';
 
-@import 'rails_bootstrap_forms';
 label.required:after {
   content:"(*)";
 }
