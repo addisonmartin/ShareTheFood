@@ -27,6 +27,9 @@ gem 'devise'
 gem 'pundit'
 # Paper Trail tracks changes to models, and stores each version of the model.
 gem 'paper_trail'
+# Discard enables soft deleting, discarding, models so they can still be viewed
+# after being deleted.
+gem 'discard'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
