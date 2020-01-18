@@ -33,6 +33,8 @@ gem 'discard'
 # Bootstrap Form makes it super easy to integrate Bootstrap's form styling with
 # Rail's forms.
 gem 'bootstrap_form'
+# Ahoy tracks visits and events and stores that data in the database.
+gem 'ahoy_matey'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
