@@ -2,6 +2,8 @@
 
 # SimpleCov must be started before anything else!
 require 'simplecov'
+# Configures SimpleCov to return an error if test coverage drops.
+SimpleCov.refuse_coverage_drop
 SimpleCov.start 'rails'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
