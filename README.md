@@ -1,6 +1,7 @@
 # README
 
 [![Build Status](https://travis-ci.org/addisonmartin/ShareTheFood.svg?branch=master)](https://travis-ci.org/addisonmartin/ShareTheFood)
+[![Test Coverage](https://codecov.io/gh/addisonmartin/ShareTheFood/branch/master/graph/badge.svg)](https://codecov.io/gh/addisonmartin/ShareTheFood)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
