@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required security meta tags -->
+    <meta charset="utf-8">
+    <!-- Required Bootstrap meta tag. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Required security meta tags. -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- Required Bootstrap meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Loads the application's stylesheets through Webpacker. -->
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Loads the application's Javascript through Webpacker. -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <title>Share The Food</title>
@@ -17,6 +19,8 @@
 
   <body>
     <%= render 'layouts/alerts' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
