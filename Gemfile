@@ -42,6 +42,8 @@ gem 'pagy'
 gem 'oj'
 # Ahoy tracks visits and events and stores that data in the database
 gem 'ahoy_matey'
+# Draper adds an object-oriented layer of presentation logic, called decorators
+gem 'draper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
