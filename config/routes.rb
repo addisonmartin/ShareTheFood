@@ -5,6 +5,14 @@
 # == Route Map
 #
 #                                Prefix Verb   URI Pattern                                                                              Controller#Action
+#                             donations GET    /donations(.:format)                                                                     donations#index
+#                                       POST   /donations(.:format)                                                                     donations#create
+#                          new_donation GET    /donations/new(.:format)                                                                 donations#new
+#                         edit_donation GET    /donations/:id/edit(.:format)                                                            donations#edit
+#                              donation GET    /donations/:id(.:format)                                                                 donations#show
+#                                       PATCH  /donations/:id(.:format)                                                                 donations#update
+#                                       PUT    /donations/:id(.:format)                                                                 donations#update
+#                                       DELETE /donations/:id(.:format)                                                                 donations#destroy
 #                      new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
 #                          user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
 #                  destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
@@ -51,6 +59,10 @@
 # rubocop:enable Metrics/LineLength
 
 Rails.application.routes.draw do
+  # Creates RESTful routes for Donation model.
+  # See app/controllers/donation_controller.rb
+  resources :donations
+
   # Creates all necessary routes for user authentication.
   # Only the registrations controller is overridden, to make it so user's
   # accounts are soft deleted, not permanently deleted.

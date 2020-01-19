@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_155853) do
+ActiveRecord::Schema.define(version: 2020_01_19_230519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,29 @@ ActiveRecord::Schema.define(version: 2020_01_19_155853) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.datetime "fresh_until"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.text "pickup_notes"
+    t.boolean "is_perishable"
+    t.boolean "requires_preparation"
+    t.boolean "is_vegetarian"
+    t.boolean "is_vegan"
+    t.boolean "is_gluten_free"
+    t.boolean "contains_peanuts"
+    t.boolean "contains_tree_nuts"
+    t.boolean "contains_dairy"
+    t.boolean "contains_soy"
+    t.boolean "contains_egg"
+    t.boolean "contains_fish"
+    t.boolean "contains_shellfish"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
