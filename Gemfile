@@ -28,22 +28,21 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 # Pundit is used for user authorization
 gem 'pundit'
-# Paper Trail tracks changes to models, and stores each version of the model.
+# Paper Trail tracks changes to models, and stores each version of the model
 gem 'paper_trail'
 # Discard enables soft deleting, discarding, models so they can still be viewed
-# after being deleted.
+# after being deleted
 gem 'discard'
-# Bootstrap Form makes it super easy to integrate Bootstrap's form styling with
-# Rail's forms.
+# Bootstrap Form makes it easy to integrate Bootstrap styling with Rail's forms
 gem 'bootstrap_form'
-# Pagy is used to paginate models
+# Pagy is used to paginate models for views
 gem 'pagy'
-# OJ is used by Pagy's Javascript views to speed up performance
+# OJ is used by Pagy's Javascript to increase performance
 gem 'oj'
-# Ahoy tracks visits and events and stores that data in the database
-gem 'ahoy_matey'
 # Draper adds an object-oriented layer of presentation logic, called decorators
 gem 'draper'
+# Ahoy tracks visits and events and stores that data in the database
+gem 'ahoy_matey'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
