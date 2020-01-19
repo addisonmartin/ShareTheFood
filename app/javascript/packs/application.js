@@ -23,3 +23,6 @@ import '../stylesheets/application'
 
 // Import the pagination's Javascript.
 import '../src/pagy.js.erb'
+
+// Import the Javascript that controls direct file upload's styling.
+import '../src/direct_upload'
