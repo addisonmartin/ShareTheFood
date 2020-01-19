@@ -2,3 +2,5 @@ Ahoy::Event:
   enabled: false
 ActiveStorage::Blob:
   enabled: false
+ActiveStorage::Attachment:
+  enabled: false
