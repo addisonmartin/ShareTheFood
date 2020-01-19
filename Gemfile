@@ -144,6 +144,8 @@ group :test do
   # Capybara Screenshot automatically stores screenshots of failing Capybara
   # tests in tmp/capybara
   gem 'capybara-screenshot'
+  # Database Cleaner is used to clean the test database between tests
+  gem 'database_cleaner'
   # SimpleCov calculates test coverage
   gem 'simplecov', require: false
   # Adds codecov.io integration
