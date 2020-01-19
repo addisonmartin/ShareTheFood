@@ -1,2 +1,4 @@
 Ahoy::Event:
-    enabled: false
+  enabled: false
+ActiveStorage::Blob:
+  enabled: false
