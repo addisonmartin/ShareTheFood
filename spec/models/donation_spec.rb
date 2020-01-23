@@ -12,17 +12,17 @@
 #  contains_shellfish   :boolean
 #  contains_soy         :boolean
 #  contains_tree_nuts   :boolean
-#  description          :text
+#  description          :text             not null
 #  discarded_at         :datetime
-#  fresh_until          :datetime
+#  fresh_until          :datetime         not null
 #  is_gluten_free       :boolean
 #  is_perishable        :boolean
 #  is_vegan             :boolean
 #  is_vegetarian        :boolean
-#  latitude             :decimal(10, 6)
-#  longitude            :decimal(10, 6)
-#  name                 :text
-#  pickup_notes         :text
+#  latitude             :decimal(10, 6)   not null
+#  longitude            :decimal(10, 6)   not null
+#  name                 :text             not null
+#  pickup_notes         :text             not null
 #  requires_preparation :boolean
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
