@@ -2,6 +2,8 @@
 
 class DonationsController < ApplicationController
   before_action :set_donation, only: %i[show edit update destroy]
+  # Verifies that authorize has been called on each controller action.
+  after_action :verify_authorized
 
   # GET /donations
   def index
