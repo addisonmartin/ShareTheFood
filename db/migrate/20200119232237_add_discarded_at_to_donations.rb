@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDiscardedAtToDonations < ActiveRecord::Migration[6.0]
   # Prevents the entire table from locking when adding this index.
   disable_ddl_transaction!

@@ -41,7 +41,7 @@ class User < ApplicationRecord
   include Discard::Model
 
   has_many :donations, inverse_of: :user
-  
+
   # Enables viewing the visits for a given user.
   # e.g. User.first.visits
   # rubocop:disable Rails/HasManyOrHasOneDependent
