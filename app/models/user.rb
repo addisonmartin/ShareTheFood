@@ -62,7 +62,7 @@ class User < ApplicationRecord
     super && !discarded?
   end
 
-  # Adds a custom message for a discarded account.
+  # Adds an error message when a user tries to log in to a soft deleted account.
   def inactive_message
     !discarded? ? super : :deleted_account
   end
