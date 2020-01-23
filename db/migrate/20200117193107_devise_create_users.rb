@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/MethodLength
-# rubocop:disable Metrics/AbcSize
-
 # The database migration which creates the user model for user authentication.
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
@@ -44,6 +41,3 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     add_index :users, :unlock_token,         unique: true
   end
 end
-
-# rubocop:enable Metrics/MethodLength
-# rubocop:enable Metrics/AbcSize

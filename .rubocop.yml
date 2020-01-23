@@ -18,5 +18,11 @@ Bundler/OrderedGems:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
 Rails/FilePath:
   Enabled: false

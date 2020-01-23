@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/MethodLength
-# rubocop:disable Metrics/AbcSize
 # rubocop:disable Rails/CreateTableWithTimestamps
 
 # Creates the database tables where analytics are stored.
@@ -64,6 +62,4 @@ class CreateAhoyVisitsAndEvents < ActiveRecord::Migration[6.0]
   end
 end
 
-# rubocop:enable Metrics/MethodLength
-# rubocop:enable Metrics/AbcSize
 # rubocop:enable Rails/CreateTableWithTimestamps
