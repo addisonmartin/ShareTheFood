@@ -79,28 +79,30 @@ ActiveRecord::Schema.define(version: 2020_01_19_232237) do
   end
 
   create_table "donations", force: :cascade do |t|
+    t.bigint "user_id"
     t.text "name", null: false
     t.text "description", null: false
     t.datetime "fresh_until", null: false
     t.decimal "latitude", precision: 10, scale: 6, null: false
     t.decimal "longitude", precision: 10, scale: 6, null: false
     t.text "pickup_notes", null: false
-    t.boolean "is_perishable"
-    t.boolean "requires_preparation"
-    t.boolean "is_vegetarian"
-    t.boolean "is_vegan"
-    t.boolean "is_gluten_free"
-    t.boolean "contains_peanuts"
-    t.boolean "contains_tree_nuts"
-    t.boolean "contains_dairy"
-    t.boolean "contains_soy"
-    t.boolean "contains_egg"
-    t.boolean "contains_fish"
-    t.boolean "contains_shellfish"
+    t.boolean "is_perishable", null: false
+    t.boolean "requires_preparation", null: false
+    t.boolean "is_vegetarian", null: false
+    t.boolean "is_vegan", null: false
+    t.boolean "is_gluten_free", null: false
+    t.boolean "contains_peanuts", null: false
+    t.boolean "contains_tree_nuts", null: false
+    t.boolean "contains_dairy", null: false
+    t.boolean "contains_soy", null: false
+    t.boolean "contains_egg", null: false
+    t.boolean "contains_fish", null: false
+    t.boolean "contains_shellfish", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "discarded_at"
     t.index ["discarded_at"], name: "index_donations_on_discarded_at"
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -142,4 +144,5 @@ ActiveRecord::Schema.define(version: 2020_01_19_232237) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "donations", "users"
 end
