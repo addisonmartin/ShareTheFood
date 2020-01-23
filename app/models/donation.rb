@@ -53,12 +53,10 @@ class Donation < ApplicationRecord
             :contains_dairy, :contains_soy, :contains_egg, :contains_fish,
             :contains_shellfish, inclusion: { in: [true, false] }
 
-  # Requires that latitude is a valid coordinate on Earth.
+  # Requires that latitude/longitude are valid coordinates on Earth.
   validates :latitude, inclusion: { in: -90..90,
                                     message:
                                     'Latitude must be between -90 and 90.' }
-
-  # Requires that longitude is a valid coordinate on Earth.
   validates :longitude, inclusion: { in: -180..180,
                                      message:
                                      'Longitude must be between -180 and 180.' }
