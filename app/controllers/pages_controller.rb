@@ -2,6 +2,9 @@
 
 # Renders views that are not backed by database models.
 class PagesController < ApplicationController
+  # Skip authorization.
+  skip_after_action :verify_authorized
+
   # Renders the page based based on the given page parameter,
   # or renders the 404 error page if the page parameter is invalid.
   def show
