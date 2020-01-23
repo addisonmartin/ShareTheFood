@@ -38,7 +38,7 @@ class Donation < ApplicationRecord
   # Enables soft deleting this model.
   include Discard::Model
 
-  belongs_to :user, inverse_of: :donations
+  belongs_to :user, inverse_of: :donations, dependent: :nullify
 
   # Enables attaching one or more images to this model.
   has_many_attached :images

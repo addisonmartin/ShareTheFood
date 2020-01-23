@@ -40,7 +40,7 @@ class User < ApplicationRecord
   # Enables soft deleting this model.
   include Discard::Model
 
-  has_many :donations, inverse_of: :user
+  has_many :donations, inverse_of: :user, dependent: :nullify
 
   # Enables viewing the visits for a given user.
   # e.g. User.first.visits
