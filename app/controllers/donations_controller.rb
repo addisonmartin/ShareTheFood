@@ -7,7 +7,7 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-    @donations = Donation.all
+    @donations = Donation.kept
     authorize @donations
   end
 
@@ -46,7 +46,7 @@ class DonationsController < ApplicationController
 
   # DELETE /donations/1
   def destroy
-    @donation.destroy
+    @donation.discard
     redirect_to donations_url, notice: 'Donation was successfully destroyed.'
   end
 
@@ -54,7 +54,7 @@ class DonationsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_donation
-    @donation = Donation.find(params[:id])
+    @donation = Donation.kept.find(params[:id])
     authorize @donation
   end
 
