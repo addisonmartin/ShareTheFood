@@ -149,6 +149,10 @@ group :test do
   gem 'database_cleaner'
   # SimpleCov calculates test coverage
   gem 'simplecov', require: false
+  # Reverse Coverage shows which lines of code RSpec tests cover
+  # See tmp/index.html
+  # Disabled until the gem adds RSpec 3.10 support.
+  # gem 'reverse_coverage'
   # Adds codecov.io integration
   gem 'codecov', require: false
 end

@@ -96,14 +96,23 @@ RSpec.configure do |config|
     end
   end
 
-  # Configures Database Cleaner to clear the test database between tests.
   config.before(:suite) do
+    # Configures Database Cleaner to clear the test database between tests.
     DatabaseCleaner.clean_with(:truncation)
+    # Disabled until the gem adds RSpec 3.10 support.
+    # ReverseCoverage::Main.start
   end
 
   config.before do
     DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.start
   end
+
+  # Disabled until the gem adds RSpec 3.10 support.
+  # config.around do |e|
+  #  e.run
+  #  ReverseCoverage::Main.add(e)
+  # end
 
   config.before(:each, type: :feature) do
     # :rack_test driver's Rack app under test shares database connection
@@ -118,9 +127,12 @@ RSpec.configure do |config|
     end
   end
 
-  config.before do
-    DatabaseCleaner.start
-  end
+  # Disabled until the gem adds RSpec 3.10 support.
+  # config.after(:suite) do
+  #   ReverseCoverage::Main.save_results
+  #   coverage_matrix = ReverseCoverage::Main.coverage_matrix
+  #   ReverseCoverage::Formatters::HTML::Formatter.new.format(coverage_matrix)
+  # end
 
   config.append_after do
     DatabaseCleaner.clean
