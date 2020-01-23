@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The decorator that handles presentation logic for Donations.
 class DonationDecorator < ApplicationDecorator
   delegate_all
 

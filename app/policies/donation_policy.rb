@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The policy that specifies user authorization for Donation's actions.
 class DonationPolicy < ApplicationPolicy
   def index?
     true

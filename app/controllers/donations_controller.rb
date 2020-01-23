@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The controller that specifies RESTful actions for working with Donations.
 class DonationsController < ApplicationController
   before_action :set_donation, only: %i[show edit update destroy]
   # Verifies that authorize has been called on each controller action.
