@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-expectations
-  revision: c085c5a6f0678ae7f88a489996e391e6b661d8a9
+  revision: fe7710ef7b656869a21468c908a4fd7cf6335343
   specs:
     rspec-expectations (3.10.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails
-  revision: b1ffe94265b33b02616658ec3c1921fc0355f662
+  revision: 3778862901ffe97fd1e8ebc971624ae931eb97d4
   specs:
     rspec-rails (4.0.0.pre)
       actionpack (>= 4.2)
@@ -140,7 +140,7 @@ GEM
     bundler-audit (0.6.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 0.18)
-    byebug (11.0.1)
+    byebug (11.1.0)
     capybara (3.30.0)
       addressable
       mini_mime (>= 0.1.3)
