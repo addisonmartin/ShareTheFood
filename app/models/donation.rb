@@ -13,6 +13,7 @@
 #  contains_soy         :boolean
 #  contains_tree_nuts   :boolean
 #  description          :text
+#  discarded_at         :datetime
 #  fresh_until          :datetime
 #  is_gluten_free       :boolean
 #  is_perishable        :boolean
@@ -25,6 +26,10 @@
 #  requires_preparation :boolean
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#
+# Indexes
+#
+#  index_donations_on_discarded_at  (discarded_at)
 #
 class Donation < ApplicationRecord
   # Tracks changes to this model.
