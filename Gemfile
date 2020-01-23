@@ -93,6 +93,10 @@ group :development, :test do
   gem 'database_consistency', require: false
   # Strong Migrations catches unsafe database migrations
   gem 'strong_migrations'
+  # Ruby Debug IDE is used by Rubymine to enable its debugger
+  gem 'ruby-debug-ide'
+  # Debase is required by Ruby Debug IDE
+  gem 'debase'
 end
 
 group :development do
