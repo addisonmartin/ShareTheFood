@@ -12,5 +12,6 @@ script:
   - bundle exec rubocop
   - bundle exec brakeman
   - bundle exec bundle-audit check --update
+  - bundle leak check --update
   - bundle exec database_consistency
   - bundle exec rspec

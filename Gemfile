@@ -84,8 +84,10 @@ group :development, :test do
   gem 'bullet'
   # Brakeman is a static analysis tool which checks for security vulnerabilities
   gem 'brakeman'
-  # Bundler Audit checks for vulnerable versions of gems in Gemfile.lock
+  # Bundler Audit checks for versions of used gems with security vulnerabilities
   gem 'bundler-audit'
+  # Bundler Leak checks for versions of used gems with memory leaks
+  gem 'bundler-leak'
   # Isolator detects non-atomic database transactions
   gem 'isolator'
   # Database Consistency checks the consistency of database constraints with
