@@ -1,0 +1,109 @@
+# Path is relative to configuration root and specifies where cached metadata
+# will be stored. If not set, defaults to '.licenses'
+cache_path: 'tmp/licensed/cache'
+
+# Dependencies with these licenses are allowed and will not raise errors or
+# warnings. This list does not have a default value and is required for
+# `licensed status` to succeed.
+allowed:
+  - mit
+  - apache-2.0
+  - bsd-2-clause
+  - bsd-3-clause
+  - cc0-1.0
+  - isc
+
+# Sources of metadata. All are enabled by default.
+sources:
+  npm: false
+
+# These dependencies are ignored during enumeration.
+# They will not be cached, and will not raise errors or warnings.
+# This configuration is intended to be used for dependencies that don't need to
+# be included for compliance purposes, such as other projects owned by the
+# current project's owner, internal dependencies, and dependencies that aren't
+# shipped with the project like test frameworks.
+ignored:
+  yarn:
+    - bindings
+    - camelcase-5.3.1
+    - file-uri-to-path
+    - fsevents
+    - get-caller-file-1.0.3
+    - json-schema
+    - ms-2.1.2
+    - require-main-filename-1.0.1
+    - spdx-exceptions
+    - string_decoder-1.3.0
+    - wrap-ansi-2.1.0
+
+# These dependencies have licenses not on the `allowed` list and have been
+# reviewed. They will be cached and checked, but will not raise errors or
+# warnings for a non-allowed license.  Dependencies on this list will still
+# raise errors if license text cannot be found for the dependency.
+reviewed:
+  bundler:
+    - activerecord
+    - bcrypt
+    - concurrent-ruby
+    - device_detector
+    - pg
+    - puma
+    - warden
+    - websocket-driver
+    - websocket-extensions
+  yarn:
+    - "@webassemblyjs/helper-fsm"
+    - "@webassemblyjs/leb128"
+    - "@xtuc/ieee754"
+    - abbrev
+    - atob
+    - bcrypt-pbkdf
+    - block-stream
+    - cacache
+    - caniuse-lite
+    - case-sensitive-paths-webpack-plugin
+    - color-convert
+    - dom-serializer
+    - domain-browser
+    - electron-to-chromium
+    - figgy-pudding
+    - fs.realpath
+    - glob
+    - ieee754
+    - jsbn
+    - lodash
+    - lodash._reinterpolate
+    - lodash.defaults
+    - lodash.get
+    - lodash.has
+    - lodash.memoize
+    - lodash.template
+    - lodash.templatesettings
+    - lodash.uniq
+    - nan
+    - neo-async
+    - normalize-package-data
+    - pako
+    - path-browserify
+    - postcss-color-gray
+    - postcss-load-config
+    - postcss-loader
+    - qs
+    - readable-stream
+    - readdirp
+    - sax
+    - serialize-javascript
+    - sha.js
+    - source-map
+    - spark-md5
+    - sprintf-js
+    - ssri
+    - string_decoder
+    - svgo
+    - terser
+    - tty-browserify
+    - tweetnacl
+    - typedarray
+    - webpack
+    - yargs

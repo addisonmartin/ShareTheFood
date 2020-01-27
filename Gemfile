@@ -99,6 +99,8 @@ group :development, :test do
   gem 'ruby-debug-ide'
   # Debase is required by Ruby Debug IDE
   gem 'debase'
+  # Licensed is used to list the license type of each dependency
+  gem 'licensed'
 end
 
 group :development do

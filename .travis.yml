@@ -15,3 +15,5 @@ script:
   - bundle leak check --update
   - bundle exec database_consistency
   - bundle exec rspec
+  - bundle exec licensed cache
+  - bundle exec licensed status
