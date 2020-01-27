@@ -33,6 +33,8 @@ gem 'paper_trail'
 # Discard enables soft deleting, discarding, models so they can still be viewed
 # after being deleted
 gem 'discard'
+# Lograge replace the default Rails logger
+gem 'lograge'
 # Bootstrap Form makes it easy to integrate Bootstrap styling with Rail's forms
 gem 'bootstrap_form'
 # Pagy is used to paginate models for views
