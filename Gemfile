@@ -43,6 +43,8 @@ gem 'oj'
 gem 'draper'
 # Ahoy tracks visits and events and stores that data in the database
 gem 'ahoy_matey'
+# Authtrail tracks devise user login activity
+gem 'authtrail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
