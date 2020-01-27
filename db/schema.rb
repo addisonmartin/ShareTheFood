@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 2020_01_27_013727) do
     t.string "unconfirmed_email"
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "discarded_at"

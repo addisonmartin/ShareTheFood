@@ -32,6 +32,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+      # Create boolean attribute, to identify admin users.
+      t.boolean :admin, default: false, null: false
+
       t.timestamps null: false
     end
 
