@@ -75,4 +75,15 @@ Rails.application.routes.draw do
 
   # Sets the homepage of the website to /pages/home.
   root 'pages#show', page: 'home'
+
+  # Returns true if the user is authenticated and an admin user.
+  # Used to mount logster's web interface.
+  admin_constraint = lambda do |request|
+    request.env['warden'].authenticate? and request.env['warden'].user.admin?
+  end
+
+  # Used to view the logs directly from the website, only for admin users.
+  constraints admin_constraint do
+    mount Logster::Web, at: '/logs'
+  end
 end

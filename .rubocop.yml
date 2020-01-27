@@ -26,3 +26,6 @@ Metrics/AbcSize:
 
 Rails/FilePath:
   Enabled: false
+
+Style/AndOr:
+  Enabled: false

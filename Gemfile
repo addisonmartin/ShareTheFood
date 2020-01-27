@@ -35,6 +35,11 @@ gem 'paper_trail'
 gem 'discard'
 # Lograge replace the default Rails logger
 gem 'lograge'
+# Redis is required by logster
+gem 'redis'
+# Logster is used to view the logs directly from the website, for admin users
+# See /logs
+gem 'logster'
 # Bootstrap Form makes it easy to integrate Bootstrap styling with Rail's forms
 gem 'bootstrap_form'
 # Pagy is used to paginate models for views
@@ -105,6 +110,9 @@ group :development, :test do
   gem 'debase'
   # Licensed is used to list the license type of each dependency
   gem 'licensed'
+  # Rubycritic wraps static analysis gems such as Reek, Flay, and Flog to
+  # provide a quality report in a nice format
+  gem 'rubycritic', require: false
 end
 
 group :development do
