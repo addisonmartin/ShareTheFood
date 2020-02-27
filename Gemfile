@@ -48,7 +48,7 @@ gem 'pagy'
 gem 'oj'
 # Draper adds an object-oriented layer of presentation logic, called decorators
 gem 'draper'
-# HAML, HTML Abstraction Markup Language, makes it easier to write HTML
+# Haml, HTML Abstraction Markup Language, makes it easier to write HTML
 gem 'haml-rails'
 # Ahoy tracks visits and events and stores that data in the database
 gem 'ahoy_matey'
@@ -115,6 +115,8 @@ group :development, :test do
   # Rubycritic wraps static analysis gems such as Reek, Flay, and Flog to
   # provide a quality report in a nice format
   gem 'rubycritic', require: false
+  # Haml Lint is used to enforce consistent style within haml files
+  gem 'haml_lint', require: false
 end
 
 group :development do
