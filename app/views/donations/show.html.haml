@@ -1,0 +1,58 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @donation.name
+%p
+  %strong Description:
+  = @donation.description
+%p
+  %strong Fresh until:
+  = @donation.fresh_until
+%p
+  %strong Latitude:
+  = @donation.latitude
+%p
+  %strong Longitude:
+  = @donation.longitude
+%p
+  %strong Pickup notes:
+  = @donation.pickup_notes
+%p
+  %strong Is perishable:
+  = @donation.is_perishable
+%p
+  %strong Requires preparation:
+  = @donation.requires_preparation
+%p
+  %strong Is vegetarian:
+  = @donation.is_vegetarian
+%p
+  %strong Is vegan:
+  = @donation.is_vegan
+%p
+  %strong Is gluten free:
+  = @donation.is_gluten_free
+%p
+  %strong Contains peanuts:
+  = @donation.contains_peanuts
+%p
+  %strong Contains tree nuts:
+  = @donation.contains_tree_nuts
+%p
+  %strong Contains dairy:
+  = @donation.contains_dairy
+%p
+  %strong Contains soy:
+  = @donation.contains_soy
+%p
+  %strong Contains egg:
+  = @donation.contains_egg
+%p
+  %strong Contains fish:
+  = @donation.contains_fish
+%p
+  %strong Contains shellfish:
+  = @donation.contains_shellfish
+= link_to 'Edit', edit_donation_path(@donation)
+|
+= link_to 'Back', donations_path

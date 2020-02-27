@@ -33,7 +33,7 @@ gem 'paper_trail'
 # Discard enables soft deleting, discarding, models so they can still be viewed
 # after being deleted
 gem 'discard'
-# Lograge replace the default Rails logger
+# Lograge replaces the default Rails logger
 gem 'lograge'
 # Redis is required by logster
 gem 'redis'
@@ -48,6 +48,8 @@ gem 'pagy'
 gem 'oj'
 # Draper adds an object-oriented layer of presentation logic, called decorators
 gem 'draper'
+# HAML, HTML Abstraction Markup Language, makes it easier to write HTML
+gem 'haml-rails'
 # Ahoy tracks visits and events and stores that data in the database
 gem 'ahoy_matey'
 # Authtrail tracks devise user login activity

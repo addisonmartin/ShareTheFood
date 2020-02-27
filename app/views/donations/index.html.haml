@@ -1,0 +1,50 @@
+%p#notice= notice
+%h1 Donations
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Fresh until
+      %th Latitude
+      %th Longitude
+      %th Pickup notes
+      %th Is perishable
+      %th Requires preparation
+      %th Is vegetarian
+      %th Is vegan
+      %th Is gluten free
+      %th Contains peanuts
+      %th Contains tree nuts
+      %th Contains dairy
+      %th Contains soy
+      %th Contains egg
+      %th Contains fish
+      %th Contains shellfish
+      %th{:colspan => "3"}
+  %tbody
+    - @donations.each do |donation|
+      %tr
+        %td= donation.name
+        %td= donation.description
+        %td= donation.fresh_until
+        %td= donation.latitude
+        %td= donation.longitude
+        %td= donation.pickup_notes
+        %td= donation.is_perishable
+        %td= donation.requires_preparation
+        %td= donation.is_vegetarian
+        %td= donation.is_vegan
+        %td= donation.is_gluten_free
+        %td= donation.contains_peanuts
+        %td= donation.contains_tree_nuts
+        %td= donation.contains_dairy
+        %td= donation.contains_soy
+        %td= donation.contains_egg
+        %td= donation.contains_fish
+        %td= donation.contains_shellfish
+        %td= link_to 'Show', donation
+        %td= link_to 'Edit', edit_donation_path(donation)
+        %td= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Donation', new_donation_path

@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Required Bootstrap meta tag.
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    / Required security meta tags.
+    = csrf_meta_tags
+    = csp_meta_tag
+    / Loads the application's stylesheets through Webpacker.
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    / Loads the application's Javascript through Webpacker.
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %title Share The Food
+  %body
+    = render 'layouts/alerts'
+    .container
+      = yield
