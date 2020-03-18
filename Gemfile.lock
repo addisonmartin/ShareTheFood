@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/rspec/rspec-core
-  revision: da87aa0c5f25a6e6f2db6f0c8fb2a04625b80ac6
+  revision: 725b0d2eadaa9ac9f816a6d2d7ef1e507a6705cd
   specs:
     rspec-core (3.10.0.pre)
       rspec-support (= 3.10.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-expectations
-  revision: 986f545858eb9154dd9177deb83575f3e95427dc
+  revision: 3c997d98f49731b2d28d01e070b88aef6bb3c68b
   specs:
     rspec-expectations (3.10.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-mocks
-  revision: ae6e11d7f5100146c4b58b165975a29e2ccc60db
+  revision: 81c17e89b2722cb225d602e08b600e4a4f6148a4
   specs:
     rspec-mocks (3.10.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails
-  revision: 2f22bf33504c1908a3d9ef32f54da0179ebb0a15
+  revision: 84e79259c8978fdff34ea2a327316b638ff00b85
   specs:
     rspec-rails (4.0.0.pre)
       actionpack (>= 4.2)
@@ -138,7 +138,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap_form (4.3.0)
+    bootstrap_form (4.4.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     brakeman (4.8.0)
@@ -177,7 +177,7 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     database_cleaner (1.8.3)
-    database_consistency (0.7.9)
+    database_consistency (0.8.0)
       activerecord (>= 3.2)
     debase (0.2.4.1)
       debase-ruby_core_source (>= 0.10.2)
@@ -226,7 +226,7 @@ GEM
       path_expander (~> 1.0)
       ruby_parser (~> 3.1, > 3.1.0)
       sexp_processor (~> 4.8)
-    geocoder (1.6.1)
+    geocoder (1.6.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
@@ -238,7 +238,7 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
-    haml_lint (0.34.2)
+    haml_lint (0.35.0)
       haml (>= 4.0, < 5.2)
       rainbow
       rubocop (>= 0.50.0)
@@ -271,9 +271,9 @@ GEM
       ruby-xxHash (~> 0.4)
       thor (~> 0.19)
       tomlrb (~> 1.2)
-    licensee (9.13.0)
+    licensee (9.13.1)
       dotenv (~> 2.0)
-      octokit (~> 4.8)
+      octokit (~> 4.17)
       reverse_markdown (~> 1.0)
       rugged (~> 0.24)
       thor (~> 0.19)
@@ -286,7 +286,7 @@ GEM
       activesupport (>= 4)
       railties (>= 4)
       request_store (~> 1.0)
-    logster (2.7.0)
+    logster (2.7.1)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -306,19 +306,19 @@ GEM
     msgpack (1.3.3)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.8)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    octokit (4.16.0)
+    octokit (4.17.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
-    oj (3.10.2)
+    oj (3.10.5)
     orm_adapter (0.5.0)
     pagy (3.7.3)
     paper_trail (10.3.1)
       activerecord (>= 4.2)
       request_store (~> 1.1)
     parallel (1.19.1)
-    parser (2.7.0.3)
+    parser (2.7.0.4)
       ast (~> 2.4.0)
     path_expander (1.1.0)
     pathname-common_prefix (0.0.1)
@@ -394,7 +394,7 @@ GEM
     reverse_markdown (1.4.0)
       nokogiri
     rexml (3.2.4)
-    rubocop (0.80.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
@@ -433,8 +433,8 @@ GEM
       simplecov (>= 0.17.0)
       tty-which (~> 0.4.0)
       virtus (~> 1.0)
-    rubyzip (2.2.0)
-    rugged (0.28.4.1)
+    rubyzip (2.3.0)
+    rugged (0.99.0)
     safely_block (0.3.0)
       errbase (>= 0.1.1)
     sawyer (0.8.2)
@@ -449,7 +449,7 @@ GEM
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
-    simplecov-html (0.12.1)
+    simplecov-html (0.12.2)
     sniffer (0.3.2)
       active_attr (>= 0.10.2)
       anyway_config (~> 1.0)
@@ -506,7 +506,7 @@ GEM
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.2.2)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
