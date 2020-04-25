@@ -48,4 +48,7 @@ group :development do
 
   # Annotate automatically adds information about the database schema to the top of relevant classes in the project.
   gem 'annotate', '~> 3.1'
+
+  # Letter Opener is used to redirect emails sent from the application directly to a new tab of the web browser.
+  gem 'letter_opener', '~> 1.7'
 end
