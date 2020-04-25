@@ -36,5 +36,10 @@ group :development do
   gem 'better_errors', '~> 2.7'
   # Binding of Caller is used by Better Errors to enabled its more advanced features.
   gem 'binding_of_caller', '~> 0.8'
+
+  # Pry is a powerful developer console and IRB alternative.
+  gem 'pry', '~> 0.13'
+  # Pry Rails configures the Rail's console to be replaced with Pry.
+  gem 'pry-rails', '~> 0.3'
 end
 
