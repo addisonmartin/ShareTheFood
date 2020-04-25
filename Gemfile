@@ -41,5 +41,8 @@ group :development do
   gem 'pry', '~> 0.13'
   # Pry Rails configures the Rail's console to be replaced with Pry.
   gem 'pry-rails', '~> 0.3'
-end
 
+  # Meta Request enables Rails Panel's functionality in the browser.
+  # The Rails Panel plugin can be downloaded from the Firefox/Chrome plugin store.
+  gem 'meta_request', '~> 0.7'
+end
