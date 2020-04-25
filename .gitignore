@@ -30,5 +30,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore IntelliJ RubyMine configuration files.
+# Ignore Jetbrains RubyMine configuration files.
 .idea/
