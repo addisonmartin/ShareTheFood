@@ -45,4 +45,7 @@ group :development do
   # Meta Request enables Rails Panel's functionality in the browser.
   # The Rails Panel plugin can be downloaded from the Firefox/Chrome plugin store.
   gem 'meta_request', '~> 0.7'
+
+  # Annotate automatically adds information about the database schema to the top of relevant classes in the project.
+  gem 'annotate', '~> 3.1'
 end
