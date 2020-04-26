@@ -33,6 +33,9 @@ gem 'draper', '~> 4.0'
 # Paper Trail is used to track and store changes to models.
 gem 'paper_trail', '~> 10.3'
 
+# Discard is used to soft delete models, so they can still be viewed after they are deleted.
+gem 'discard', '~> 1.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
