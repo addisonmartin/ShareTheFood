@@ -30,6 +30,9 @@ gem 'pundit', '~> 2.1'
 # Draper is used to add an object-oriented presentation layer to models.
 gem 'draper', '~> 4.0'
 
+# Paper Trail is used to track and store changes to models.
+gem 'paper_trail', '~> 10.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

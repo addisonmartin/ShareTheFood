@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   # Enables user authorization.
   include Pundit
 
+  # Tracks which user, if any, made changes to the models being tracked by Paper Trail.
+  before_action :set_paper_trail_whodunnit
 end
