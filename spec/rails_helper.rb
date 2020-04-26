@@ -85,3 +85,9 @@ end
 require 'capybara-screenshot/rspec'
 # Only keeps screenshots from the latest test run.
 Capybara::Screenshot.prune_strategy = :keep_last_run
+
+# Enables Devise's test helpers from within RSpec tests.
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+end
