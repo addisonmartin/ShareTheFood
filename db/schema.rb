@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_174442) do
     t.datetime "discarded_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["discarded_at"], name: "index_donations_on_discarded_at"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 

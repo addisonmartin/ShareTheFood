@@ -24,7 +24,7 @@ class CreateDonations < ActiveRecord::Migration[6.0]
       t.boolean :contains_shellfish, default: false
 
       # Used to enable soft deleting of Donations.
-      t.datetime :discarded_at
+      t.datetime :discarded_at, index: true
       # Creates the created_at/updated_at datetime columns.
       t.timestamps
     end

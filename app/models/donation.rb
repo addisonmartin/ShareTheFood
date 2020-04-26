@@ -28,7 +28,8 @@
 #
 # Indexes
 #
-#  index_donations_on_user_id  (user_id)
+#  index_donations_on_discarded_at  (discarded_at)
+#  index_donations_on_user_id       (user_id)
 #
 # Foreign Keys
 #

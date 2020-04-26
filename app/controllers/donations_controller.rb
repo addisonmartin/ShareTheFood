@@ -28,7 +28,8 @@
 #
 # Indexes
 #
-#  index_donations_on_user_id  (user_id)
+#  index_donations_on_discarded_at  (discarded_at)
+#  index_donations_on_user_id       (user_id)
 #
 # Foreign Keys
 #
@@ -39,7 +40,8 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-    @donations = Donation.all
+    # Only get non-soft deleted Donations.
+    @donations = Donation.kept
 
     # Ensure the User has permission to perform this action.
     authorize @donations
@@ -96,8 +98,9 @@ class DonationsController < ApplicationController
     # Ensure the User has permission to perform this action.
     authorize @donation
 
-    @donation.destroy
-    redirect_to donations_url, notice: 'Donation was successfully destroyed.'
+    # Soft delete the Donation.
+    @donation.discard
+    redirect_to donations_url, notice: 'Donation was successfully deleted.'
   end
 
   private
