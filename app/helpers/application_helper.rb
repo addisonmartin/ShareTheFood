@@ -16,7 +16,7 @@ module ApplicationHelper
     doc.to_html.html_safe
   end
 
-  # Used from the navigation bar, to display sign up/in links for users not signed in, and edit profile/log out links to signed in users.
+  # Called from the navigation bar to display sign up/in links for users not signed in, and edit profile/log out links to signed in users.
   def user_links_for_navigation_bar
     content_tag(:div, class: 'collapse navbar-collapse order-2') do
       content_tag(:ul, class: 'navbar-nav ml-auto') do
@@ -44,6 +44,19 @@ module ApplicationHelper
               icon('box-arrow-in-right') + ' Logout'
             end
           end)
+        end
+      end
+    end
+  end
+
+  # Called from the navigation bar to display links only for admin users.
+  def admin_links_for_navigation_bar
+    unless current_user.nil?
+      if current_user.admin?
+        content_tag(:li, class: 'nav-item active') do
+          link_to admin_path, class: 'nav-link' do
+            icon('clipboard-data') + ' Admin Dashboard'
+          end
         end
       end
     end

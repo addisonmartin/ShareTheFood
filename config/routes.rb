@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   controller :pages do
     # sharethefood.net/about
     get :about
+    # sharethefood.net/admin
+    get :admin
   end
 
   # Sets the application's homepage to sharethefood.net/about
