@@ -23,18 +23,16 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Simple Form is used to replace Rail's default forms with a more powerful alternative.
 gem 'simple_form', '~> 5.0'
+# Draper is used to add an object-oriented presentation layer to models.
+gem 'draper', '~> 4.0'
 
 # Devise is used to provide user authentication (but not authorization).
 gem 'devise', '~> 4.7'
 # Pundit is used to provide user authorization (but not authentication).
 gem 'pundit', '~> 2.1'
 
-# Draper is used to add an object-oriented presentation layer to models.
-gem 'draper', '~> 4.0'
-
 # Paper Trail is used to track and store changes to models.
 gem 'paper_trail', '~> 10.3'
-
 # Discard is used to soft delete models, so they can still be viewed after they are deleted.
 gem 'discard', '~> 1.2'
 
