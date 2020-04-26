@@ -24,3 +24,6 @@ import 'bootstrap/dist/js/bootstrap'
 
 // Enables Bootstrap's tooltip.
 import '../source/bootstrap_tooltip'
+
+// Enables pagination's Javascript.
+import '../source/pagy.js.erb'
