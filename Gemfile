@@ -36,6 +36,9 @@ gem 'paper_trail', '~> 10.3'
 # Discard is used to soft delete models, so they can still be viewed after they are deleted.
 gem 'discard', '~> 1.2'
 
+# Authtrail is used to store each user's login attempt, and relevant information about that attempt.
+gem 'authtrail', '~> 0.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

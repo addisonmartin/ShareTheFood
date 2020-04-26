@@ -35,4 +35,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :validatable,
          :recoverable, :rememberable, :lockable, :timeoutable, :trackable
 
+  # Stores each login attempt by the user.
+  has_many :login_activities, as: :user
+
 end
