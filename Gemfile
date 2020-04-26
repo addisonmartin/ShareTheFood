@@ -27,6 +27,9 @@ gem 'devise', '~> 4.7'
 # Pundit is used to provide user authorization (but not authentication).
 gem 'pundit', '~> 2.1'
 
+# Draper is used to add an object-oriented presentation layer to models.
+gem 'draper', '~> 4.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
