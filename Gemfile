@@ -114,4 +114,7 @@ group :test do
 
   # Pundit Matchers adds RSpec test matchers for testing user authorization.
   gem 'pundit-matchers', '~> 1.6'
+
+  # Database Cleaner Active Record automatically cleans the test database after each test.
+  gem 'database_cleaner-active_record', '~> 1.8'
 end
