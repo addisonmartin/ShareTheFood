@@ -15,3 +15,12 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// Import the application's CSS.
+import '../stylesheets/application'
+
+// Import Bootstrap's Javascript.
+import 'bootstrap/dist/js/bootstrap'
+
+// Enables Bootstrap's tooltip.
+import '../source/bootstrap_tooltip'

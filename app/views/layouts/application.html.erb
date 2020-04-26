@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShareTheFood</title>
+    <!-- Denotes this application's character encoding as UTF-8. -->
+    <meta charset="utf-8">
+    <!-- Required Bootstrap meta tag. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Required security meta tags. -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Import the application's CSS through Webpacker. -->
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Import the application's Javascript through Webpacker. -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <title>Share The Food</title>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
