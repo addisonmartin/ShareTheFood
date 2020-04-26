@@ -22,6 +22,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Rubocop is a static code analyzer and linter for Ruby.
+  gem 'rubocop', '~> 0.82', require: false
+  # Rubocop Rails adds extra checks for Rails specific applications.
+  gem 'rubocop-rails', '~> 2.5', require: false
+  # Rubocop Performance adds extra performance related checks.
+  gem 'rubocop-performance', '~> 1.5', require: false
+  # Rubocop Thread Safety adds extra checks related to maintaining thread safety.
+  gem 'rubocop-thread_safety', '~> 0.3', require: false
+  # Rubocop RSpec adds checks for RSpec tests.
+  gem 'rubocop-rspec', '~> 1.38', require: false
+  # Rubocop Rake adds Rake task specific checks.
+  gem 'rubocop-rake', '~> 0.5', require: false
 end
 
 group :development do
@@ -51,4 +64,7 @@ group :development do
 
   # Letter Opener is used to redirect emails sent from the application directly to a new tab of the web browser.
   gem 'letter_opener', '~> 1.7'
+
+  # Bullet is used to automatically detect N+1 database queries, which should be optimized.
+  gem 'bullet', '~> 6.1'
 end

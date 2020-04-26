@@ -1,0 +1,15 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-thread_safety
+  - rubocop-rspec
+  - rubocop-rake
+
+Layout/LineLength:
+  Max: 120
+
+Rails/FilePath:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
