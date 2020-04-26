@@ -25,6 +25,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'simple_form', '~> 5.0'
 # Draper is used to add an object-oriented presentation layer to models.
 gem 'draper', '~> 4.0'
+# Pagy is used to paginate models in views.
+gem 'pagy', '~> 3.8'
+# OJ is used by Pagy to increase performance.
+gem 'oj', '~> 3.10'
 
 # Devise is used to provide user authentication (but not authorization).
 gem 'devise', '~> 4.7'
