@@ -35,6 +35,12 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 1.38', require: false
   # Rubocop Rake adds Rake task specific checks.
   gem 'rubocop-rake', '~> 0.5', require: false
+
+  # RSPec replaces Rail's default testing framework.
+  gem 'rspec-rails', '~> 4.0'
+
+  # Factory Bot Rails is used to replace Rail's default test fixtures, with test factories.
+  gem 'factory_bot_rails', '~> 5.1'
 end
 
 group :development do
@@ -67,4 +73,14 @@ group :development do
 
   # Bullet is used to automatically detect N+1 database queries, which should be optimized.
   gem 'bullet', '~> 6.1'
+end
+
+group :test do
+  # Selenium Webdriver provides the test webdriver for Capybara, which enables testing Javascript functionality in system or feature tests.
+  gem 'selenium-webdriver', '~> 3.142'
+  # Capybara is used to simulate the user in tests, when writing system or feature tests.
+  gem 'capybara', '~> 3.32'
+
+  # Shoulda Matchers adds many, common one-line RSpec matchers useful for testing Rails applications.
+  gem 'shoulda-matchers', '~> 4.3'
 end
