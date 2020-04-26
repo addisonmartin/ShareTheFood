@@ -52,6 +52,6 @@ class Donation < ApplicationRecord
             inclusion: { in: [true, false] }
 
   # Requires that latitude and longitude be valid latitude/longitude coordinates on Earth:
-  validates :latitude, inclusion: { in: -90..90, message: 'Latitude must be between -90 and 90.' }
-  validates :longitude, inclusion: { in: -180..180, message: 'Longitude must be between -180 and 180.' }
+  validates :latitude, inclusion: { in: -90..90, message: 'must be between -90 and 90.' }
+  validates :longitude, inclusion: { in: -180..180, message: 'must be between -180 and 180.' }
 end
