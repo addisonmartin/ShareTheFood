@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @donation.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @donation.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @donation.description %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @donation.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @donation.longitude %>
+</p>
+
+<p>
+  <strong>Pickup notes:</strong>
+  <%= @donation.pickup_notes %>
+</p>
+
+<p>
+  <strong>Available until:</strong>
+  <%= @donation.available_until %>
+</p>
+
+<p>
+  <strong>Is perishable:</strong>
+  <%= @donation.is_perishable %>
+</p>
+
+<p>
+  <strong>Requires preparation:</strong>
+  <%= @donation.requires_preparation %>
+</p>
+
+<p>
+  <strong>Is vegetarian:</strong>
+  <%= @donation.is_vegetarian %>
+</p>
+
+<p>
+  <strong>Is vegan:</strong>
+  <%= @donation.is_vegan %>
+</p>
+
+<p>
+  <strong>Is gluten free:</strong>
+  <%= @donation.is_gluten_free %>
+</p>
+
+<p>
+  <strong>Contains peanuts:</strong>
+  <%= @donation.contains_peanuts %>
+</p>
+
+<p>
+  <strong>Contains tree nuts:</strong>
+  <%= @donation.contains_tree_nuts %>
+</p>
+
+<p>
+  <strong>Contains dairy:</strong>
+  <%= @donation.contains_dairy %>
+</p>
+
+<p>
+  <strong>Contains soy:</strong>
+  <%= @donation.contains_soy %>
+</p>
+
+<p>
+  <strong>Contains egg:</strong>
+  <%= @donation.contains_egg %>
+</p>
+
+<p>
+  <strong>Contains fish:</strong>
+  <%= @donation.contains_fish %>
+</p>
+
+<p>
+  <strong>Contains shellfish:</strong>
+  <%= @donation.contains_shellfish %>
+</p>
+
+<p>
+  <strong>Discarded at:</strong>
+  <%= @donation.discarded_at %>
+</p>
+
+<%= link_to 'Edit', edit_donation_path(@donation) %> |
+<%= link_to 'Back', donations_path %>

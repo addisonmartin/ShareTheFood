@@ -1,0 +1,32 @@
+
+<%= simple_form_for(@donation) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :pickup_notes %>
+    <%= f.input :available_until %>
+    <%= f.input :is_perishable %>
+    <%= f.input :requires_preparation %>
+    <%= f.input :is_vegetarian %>
+    <%= f.input :is_vegan %>
+    <%= f.input :is_gluten_free %>
+    <%= f.input :contains_peanuts %>
+    <%= f.input :contains_tree_nuts %>
+    <%= f.input :contains_dairy %>
+    <%= f.input :contains_soy %>
+    <%= f.input :contains_egg %>
+    <%= f.input :contains_fish %>
+    <%= f.input :contains_shellfish %>
+    <%= f.input :discarded_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
