@@ -364,7 +364,7 @@ DEPENDENCIES
   puma (~> 4.1)
   pundit (~> 2.1)
   pundit-matchers (~> 1.6)
-  rails (~> 6.0.2, >= 6.0.2.2)
+  rails (~> 6)
   rspec-rails (~> 4.0)
   rubocop (~> 0.82)
   rubocop-performance (~> 1.5)
