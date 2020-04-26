@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -31,7 +33,6 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
-
   devise :database_authenticatable, :registerable, :confirmable, :validatable,
          :recoverable, :rememberable, :lockable, :timeoutable, :trackable
 
@@ -39,6 +40,5 @@ class User < ApplicationRecord
   has_many :login_activities, as: :user
 
   # Stores page visits and events done by the user.
-  has_many :visits, class_name: "Ahoy::Visit"
-
+  has_many :visits, class_name: 'Ahoy::Visit'
 end
