@@ -41,6 +41,9 @@ group :development, :test do
 
   # Factory Bot Rails is used to replace Rail's default test fixtures, with test factories.
   gem 'factory_bot_rails', '~> 5.1'
+
+  # Faker is used to generate pseudo-realistic data for tests and development.
+  gem 'faker', '~> 2.11'
 end
 
 group :development do
