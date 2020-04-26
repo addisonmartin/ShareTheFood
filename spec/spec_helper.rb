@@ -103,3 +103,5 @@ Capybara.server = :puma, { Silent: true }
 Capybara.default_driver = :selenium
 # Allows the browser to correctly resolve asset paths.
 Capybara.asset_host = 'http://localhost:3000'
+# Enables Pundit user authorization matchers within RSpec tests.
+require 'pundit/matchers'

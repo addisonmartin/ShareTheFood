@@ -24,6 +24,8 @@ gem 'simple_form', '~> 5.0'
 
 # Devise is used to provide user authentication (but not authorization).
 gem 'devise', '~> 4.7'
+# Pundit is used to provide user authorization (but not authentication).
+gem 'pundit', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -95,4 +97,7 @@ group :test do
 
   # Shoulda Matchers adds many, common one-line RSpec matchers useful for testing Rails applications.
   gem 'shoulda-matchers', '~> 4.3'
+
+  # Pundit Matchers adds RSpec test matchers for testing user authorization.
+  gem 'pundit-matchers', '~> 1.6'
 end
