@@ -1,7 +1,11 @@
 class CreateDonations < ActiveRecord::Migration[6.0]
   def change
     create_table :donations do |t|
-      t.references :user, null: false, foreign_key: true
+      # Configures Donations to belong to a User.
+      t.belongs_to :user, null: false, foreign_key: true
+      # Configures Donations to keep track of User visits, for analytics.
+      t.bigint :ahoy_visit_id
+
       t.text :name
       t.text :description
       t.decimal :latitude

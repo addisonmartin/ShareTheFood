@@ -37,9 +37,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :validatable,
          :recoverable, :rememberable, :lockable, :timeoutable, :trackable
 
-  # Stores each login attempt by the user.
+  # Stores each login attempt by the User.
   has_many :login_activities, as: :user
 
-  # Stores page visits and events done by the user.
+  # Stores page visits and events done by the User.
   has_many :visits, class_name: 'Ahoy::Visit'
+
+  # Configures User to have many Donations.
+  has_many :donations, inverse_of: :user
 end
