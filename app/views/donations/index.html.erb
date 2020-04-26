@@ -24,7 +24,6 @@
       <th>Contains egg</th>
       <th>Contains fish</th>
       <th>Contains shellfish</th>
-      <th>Discarded at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -51,7 +50,6 @@
         <td><%= donation.contains_egg %></td>
         <td><%= donation.contains_fish %></td>
         <td><%= donation.contains_shellfish %></td>
-        <td><%= donation.discarded_at %></td>
         <td><%= link_to 'Show', donation %></td>
         <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
         <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
