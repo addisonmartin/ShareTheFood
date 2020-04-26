@@ -38,6 +38,8 @@ gem 'discard', '~> 1.2'
 
 # Authtrail is used to store each user's login attempt, and relevant information about that attempt.
 gem 'authtrail', '~> 0.2'
+# Ahoy Matey is used to track and store page visits and events in the database, for user analytics without using a 3rd party service.
+gem 'ahoy_matey', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -38,4 +38,7 @@ class User < ApplicationRecord
   # Stores each login attempt by the user.
   has_many :login_activities, as: :user
 
+  # Stores page visits and events done by the user.
+  has_many :visits, class_name: "Ahoy::Visit"
+
 end
