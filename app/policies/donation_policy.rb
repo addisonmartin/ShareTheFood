@@ -9,12 +9,12 @@ class DonationPolicy < ApplicationPolicy
     true
   end
 
-  # Only signed in Users can create donations.
+  # Only signed in Users can create Donations.
   def create?
     user_signed_in?
   end
 
-  # Only signed in Users can create donations.
+  # Only signed in Users can create Donations.
   def new?
     create?
   end
