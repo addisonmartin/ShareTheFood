@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_151143) do
+ActiveRecord::Schema.define(version: 2020_04_26_174442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,32 @@ ActiveRecord::Schema.define(version: 2020_04_26_151143) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "name", null: false
+    t.text "description", default: ""
+    t.decimal "latitude", precision: 10, scale: 6, null: false
+    t.decimal "longitude", precision: 10, scale: 6, null: false
+    t.text "pickup_notes", null: false
+    t.datetime "available_until", null: false
+    t.boolean "is_perishable", default: false
+    t.boolean "requires_preparation", default: false
+    t.boolean "is_vegetarian", default: false
+    t.boolean "is_vegan", default: false
+    t.boolean "is_gluten_free", default: false
+    t.boolean "contains_peanuts", default: false
+    t.boolean "contains_tree_nuts", default: false
+    t.boolean "contains_dairy", default: false
+    t.boolean "contains_soy", default: false
+    t.boolean "contains_egg", default: false
+    t.boolean "contains_fish", default: false
+    t.boolean "contains_shellfish", default: false
+    t.datetime "discarded_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "login_activities", force: :cascade do |t|
@@ -118,4 +144,5 @@ ActiveRecord::Schema.define(version: 2020_04_26_151143) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "donations", "users"
 end
