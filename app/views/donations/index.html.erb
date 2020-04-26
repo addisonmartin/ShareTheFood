@@ -31,7 +31,7 @@
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
-        <td><%= link_to 'Show', donation, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'View', donation, class: 'btn btn-primary' %></td>
         <td><%= donation.user.email %></td>
         <td><%= donation.name %></td>
         <td><%= donation.description %></td>
