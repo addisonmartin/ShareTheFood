@@ -32,6 +32,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string   :unlock_token
       t.datetime :locked_at
 
+      # Used by user authorization to determine if the given user is an admin, and can perform more actions.
+      # Defaults to false, and can only be changed from the Rails console, not the frontend.
+      t.boolean :admin, default: false
+
       t.timestamps null: false
     end
 
