@@ -80,6 +80,9 @@ group :test do
   gem 'selenium-webdriver', '~> 3.142'
   # Capybara is used to simulate the user in tests, when writing system or feature tests.
   gem 'capybara', '~> 3.32'
+  # Capybara Screenshot automatically saves a screenshot of any failing tests.
+  # Screenshots are stored in tmp/capybara.
+  gem 'capybara-screenshot', '~> 1.0'
 
   # Shoulda Matchers adds many, common one-line RSpec matchers useful for testing Rails applications.
   gem 'shoulda-matchers', '~> 4.3'

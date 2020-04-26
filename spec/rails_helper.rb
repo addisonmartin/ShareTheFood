@@ -75,3 +75,9 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
+
+# Enables automatically taking a screenshot of any failing tests.
+# Screenshots are stored in tmp/capybara.
+require 'capybara-screenshot/rspec'
+# Only keeps screenshots from the latest test run.
+Capybara::Screenshot.prune_strategy = :keep_last_run

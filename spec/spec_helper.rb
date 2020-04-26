@@ -101,3 +101,5 @@ require 'capybara/rspec'
 Capybara.server = :puma, { Silent: true }
 # Configures Capybara to use a full webdriver (Selenium Firefox), instead of the Javascript disabled Rack Test.
 Capybara.default_driver = :selenium
+# Allows the browser to correctly resolve asset paths.
+Capybara.asset_host = 'http://localhost:3000'
