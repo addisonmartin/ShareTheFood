@@ -22,6 +22,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Simple Form is used to replace Rail's default forms with a more powerful alternative.
 gem 'simple_form', '~> 5.0'
 
+# Devise is used to provide user authentication (but not authorization).
+gem 'devise', '~> 4.7'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
