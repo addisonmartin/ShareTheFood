@@ -43,7 +43,7 @@ class DonationsController < ApplicationController
   # GET /donations
   def index
     # Only get non-soft deleted Donations. Paginate the results.
-    @pagination, @donations = pagy(Donation.kept)
+    @pagination, @donations = pagy(Donation.includes(:user).kept)
 
     # Ensure the User has permission to perform this action.
     authorize @donations

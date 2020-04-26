@@ -2,36 +2,37 @@
 
 <h1>Donations</h1>
 
-<table>
+<table class="table table-striped table-hover table-sm">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Pickup notes</th>
-      <th>Available until</th>
-      <th>Is perishable</th>
-      <th>Requires preparation</th>
-      <th>Is vegetarian</th>
-      <th>Is vegan</th>
-      <th>Is gluten free</th>
-      <th>Contains peanuts</th>
-      <th>Contains tree nuts</th>
-      <th>Contains dairy</th>
-      <th>Contains soy</th>
-      <th>Contains egg</th>
-      <th>Contains fish</th>
-      <th>Contains shellfish</th>
-      <th colspan="3"></th>
+      <th class="table-primary"></th>
+      <th class="table-primary">User</th>
+      <th class="table-primary">Name</th>
+      <th class="table-primary">Description</th>
+      <th class="table-primary">Latitude</th>
+      <th class="table-primary">Longitude</th>
+      <th class="table-primary">Pickup Notes</th>
+      <th class="table-primary">Available Until</th>
+      <th class="table-primary">Perishable?</th>
+      <th class="table-primary">Requires Preparation?</th>
+      <th class="table-primary">Vegetarian?</th>
+      <th class="table-primary">Vegan?</th>
+      <th class="table-primary">Gluten Free?</th>
+      <th class="table-primary">Contains Peanuts?</th>
+      <th class="table-primary">Contains Tree Nuts?</th>
+      <th class="table-primary">Contains Dairy?</th>
+      <th class="table-primary">Contains Soy?</th>
+      <th class="table-primary">Contains Egg?</th>
+      <th class="table-primary">Contains Fish?</th>
+      <th class="table-primary">Contains Shellfish?</th>
     </tr>
   </thead>
 
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
-        <td><%= donation.user_id %></td>
+        <td><%= link_to 'Show', donation, class: 'btn btn-primary' %></td>
+        <td><%= donation.user.email %></td>
         <td><%= donation.name %></td>
         <td><%= donation.description %></td>
         <td><%= donation.latitude %></td>
@@ -50,9 +51,6 @@
         <td><%= donation.contains_egg %></td>
         <td><%= donation.contains_fish %></td>
         <td><%= donation.contains_shellfish %></td>
-        <td><%= link_to 'Show', donation %></td>
-        <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
-        <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

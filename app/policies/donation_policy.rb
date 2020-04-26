@@ -11,7 +11,7 @@ class DonationPolicy < ApplicationPolicy
 
   # Only signed in Users can create Donations.
   def create?
-    user_signed_in?
+    not user.nil?
   end
 
   # Only signed in Users can create Donations.
