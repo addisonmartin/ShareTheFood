@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>User:</strong>
-  <%= @donation.user_id %>
+  <strong>Donated By:</strong>
+  <%= @donation.user.email %>
 </p>
 
 <p>
@@ -95,4 +93,4 @@
   <%= @donation.contains_shellfish %>
 </p>
 
-<%= link_to 'Back', :back, class: 'btn btn-outline-secondary' %>
+<%= link_to 'Back', :back, class: 'btn btn-outline-primary' %>
