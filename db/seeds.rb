@@ -27,7 +27,7 @@ end
 (0...NUMBER_OF_SEED_DONATIONS).each do
 
   donation = Donation.new(
-    user: User.find(rand(1..(NUMBER_OF_SEED_USERS + 1))),
+    user: User.find(rand(1..NUMBER_OF_SEED_USERS)),
     name: Faker::Food.dish,
     description: Faker::Food.description,
     latitude: rand(-90..90),
