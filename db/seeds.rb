@@ -4,11 +4,13 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 require 'faker'
+require 'open-uri'
 
 NUMBER_OF_SEED_USERS = 1_000
-NUMBER_OF_SEED_DONATIONS = 100_000
+NUMBER_OF_SEED_DONATIONS = 1_000_000
+MAX_NUMBER_OF_DONATION_IMAGES = 25
 
-(0..NUMBER_OF_SEED_USERS).each do
+(0...NUMBER_OF_SEED_USERS).each do
 
   seed_password = Faker::Alphanumeric.alphanumeric(number: rand(8...129))
 
@@ -22,9 +24,9 @@ NUMBER_OF_SEED_DONATIONS = 100_000
   user.save!
 end
 
-(0..NUMBER_OF_SEED_DONATIONS).each do
+(0...NUMBER_OF_SEED_DONATIONS).each do
 
-  Donation.create!(
+  donation = Donation.new(
     user: User.find(rand(1..(NUMBER_OF_SEED_USERS + 1))),
     name: Faker::Food.dish,
     description: Faker::Food.description,
@@ -45,5 +47,12 @@ end
     contains_fish: Faker::Boolean.boolean,
     contains_shellfish: Faker::Boolean.boolean
   )
+
+  (0...(rand(MAX_NUMBER_OF_DONATION_IMAGES))).each do |i|
+    image = open(Faker::LoremFlickr.image)
+    donation.images.attach(io: image, filename: "seed_image#{i+1}.jpg")
+  end
+
+  donation.save!
 
 end
