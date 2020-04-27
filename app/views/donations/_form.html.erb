@@ -26,6 +26,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <div class="btn-group">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= link_to 'Back', :back, class: 'btn btn-outline-primary' %>
+    </div>
   </div>
 <% end %>
