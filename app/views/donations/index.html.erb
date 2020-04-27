@@ -15,14 +15,7 @@
       <th class="table-primary">Requires Preparation?</th>
       <th class="table-primary">Vegetarian?</th>
       <th class="table-primary">Vegan?</th>
-      <th class="table-primary">Gluten Free?</th>
-      <th class="table-primary">Contains Peanuts?</th>
-      <th class="table-primary">Contains Tree Nuts?</th>
-      <th class="table-primary">Contains Dairy?</th>
-      <th class="table-primary">Contains Soy?</th>
-      <th class="table-primary">Contains Egg?</th>
-      <th class="table-primary">Contains Fish?</th>
-      <th class="table-primary">Contains Shellfish?</th>
+      <th class="table-primary">Allergen Information</th>
     </tr>
   </thead>
 
@@ -41,14 +34,7 @@
         <td><%= donation.requires_preparation %></td>
         <td><%= donation.is_vegetarian %></td>
         <td><%= donation.is_vegan %></td>
-        <td><%= donation.is_gluten_free %></td>
-        <td><%= donation.contains_peanuts %></td>
-        <td><%= donation.contains_tree_nuts %></td>
-        <td><%= donation.contains_dairy %></td>
-        <td><%= donation.contains_soy %></td>
-        <td><%= donation.contains_egg %></td>
-        <td><%= donation.contains_fish %></td>
-        <td><%= donation.contains_shellfish %></td>
+        <td><%= donation.allergen_information %></td>
       </tr>
     <% end %>
   </tbody>

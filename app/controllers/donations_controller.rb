@@ -47,12 +47,18 @@ class DonationsController < ApplicationController
 
     # Ensure the User has permission to perform this action.
     authorize @donations
+
+    # Decorate the Donations so its decorator methods can be used.
+    @donations = @donations.decorate
   end
 
   # GET /donations/1
   def show
     # Ensure the User has permission to perform this action.
     authorize @donation
+
+    # Decorate the Donation so its decorator methods can be used.
+    @donation = @donation.decorate
   end
 
   # GET /donations/new
