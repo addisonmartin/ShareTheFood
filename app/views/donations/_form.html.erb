@@ -6,6 +6,8 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
     <%= f.input :pickup_notes %>

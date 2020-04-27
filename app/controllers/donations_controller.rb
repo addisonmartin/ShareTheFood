@@ -141,6 +141,7 @@ class DonationsController < ApplicationController
                                      :contains_soy,
                                      :contains_egg,
                                      :contains_fish,
-                                     :contains_shellfish)
+                                     :contains_shellfish,
+                                     images: [])
   end
 end

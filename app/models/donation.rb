@@ -41,6 +41,9 @@ class Donation < ApplicationRecord
   # Enables soft deleting Donations.
   include Discard::Model
 
+  # Enables uploading and attaching images to Donations.
+  has_many_attached :images
+
   # Configures Donations to belong to a User.
   belongs_to :user, inverse_of: :donations
 
