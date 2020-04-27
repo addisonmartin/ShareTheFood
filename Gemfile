@@ -14,7 +14,7 @@ gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Use Active Storage variant
+# Use Active Storage variant. Used to resize uploaded images.
 gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
