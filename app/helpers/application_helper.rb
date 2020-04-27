@@ -4,6 +4,11 @@ module ApplicationHelper
   # Enables pagination of models in views.
   include Pagy::Frontend
 
+  # Used to convert a boolean to the string Yes/No.
+  def as_yes_or_no(boolean)
+    boolean ? 'Yes' : 'No'
+  end
+
   # Used to load Bootstrap's SVG icons into HTML pages.
   def icon(icon, options = {})
     file = File.read("node_modules/bootstrap-icons/icons/#{icon}.svg")

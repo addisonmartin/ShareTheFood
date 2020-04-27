@@ -30,10 +30,10 @@
         <td><%= donation.longitude %></td>
         <td><%= donation.pickup_notes %></td>
         <td><%= donation.available_until %></td>
-        <td><%= donation.is_perishable %></td>
-        <td><%= donation.requires_preparation %></td>
-        <td><%= donation.is_vegetarian %></td>
-        <td><%= donation.is_vegan %></td>
+        <td><%= as_yes_or_no(donation.is_perishable) %></td>
+        <td><%= as_yes_or_no(donation.requires_preparation) %></td>
+        <td><%= as_yes_or_no(donation.is_vegetarian) %></td>
+        <td><%= as_yes_or_no(donation.is_vegan) %></td>
         <td><%= donation.allergen_information %></td>
       </tr>
     <% end %>
