@@ -76,6 +76,9 @@ class DonationsController < ApplicationController
     # Ensure the User has permission to perform this action.
     authorize @donation
 
+    # Set the Donation's user to the currently logged in User.
+    @donation.user = current_user
+
     if @donation.save
       redirect_to @donation, notice: 'Donation was successfully created.'
     else
