@@ -27,3 +27,6 @@ import '../source/bootstrap_tooltip'
 
 // Enables pagination's Javascript.
 import '../source/pagy.js.erb'
+
+// Gets the User's local time, to convert time objects to the User's timezone.
+import '../source/local_time'

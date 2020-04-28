@@ -29,7 +29,7 @@
         <td><%= donation.latitude %></td>
         <td><%= donation.longitude %></td>
         <td><%= donation.pickup_notes %></td>
-        <td><%= donation.available_until %></td>
+        <td><%= local_time(donation.available_until) %></td>
         <td><%= as_yes_or_no(donation.is_perishable) %></td>
         <td><%= as_yes_or_no(donation.requires_preparation) %></td>
         <td><%= as_yes_or_no(donation.is_vegetarian) %></td>

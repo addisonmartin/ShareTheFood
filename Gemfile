@@ -30,6 +30,9 @@ gem 'pagy', '~> 3.8'
 # OJ is used by Pagy to increase performance.
 gem 'oj', '~> 3.10'
 
+# Local Time is used to get the user's timezone and convert time objects to the user's local timezone.
+gem 'local_time', '~> 2.1'
+
 # Devise is used to provide user authentication (but not authorization).
 gem 'devise', '~> 4.7'
 # Pundit is used to provide user authorization (but not authentication).
