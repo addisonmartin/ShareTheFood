@@ -16,7 +16,7 @@ class CreateDonations < ActiveRecord::Migration[6.0]
       t.boolean :requires_preparation, default: false
       t.boolean :is_vegetarian, default: false
       t.boolean :is_vegan, default: false
-      t.boolean :is_gluten_free, default: false
+      t.boolean :contains_gluten, default: false
       t.boolean :contains_peanuts, default: false
       t.boolean :contains_tree_nuts, default: false
       t.boolean :contains_dairy, default: false

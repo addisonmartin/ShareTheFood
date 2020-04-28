@@ -9,13 +9,13 @@
 #  contains_dairy       :boolean          default(FALSE)
 #  contains_egg         :boolean          default(FALSE)
 #  contains_fish        :boolean          default(FALSE)
+#  contains_gluten      :boolean          default(FALSE)
 #  contains_peanuts     :boolean          default(FALSE)
 #  contains_shellfish   :boolean          default(FALSE)
 #  contains_soy         :boolean          default(FALSE)
 #  contains_tree_nuts   :boolean          default(FALSE)
 #  description          :text             default("")
 #  discarded_at         :datetime
-#  is_gluten_free       :boolean          default(FALSE)
 #  is_perishable        :boolean          default(FALSE)
 #  is_vegan             :boolean          default(FALSE)
 #  is_vegetarian        :boolean          default(FALSE)
@@ -50,7 +50,7 @@ FactoryBot.define do
     requires_preparation { false }
     is_vegetarian { false }
     is_vegan { false }
-    is_gluten_free { false }
+    contains_gluten { false }
     contains_peanuts { false }
     contains_tree_nuts { false }
     contains_dairy { false }

@@ -15,7 +15,7 @@ RSpec.describe 'donations/show', type: :view do
                                     requires_preparation: false,
                                     is_vegetarian: false,
                                     is_vegan: false,
-                                    is_gluten_free: false,
+                                    contains_gluten: false,
                                     contains_peanuts: false,
                                     contains_tree_nuts: false,
                                     contains_dairy: false,

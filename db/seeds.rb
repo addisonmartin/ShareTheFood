@@ -36,7 +36,7 @@ end
     requires_preparation: Faker::Boolean.boolean,
     is_vegetarian: Faker::Boolean.boolean,
     is_vegan: Faker::Boolean.boolean,
-    is_gluten_free: Faker::Boolean.boolean,
+    contains_gluten: Faker::Boolean.boolean,
     contains_peanuts: Faker::Boolean.boolean,
     contains_tree_nuts: Faker::Boolean.boolean,
     contains_dairy: Faker::Boolean.boolean,

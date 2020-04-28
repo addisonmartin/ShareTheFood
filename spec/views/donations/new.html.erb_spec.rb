@@ -15,7 +15,7 @@ RSpec.describe 'donations/new', type: :view do
                         requires_preparation: false,
                         is_vegetarian: false,
                         is_vegan: false,
-                        is_gluten_free: false,
+                        contains_gluten: false,
                         contains_peanuts: false,
                         contains_tree_nuts: false,
                         contains_dairy: false,
@@ -50,7 +50,7 @@ RSpec.describe 'donations/new', type: :view do
 
       assert_select 'input[name=?]', 'donation[is_vegan]'
 
-      assert_select 'input[name=?]', 'donation[is_gluten_free]'
+      assert_select 'input[name=?]', 'donation[contains_gluten]'
 
       assert_select 'input[name=?]', 'donation[contains_peanuts]'
 

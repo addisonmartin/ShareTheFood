@@ -6,7 +6,7 @@ class DonationDecorator < ApplicationDecorator
   def allergen_information
     allergen_information = 'Contains: '
 
-    allergen_information += 'Gluten, ' unless model.is_gluten_free
+    allergen_information += 'Gluten, ' if model.contains_gluten
     allergen_information += 'Peanuts, ' if model.contains_peanuts
     allergen_information += 'Tree Nuts,' if model.contains_tree_nuts
     allergen_information += 'Dairy, ' if model.contains_dairy

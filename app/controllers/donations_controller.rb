@@ -9,13 +9,13 @@
 #  contains_dairy       :boolean          default(FALSE)
 #  contains_egg         :boolean          default(FALSE)
 #  contains_fish        :boolean          default(FALSE)
+#  contains_gluten      :boolean          default(FALSE)
 #  contains_peanuts     :boolean          default(FALSE)
 #  contains_shellfish   :boolean          default(FALSE)
 #  contains_soy         :boolean          default(FALSE)
 #  contains_tree_nuts   :boolean          default(FALSE)
 #  description          :text             default("")
 #  discarded_at         :datetime
-#  is_gluten_free       :boolean          default(FALSE)
 #  is_perishable        :boolean          default(FALSE)
 #  is_vegan             :boolean          default(FALSE)
 #  is_vegetarian        :boolean          default(FALSE)
@@ -137,7 +137,7 @@ class DonationsController < ApplicationController
                                      :requires_preparation,
                                      :is_vegetarian,
                                      :is_vegan,
-                                     :is_gluten_free,
+                                     :contains_gluten,
                                      :contains_peanuts,
                                      :contains_tree_nuts,
                                      :contains_dairy,
