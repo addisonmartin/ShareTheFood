@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DonationDecorator < ApplicationDecorator
   delegate_all
 
@@ -14,14 +16,17 @@ class DonationDecorator < ApplicationDecorator
     allergen_information += 'Shellfish, ' if model.contains_shellfish
 
     # If no allergen information was added above, remove the contains and indicate the Donation contains no common allergens.
-    allergen_information = 'No Common Allergens' if allergen_information == 'Contains: '
+    if allergen_information == 'Contains: '
+      allergen_information = 'No Common Allergens'
+    end
 
     # Strip the trailing space.
     allergen_information = allergen_information.strip
     # Strip the trailing comma.
-    allergen_information = allergen_information[0, allergen_information.length - 1] if allergen_information[allergen_information.length - 1] == ','
+    if allergen_information[allergen_information.length - 1] == ','
+      allergen_information = allergen_information[0, allergen_information.length - 1]
+    end
 
     allergen_information
   end
-
 end

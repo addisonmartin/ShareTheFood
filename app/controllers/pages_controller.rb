@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
-  def about
-  end
+  def about; end
 
   def admin
     # Only admin Users are allowed to view the admin dashboard page.

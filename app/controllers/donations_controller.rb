@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: donations
@@ -36,9 +38,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class DonationsController < ApplicationController
-  before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  before_action :set_donation, only: %i[show edit update destroy]
   # Redirect the User to sign in when attempting to perform actions that require them to be signed in.
-  before_action :authenticate_user!, only: [:create, :new, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: %i[create new update edit destroy]
 
   # GET /donations
   def index

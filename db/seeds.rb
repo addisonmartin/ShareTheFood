@@ -11,7 +11,6 @@ NUMBER_OF_SEED_DONATIONS = 100_000
 MAX_NUMBER_OF_DONATION_IMAGES = 5
 
 (0...NUMBER_OF_SEED_USERS).each do
-
   seed_password = Faker::Alphanumeric.alphanumeric(number: rand(8...129))
 
   user = User.new(
@@ -25,7 +24,6 @@ MAX_NUMBER_OF_DONATION_IMAGES = 5
 end
 
 (0...NUMBER_OF_SEED_DONATIONS).each do
-
   donation = Donation.new(
     user: User.find(rand(1..NUMBER_OF_SEED_USERS)),
     name: Faker::Food.dish,
@@ -50,9 +48,8 @@ end
 
   (0...(rand(MAX_NUMBER_OF_DONATION_IMAGES))).each do |i|
     image = open(Faker::LoremFlickr.image)
-    donation.images.attach(io: image, filename: "seed_image#{i+1}.jpg")
+    donation.images.attach(io: image, filename: "seed_image#{i + 1}.jpg")
   end
 
   donation.save!
-
 end

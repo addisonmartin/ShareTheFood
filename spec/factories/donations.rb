@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: donations
@@ -38,12 +40,12 @@
 FactoryBot.define do
   factory :donation do
     user { nil }
-    name { "MyText" }
-    description { "MyText" }
-    latitude { "9.99" }
-    longitude { "9.99" }
-    pickup_notes { "MyText" }
-    available_until { "2020-04-26 13:44:42" }
+    name { 'MyText' }
+    description { 'MyText' }
+    latitude { '9.99' }
+    longitude { '9.99' }
+    pickup_notes { 'MyText' }
+    available_until { '2020-04-26 13:44:42' }
     is_perishable { false }
     requires_preparation { false }
     is_vegetarian { false }
@@ -56,6 +58,6 @@ FactoryBot.define do
     contains_egg { false }
     contains_fish { false }
     contains_shellfish { false }
-    discarded_at { "2020-04-26 13:44:42" }
+    discarded_at { '2020-04-26 13:44:42' }
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DonationPolicy < ApplicationPolicy
   # Any User can view Donation's index.
   def index?
@@ -11,7 +13,7 @@ class DonationPolicy < ApplicationPolicy
 
   # Only signed in Users can create Donations.
   def create?
-    not user.nil?
+    !user.nil?
   end
 
   # Only signed in Users can create Donations.
@@ -21,7 +23,7 @@ class DonationPolicy < ApplicationPolicy
 
   # Only the creator of a Donation, or an admin User, can edit it.
   def update?
-    (user.id == record.id) or user.admin?
+    (user.id == record.id) || user.admin?
   end
 
   # Only the creator of a Donation, or an admin User, can edit it.
@@ -31,6 +33,6 @@ class DonationPolicy < ApplicationPolicy
 
   # Only the creator of a Donation, or an admin User, can delete it.
   def destroy?
-    (user.id == record.id) or user.admin?
+    (user.id == record.id) || user.admin?
   end
 end
