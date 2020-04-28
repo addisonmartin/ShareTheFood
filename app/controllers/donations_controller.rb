@@ -118,7 +118,8 @@ class DonationsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_donation
-    @donation = Donation.find(params[:id])
+    # Eager load attached images to increase performance.
+    @donation = Donation.with_attached_images.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through:

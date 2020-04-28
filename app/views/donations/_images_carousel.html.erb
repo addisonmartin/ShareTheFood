@@ -1,0 +1,32 @@
+<br>
+<div id="imagesCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <% (0..donation.images.count).each do |i| %>
+      <% if i == 0 %>
+        <li data-target="#imagesCarousel" data-slide-to="<%= i %>" class="active"></li>
+      <% else %>
+        <li data-target="#imagesCarousel" data-slide-to="<%= i %>"></li>
+      <% end %>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% donation.images.each_with_index do |image, i| %>
+      <% if i == 0 %>
+        <div class="carousel-item active">
+          <%= image_tag(image, class: 'd-block w-100') %>
+        </div>
+      <% else %>
+        <div class="carousel-item">
+          <%= image_tag(image, class: 'd-block w-100') %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#imagesCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#imagesCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<br>
