@@ -175,5 +175,5 @@ SimpleForm.setup do |config|
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
 
-  config.form_class = 'simple_form form-horizontal'
+  config.default_form_class = 'simple_form form-horizontal'
 end
