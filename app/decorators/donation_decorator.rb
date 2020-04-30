@@ -24,7 +24,7 @@ class DonationDecorator < ApplicationDecorator
 
     # If no allergen information was added above, remove the contains and indicate the Donation contains no common allergens.
     if allergen_information == 'Contains: '
-      allergen_information = 'No Common Allergens'
+      allergen_information = 'Contains No Common Allergens'
     end
 
     # Strip the trailing space.
