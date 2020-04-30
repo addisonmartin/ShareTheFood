@@ -29,3 +29,6 @@ import '../source/pagy.js.erb'
 
 // Gets the User's local time, to convert time objects to the User's timezone.
 import '../source/local_time'
+
+// Enables showing the progress of file uploads after the User submits the form.
+import '../source/direct_upload'
