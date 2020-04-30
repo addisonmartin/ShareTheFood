@@ -1,45 +1,10 @@
-<h1>Donations</h1>
+<h1>Available Donations</h1>
 
-<table class="table table-striped table-hover table-sm">
-  <thead>
-    <tr>
-      <th class="table-primary"></th>
-      <th class="table-primary">Donated By</th>
-      <th class="table-primary">Name</th>
-      <th class="table-primary">Description</th>
-      <th class="table-primary">Latitude</th>
-      <th class="table-primary">Longitude</th>
-      <th class="table-primary">Pickup Notes</th>
-      <th class="table-primary">Available Until</th>
-      <th class="table-primary">Perishable?</th>
-      <th class="table-primary">Requires Preparation?</th>
-      <th class="table-primary">Vegetarian?</th>
-      <th class="table-primary">Vegan?</th>
-      <th class="table-primary">Allergen Information</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @donations.each do |donation| %>
-      <tr>
-        <td><%= link_to 'View', donation, class: 'btn btn-primary' %></td>
-        <td><%= donation.user.email %></td>
-        <td><%= donation.name %></td>
-        <td><%= donation.description %></td>
-        <td><%= donation.latitude %></td>
-        <td><%= donation.longitude %></td>
-        <td><%= donation.pickup_notes %></td>
-        <td><%= local_time(donation.available_until) %></td>
-        <td><%= as_yes_or_no(donation.is_perishable) %></td>
-        <td><%= as_yes_or_no(donation.requires_preparation) %></td>
-        <td><%= as_yes_or_no(donation.is_vegetarian) %></td>
-        <td><%= as_yes_or_no(donation.is_vegan) %></td>
-        <td><%= donation.allergen_information %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
+  <% @donations.each do |donation| %>
+    <%= render 'donations/index/donation_card', donation: donation %>
+  <% end %>
+</div>
 
 <br>
-
 <%== pagy_bootstrap_nav_js(@pagination) %>

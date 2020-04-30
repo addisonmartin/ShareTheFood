@@ -1,3 +1,5 @@
+<h1>Viewing <%= @donation.name %> Donation</h1>
+
 <% if @donation.images.attached? %>
   <%= render 'donations/show/images_carousel', donation: @donation %>
 <% end %>
