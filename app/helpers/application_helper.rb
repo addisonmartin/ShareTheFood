@@ -29,7 +29,7 @@ module ApplicationHelper
         if current_user.nil?
           concat(content_tag(:li, class: 'nav-item active') do
             link_to new_user_session_path, class: 'nav-link' do
-              icon('box-arrow-in-left') + ' Log In'
+              icon('person-check') + ' Log In'
             end
           end)
           concat(content_tag(:li, class: 'nav-item active') do
@@ -46,7 +46,7 @@ module ApplicationHelper
           end)
           concat(content_tag(:li, class: 'nav-item active') do
             link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
-              icon('box-arrow-in-right') + ' Logout'
+              icon('person-dash') + ' Logout'
             end
           end)
         end
