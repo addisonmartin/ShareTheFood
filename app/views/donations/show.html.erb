@@ -2,10 +2,9 @@
   <h1>Viewing <%= @donation.name %> Donation</h1>
 </div>
 
-
-<% if @donation.images.attached? %>
-  <%= render 'donations/show/images_carousel', donation: @donation %>
-<% end %>
+<%= @donation.buttons %>
+<br>
+<%= render 'donations/show/images_carousel', donation: @donation %>
 
 <p>
   <strong>Donated By:</strong>
@@ -101,5 +100,3 @@
   <strong>Contains Shellfish?</strong>
   <%= as_yes_or_no(@donation.contains_shellfish) %>
 </p>
-
-<%= link_to 'Back', :back, class: 'btn btn-outline-primary' %>

@@ -32,4 +32,26 @@ class DonationDecorator < ApplicationDecorator
 
     allergen_information
   end
+
+  def buttons
+
+    h.content_tag(:div, class: 'row justify-content-center') do
+      h.content_tag(:div, class: 'btn-group') do
+
+        if h.policy(model).edit?
+          h.concat(h.link_to(h.edit_donation_path(model), class: 'btn btn-primary') do
+            h.icon('pencil') + ' Edit'
+          end)
+        end
+        if h.policy(model).destroy?
+          h.concat(h.link_to(model, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') do
+            h.icon('trash') + ' Delete'
+          end)
+        end
+
+        h.concat(h.link_to('Back', :back, class: 'btn btn-outline-primary'))
+      end
+
+      end
+    end
 end
