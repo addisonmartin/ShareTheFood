@@ -41,9 +41,17 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }
+    confirmed_at { DateTime.now }
 
     factory :admin_user do
       admin { true }
     end
+  end
+
+  factory :other_user, class: User do
+    email { Faker::Internet.email }
+    password { Faker::String.random(length: 8..128) }
+    password_confirmation { password }
+    confirmed_at { DateTime.now }
   end
 end

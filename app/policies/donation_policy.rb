@@ -23,7 +23,7 @@ class DonationPolicy < ApplicationPolicy
 
   # Only the creator of a Donation, or an admin User, can edit it.
   def update?
-    (user.id == record.id) || user.admin?
+    !user.nil? and ((user.id == record.id) or user.admin?)
   end
 
   # Only the creator of a Donation, or an admin User, can edit it.
@@ -33,6 +33,6 @@ class DonationPolicy < ApplicationPolicy
 
   # Only the creator of a Donation, or an admin User, can delete it.
   def destroy?
-    (user.id == record.id) || user.admin?
+    !user.nil? and ((user.id == record.id) or user.admin?)
   end
 end

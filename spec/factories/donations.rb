@@ -42,12 +42,34 @@ require 'faker'
 
 FactoryBot.define do
   factory :donation do
-    user { :user }
-    name { Faker::String.random(length: 1..5096) }
-    description { Faker::String.random(length: 1..5096) }
+    user
+    name { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
+    description { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
     latitude { rand(-90..90) }
     longitude { rand(-180..180) }
-    pickup_notes { Faker::String.random(length: 1..5096) }
+    pickup_notes { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
+    available_until { Faker::Time.between(from: DateTime.now - 60.days, to: DateTime.now + 60.days) }
+    is_perishable { Faker::Boolean.boolean }
+    requires_preparation { Faker::Boolean.boolean }
+    is_vegetarian { Faker::Boolean.boolean }
+    is_vegan { Faker::Boolean.boolean }
+    contains_gluten { Faker::Boolean.boolean }
+    contains_peanuts { Faker::Boolean.boolean }
+    contains_tree_nuts { Faker::Boolean.boolean }
+    contains_dairy { Faker::Boolean.boolean }
+    contains_soy { Faker::Boolean.boolean }
+    contains_egg { Faker::Boolean.boolean }
+    contains_fish { Faker::Boolean.boolean }
+    contains_shellfish { Faker::Boolean.boolean }
+  end
+
+  factory :other_donation, class: Donation do
+    other_user
+    name { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
+    description { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
+    latitude { rand(-90..90) }
+    longitude { rand(-180..180) }
+    pickup_notes { Faker::String.random(length: 1..5096).gsub("\u0000", '') }
     available_until { Faker::Time.between(from: DateTime.now - 60.days, to: DateTime.now + 60.days) }
     is_perishable { Faker::Boolean.boolean }
     requires_preparation { Faker::Boolean.boolean }
