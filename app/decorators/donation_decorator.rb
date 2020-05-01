@@ -5,9 +5,7 @@ class DonationDecorator < ApplicationDecorator
 
   # Used to display the Donation's image in the card from the index view.
   def card_image
-    if model.images.attached?
-      h.image_tag(model.images.first, class: 'card-img-top')
-    end
+    h.image_tag(model.images.first, class: 'card-img-top') if model.images.attached?
   end
 
   def allergen_information
@@ -23,9 +21,7 @@ class DonationDecorator < ApplicationDecorator
     allergen_information += 'Shellfish, ' if model.contains_shellfish
 
     # If no allergen information was added above, remove the contains and indicate the Donation contains no common allergens.
-    if allergen_information == 'Contains: '
-      allergen_information = 'Contains No Common Allergens'
-    end
+    allergen_information = 'Contains No Common Allergens' if allergen_information == 'Contains: '
 
     # Strip the trailing space.
     allergen_information = allergen_information.strip

@@ -8,7 +8,7 @@ RSpec.describe '/donations', type: :request do
   end
 
   let(:invalid_attributes) do
-    [:not_valid, :also_not_valid, :still_not_valid]
+    %i[not_valid also_not_valid still_not_valid]
   end
 
   describe 'GET /index' do

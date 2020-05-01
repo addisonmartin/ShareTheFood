@@ -48,7 +48,7 @@ FactoryBot.define do
     end
   end
 
-  factory :other_user, class: User do
+  factory :other_user, class: 'User' do
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }

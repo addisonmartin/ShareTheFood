@@ -41,37 +41,38 @@ require 'rails_helper'
 
 RSpec.describe Donation, type: :model do
   describe 'associations' do
-    it { should belong_to(:user) }
+    it { is_expected.to belong_to(:user) }
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:user) }
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:available_until) }
-    it { should validate_presence_of(:latitude) }
-    it { should validate_presence_of(:longitude) }
-    it { should validate_presence_of(:pickup_notes) }
+    it { is_expected.to validate_presence_of(:user) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:available_until) }
+    it { is_expected.to validate_presence_of(:latitude) }
+    it { is_expected.to validate_presence_of(:longitude) }
+    it { is_expected.to validate_presence_of(:pickup_notes) }
 
-    it { should_not allow_value(nil).for(:is_perishable) }
-    it { should_not allow_value(nil).for(:requires_preparation) }
-    it { should_not allow_value(nil).for(:is_vegetarian) }
-    it { should_not allow_value(nil).for(:is_vegan) }
-    it { should_not allow_value(nil).for(:contains_gluten) }
-    it { should_not allow_value(nil).for(:contains_peanuts) }
-    it { should_not allow_value(nil).for(:contains_tree_nuts) }
-    it { should_not allow_value(nil).for(:contains_dairy) }
-    it { should_not allow_value(nil).for(:contains_soy) }
-    it { should_not allow_value(nil).for(:contains_egg) }
-    it { should_not allow_value(nil).for(:contains_fish) }
-    it { should_not allow_value(nil).for(:contains_shellfish) }
+    it { is_expected.not_to allow_value(nil).for(:is_perishable) }
+    it { is_expected.not_to allow_value(nil).for(:requires_preparation) }
+    it { is_expected.not_to allow_value(nil).for(:is_vegetarian) }
+    it { is_expected.not_to allow_value(nil).for(:is_vegan) }
+    it { is_expected.not_to allow_value(nil).for(:contains_gluten) }
+    it { is_expected.not_to allow_value(nil).for(:contains_peanuts) }
+    it { is_expected.not_to allow_value(nil).for(:contains_tree_nuts) }
+    it { is_expected.not_to allow_value(nil).for(:contains_dairy) }
+    it { is_expected.not_to allow_value(nil).for(:contains_soy) }
+    it { is_expected.not_to allow_value(nil).for(:contains_egg) }
+    it { is_expected.not_to allow_value(nil).for(:contains_fish) }
+    it { is_expected.not_to allow_value(nil).for(:contains_shellfish) }
 
     it do
-      should validate_inclusion_of(:latitude).in_range(-90..90)
-                                             .with_message('must be between -90 and 90.')
-      end
+      expect(subject).to validate_inclusion_of(:latitude).in_range(-90..90)
+                                                         .with_message('must be between -90 and 90.')
+    end
+
     it do
-      should validate_inclusion_of(:longitude).in_range(-180..180)
-                                              .with_message('must be between -180 and 180.')
-      end
+      expect(subject).to validate_inclusion_of(:longitude).in_range(-180..180)
+                                                          .with_message('must be between -180 and 180.')
+    end
   end
 end
