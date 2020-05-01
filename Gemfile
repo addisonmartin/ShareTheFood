@@ -52,6 +52,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
+  # Pry is a powerful developer console and IRB alternative.
+  gem 'pry', '~> 0.13'
+  # Pry Rails configures the Rail's console to be replaced with Pry.
+  gem 'pry-rails', '~> 0.3'
+  # Pry Byebug adds a debugger and stack explorer to Pry's console.
+  gem 'pry-byebug', '~> 3.9'
+
   # Rubocop is a static code analyzer and linter for Ruby.
   gem 'rubocop', '~> 0.82', require: false
   # Rubocop Rails adds extra checks for Rails specific applications.
@@ -87,13 +94,6 @@ group :development do
   gem 'better_errors', '~> 2.7'
   # Binding of Caller is used by Better Errors to enabled its more advanced features.
   gem 'binding_of_caller', '~> 0.8'
-
-  # Pry is a powerful developer console and IRB alternative.
-  gem 'pry', '~> 0.13'
-  # Pry Rails configures the Rail's console to be replaced with Pry.
-  gem 'pry-rails', '~> 0.3'
-  # Pry Byebug adds a debugger and stack explorer to Pry's console.
-  gem 'pry-byebug', '~> 3.9'
 
   # Meta Request enables Rails Panel's functionality in the browser.
   # The Rails Panel plugin can be downloaded from the Firefox/Chrome plugin store.
