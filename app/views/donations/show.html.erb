@@ -1,4 +1,7 @@
-<h1>Viewing <%= @donation.name %> Donation</h1>
+<div class="row justify-content-center">
+  <h1>Viewing <%= @donation.name %> Donation</h1>
+</div>
+
 
 <% if @donation.images.attached? %>
   <%= render 'donations/show/images_carousel', donation: @donation %>
