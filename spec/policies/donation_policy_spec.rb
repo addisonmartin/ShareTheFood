@@ -20,12 +20,13 @@ describe DonationPolicy do
 
   context 'being a signed in user and owning the donation' do
     let(:user) { create(:user) }
+    let(:donation) { create(:donation, user: user) }
 
     it { should permit_actions([:index, :show, :new, :edit, :create, :update, :destroy]) }
   end
 
   context 'being a signed in user and not owning the donation' do
-    let(:user) { create(:other_user) }
+    let(:user) { create(:user) }
 
     it { should permit_actions([:index, :show, :new, :create]) }
     it { should forbid_actions([:edit, :update, :destroy]) }
