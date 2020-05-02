@@ -23,12 +23,17 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Simple Form is used to replace Rail's default forms with a more powerful alternative.
 gem 'simple_form', '~> 5.0'
+
 # Draper is used to add an object-oriented presentation layer to models.
 gem 'draper', '~> 4.0'
+
 # Pagy is used to paginate models in views.
 gem 'pagy', '~> 3.8'
 # OJ is used by Pagy to increase performance.
 gem 'oj', '~> 3.10'
+
+# Gon is used to pass variables from Ruby to Javascript.
+gem 'gon', '~> 6.3'
 
 # Local Time is used to get the user's timezone and convert time objects to the user's local timezone.
 gem 'local_time', '~> 2.1'

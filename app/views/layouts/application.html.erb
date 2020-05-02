@@ -15,6 +15,9 @@
     <!-- Import the application's Javascript through Webpacker. -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <!-- Used to pass variables from Ruby to Javascript. -->
+    <%= Gon::Base.render_data %>
+
     <title>Share the Food</title>
   </head>
 
