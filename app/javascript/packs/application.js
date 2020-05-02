@@ -32,3 +32,7 @@ import '../source/local_time'
 
 // Enables showing the progress of file uploads after the User submits the form.
 import '../source/direct_upload'
+
+// Enables viewing Donation's location on an Open Street Map.
+import 'leaflet'
+import '../source/map'

@@ -1,0 +1,28 @@
+<h2>Location and Pickup Instructions</h2>
+
+<div id="donationmap"></div>
+
+<div class="row">
+  <div class="col-6">
+    <p>
+      <strong>Latitude:</strong>
+      <%= @donation.latitude %>
+    </p>
+  </div>
+  <div class="col-6">
+    <p>
+      <strong>Longitude:</strong>
+      <%= @donation.longitude %>
+    </p>
+  </div>
+</div>
+
+<p>
+  <strong>Pickup Notes:</strong>
+  <%= @donation.pickup_notes %>
+</p>
+
+<p>
+  <strong>Available Until:</strong>
+  <%= local_time(@donation.available_until) %>
+</p>
