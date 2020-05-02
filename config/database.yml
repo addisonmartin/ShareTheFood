@@ -89,6 +89,4 @@ test:
 #
 production:
   <<: *default
-  database: ShareTheFood_production
-  username: ShareTheFood
-  password: <%= ENV['SHARETHEFOOD_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
