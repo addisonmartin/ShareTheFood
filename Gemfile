@@ -126,4 +126,9 @@ group :test do
 
   # Database Cleaner Active Record automatically cleans the test database after each test.
   gem 'database_cleaner-active_record', '~> 1.8'
+
+  # Simplecov is used to calculate test coverage and generate a report.
+  gem 'simplecov', '~> 0.18', require: false
+  # Codecov is used to integrate test coverage with codecov.io and Github.
+  gem 'codecov', '~> 0.1', require: false
 end
