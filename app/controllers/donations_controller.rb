@@ -59,6 +59,10 @@ class DonationsController < ApplicationController
     # Ensure the User has permission to perform this action.
     authorize @donation
 
+    # Pass the Donation's latitude and longitude to Javascript for use within the map.
+    gon.donation_latitude = @donation.latitude
+    gon.donation_longitude = @donation.longitude
+
     # Decorate the Donation so its decorator methods can be used.
     @donation = @donation.decorate
   end
