@@ -1,24 +1,5 @@
-# README
+# Share the Food
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/addisonmartin/ShareTheFood.svg?branch=master)](https://travis-ci.org/addisonmartin/ShareTheFood)
+[![codecov](https://codecov.io/gh/addisonmartin/ShareTheFood/branch/master/graph/badge.svg)](https://codecov.io/gh/addisonmartin/ShareTheFood)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
