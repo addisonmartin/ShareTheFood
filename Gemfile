@@ -53,6 +53,9 @@ gem 'authtrail', '~> 0.2'
 # Ahoy Matey is used to track and store page visits and events in the database, for user analytics without using a 3rd party service.
 gem 'ahoy_matey', '~> 3.0'
 
+# Faker is used to generate pseudo-realistic data for tests and development.
+gem 'faker', '~> 2.11'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -82,9 +85,6 @@ group :development, :test do
 
   # Factory Bot Rails is used to replace Rail's default test fixtures, with test factories.
   gem 'factory_bot_rails', '~> 5.1'
-
-  # Faker is used to generate pseudo-realistic data for tests and development.
-  gem 'faker', '~> 2.11'
 end
 
 group :development do
