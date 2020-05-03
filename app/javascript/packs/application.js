@@ -45,4 +45,5 @@ L.Icon.Default.mergeOptions({
 // Enables viewing Donation's location on an Open Street Map with Leaflet.
 import 'leaflet'
 import 'leaflet/dist/leaflet.css';
+require('leaflet-minimap/dist/Control.MiniMap.min.css');
 import '../source/map'

@@ -10,6 +10,7 @@
     "bootstrap-icons": "^1.0.0-alpha3",
     "jquery": "^3.5.0",
     "leaflet": "^1.6.0",
+    "leaflet-minimap": "^3.6.1",
     "local-time": "^2.1.0",
     "popper.js": "^1.16.1",
     "rails-erb-loader": "^5.5.2",
