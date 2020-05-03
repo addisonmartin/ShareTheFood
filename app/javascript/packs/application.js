@@ -32,3 +32,17 @@ import '../source/local_time'
 
 // Enables showing the progress of file uploads after the User submits the form.
 import '../source/direct_upload'
+
+// Fixes an issue where Leaflet's images wouldn't load properly with Webpacker.
+import L from 'leaflet';
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
+// Enables viewing Donation's location on an Open Street Map with Leaflet.
+import 'leaflet'
+import 'leaflet/dist/leaflet.css';
+import '../source/map'
