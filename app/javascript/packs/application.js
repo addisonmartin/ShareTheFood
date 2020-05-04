@@ -49,7 +49,6 @@ import 'leaflet/dist/leaflet.css'
 require('leaflet-minimap/dist/Control.MiniMap.min.css')
 // Enables creating marker clusters.
 import 'leaflet.markercluster/dist/leaflet.markercluster'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
 
 // Enables viewing the Donation's locations on Donation's show view.
 import '../source/show_map'

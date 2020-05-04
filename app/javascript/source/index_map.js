@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function() {
         // Adds all of the Donation's locations as markers on the map, using marker clusters if they are close together.
         var markers = L.markerClusterGroup();
         for (i = 0; i < gon.donation_location_information.length; i++) {
-            var pin = L.marker(gon.donation_location_information[i].latitude, gon.donation_location_information[i].longitude);
+            var pin = L.marker({lat: gon.donation_location_information[i].latitude, lng: gon.donation_location_information[i].longitude});
             pin.bindPopup("<b>" + gon.donation_location_information[i].name + "</b><br>" + gon.donation_location_information[i].pickup_notes).openPopup();
             markers.addLayer(pin);
         }
