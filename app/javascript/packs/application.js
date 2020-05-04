@@ -45,7 +45,12 @@ L.Icon.Default.mergeOptions({
 // Use Leaflet to display a map, using Open Street Maps data.
 import 'leaflet'
 import 'leaflet/dist/leaflet.css'
+// Enables a mini map in the corner of the map.
 require('leaflet-minimap/dist/Control.MiniMap.min.css')
+// Enables creating marker clusters.
+import 'leaflet.markercluster/dist/leaflet.markercluster'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+
 // Enables viewing the Donation's locations on Donation's show view.
 import '../source/show_map'
 // Enables viewing all Donation's locations on Donation's index view.
