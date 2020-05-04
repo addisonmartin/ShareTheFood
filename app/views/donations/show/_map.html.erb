@@ -1,14 +1,18 @@
-<h2>Location and Pickup Instructions</h2>
-<div class="row">
-  <div id="donationmap"></div>
+<div class="row justify-content-center">
+  <h2>Location and Pickup Instructions</h2>
 </div>
-
-<p>
-  <strong>Pickup Notes:</strong>
-  <%= @donation.pickup_notes %>
-</p>
-
-<p>
-  <strong>Available Until:</strong>
-  <%= local_time(@donation.available_until) %>
-</p>
+<div class="row justify-content-center">
+  <div id="show_donation_map"></div>
+</div>
+<div class="row justify-content-center">
+  <p>
+    <strong>Pickup Notes:</strong>
+    <%= @donation.pickup_notes %>
+  </p>
+</div>
+<div class="row justify-content-center">
+  <p>
+    <strong>Available Until:</strong>
+    <%= local_time(@donation.available_until) %>
+  </p>
+</div>

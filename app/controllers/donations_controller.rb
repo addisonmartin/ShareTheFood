@@ -50,6 +50,8 @@ class DonationsController < ApplicationController
     # Ensure the User has permission to perform this action.
     authorize @donations
 
+    # TODO Add the donation's locations to index.
+
     # Decorate the Donations so its decorator methods can be used.
     @donations = @donations.decorate
   end

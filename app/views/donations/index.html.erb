@@ -6,6 +6,12 @@
 </div>
 <br>
 
+<%= render 'donations/index/map' %>
+
+<div class="row justify-content-center">
+  <%== pagy_bootstrap_nav_js(@pagination) %>
+</div>
+
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
   <% @donations.each do |donation| %>
     <%= render 'donations/index/donation_card', donation: donation %>
