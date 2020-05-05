@@ -48,6 +48,9 @@ gem 'paper_trail', '~> 10.3'
 # Discard is used to soft delete models, so they can still be viewed after they are deleted.
 gem 'discard', '~> 1.2'
 
+# Faker is used to generate pseudo-realistic data for tests and development.
+gem 'faker', '~> 2.11'
+
 # AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
 gem 'aws-sdk-s3', '~> 1', require: false
 
@@ -85,9 +88,6 @@ group :development, :test do
 
   # Factory Bot Rails is used to replace Rail's default test fixtures, with test factories.
   gem 'factory_bot_rails', '~> 5.1'
-
-  # Faker is used to generate pseudo-realistic data for tests and development.
-  gem 'faker', '~> 2.11'
 end
 
 group :development do
