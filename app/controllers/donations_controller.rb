@@ -50,6 +50,17 @@ class DonationsController < ApplicationController
     # Ensure the User has permission to perform this action.
     authorize @donations
 
+    # Pass some of the Donation's attributes to Javascript for use within the map.
+    donation_location_information = []
+    @donations.each do |donation|
+      donation_location_information << {latitude: donation.latitude,
+                                        longitude: donation.longitude,
+                                        name: donation.name,
+                                        pickup_notes: donation.pickup_notes}
+    end
+
+    gon.donation_location_information = donation_location_information
+
     # Decorate the Donations so its decorator methods can be used.
     @donations = @donations.decorate
   end
