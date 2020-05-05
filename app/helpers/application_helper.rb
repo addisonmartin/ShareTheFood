@@ -23,7 +23,7 @@ module ApplicationHelper
 
   # Called from the navigation bar to display sign up/in links for users not signed in, and edit profile/log out links to signed in users.
   def user_links_for_navigation_bar
-    content_tag(:div, class: 'collapse navbar-collapse order-2') do
+    content_tag(:div, class: 'ml-auto') do
       content_tag(:ul, class: 'navbar-nav ml-auto') do
         # User is not signed in.
         if current_user.nil?
