@@ -8,7 +8,7 @@ local:
 
 amazon:
   service: S3
-  access_key_id: <%= ENV["ACCESS_KEY_ID"] %>
-  secret_access_key: <%= ENV["SECRET_ACCESS_KEY"] %>
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_key_id) %>
   region: us-east-1
   bucket: sharethefood
