@@ -48,6 +48,9 @@ gem 'paper_trail', '~> 10.3'
 # Discard is used to soft delete models, so they can still be viewed after they are deleted.
 gem 'discard', '~> 1.2'
 
+# AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
+gem 'aws-sdk-s3', '~> 1', require: false
+
 # Authtrail is used to store each user's login attempt, and relevant information about that attempt.
 gem 'authtrail', '~> 0.2'
 # Ahoy Matey is used to track and store page visits and events in the database, for user analytics without using a 3rd party service.
