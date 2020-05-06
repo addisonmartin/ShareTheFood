@@ -53,6 +53,8 @@ gem 'discard', '~> 1.2'
 
 # Faker is used to generate pseudo-realistic data for tests and development.
 gem 'faker', '~> 2.11'
+# Strong Migrations is used to catch potentially unsafe database migrations.
+gem 'strong_migrations', '~> 0.6'
 
 # AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
 gem 'aws-sdk-s3', '~> 1', require: false
@@ -118,8 +120,6 @@ group :development do
 
   # Bullet is used to automatically detect N+1 database queries, which should be optimized.
   gem 'bullet', '~> 6.1'
-  # Strong Migrations is used to catch potentially unsafe database migrations.
-  gem 'strong_migrations', '~> 0.6'
 end
 
 group :test do
