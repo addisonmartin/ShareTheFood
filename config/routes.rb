@@ -3,7 +3,11 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   # Creates RESTful routes for the Donation model.
-  resources :donations
+  resources :donations do
+    collection do
+      get :autocomplete
+    end
+  end
 
   # Sets up the routes for user authentication through Devise.
   devise_for :users

@@ -78,6 +78,19 @@ class DonationsController < ApplicationController
     @donations = @donations.decorate
   end
 
+  # Used to return possible donations
+  def autocomplete
+    respond_to do |format|
+      format.json do
+        @donations = Donation.kept.available
+        @donation_names = []
+        @donations.each { |donation| @donation_names << donation.name }
+
+        render json: @donation_names
+      end
+    end
+  end
+
   # GET /donations/1
   def show
     # Ensure the User has permission to perform this action.
