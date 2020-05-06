@@ -10,7 +10,7 @@
   <h5><%== pagy_info(@pagination) %></h5>
 </div>
 <div class="row justify-content-center">
-  <%== pagy_bootstrap_nav_js(@pagination) %>
+  <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
 </div>
 
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
@@ -21,5 +21,5 @@
 <br>
 
 <div class="row justify-content-center">
-  <%== pagy_bootstrap_nav_js(@pagination) %>
+  <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
 </div>
