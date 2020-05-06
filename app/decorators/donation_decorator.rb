@@ -50,5 +50,9 @@ class DonationDecorator < ApplicationDecorator
         h.concat(h.link_to('Back', :back, class: 'btn btn-outline-primary'))
       end
     end
-    end
+  end
+
+  def available_until_formatted
+    h.distance_of_time_in_words(h.local_time(model.available_until), h.local_time(Time.now), seconds: true)
+  end
 end

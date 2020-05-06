@@ -58,6 +58,9 @@ class Donation < ApplicationRecord
                                                dictionary: 'english' } },
                            ignoring: :accents
 
+  # This scope only returns Donation's where their available until time is after the current time.
+  scope :available, -> { where("available_until >= ?", Time.now) }
+
   # Enables uploading and attaching images to Donations.
   has_many_attached :images
 

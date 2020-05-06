@@ -57,6 +57,9 @@ class DonationsController < ApplicationController
     # Only get non-soft deleted Donations.
     @donations = @donations.kept
 
+    # Only get Donations where the available until datetime is after the current datetime.
+    @donations = @donations.available
+
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
 
