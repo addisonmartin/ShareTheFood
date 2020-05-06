@@ -54,3 +54,7 @@ import 'leaflet.markercluster/dist/leaflet.markercluster'
 import '../source/show_map'
 // Enables viewing all Donation's locations on Donation's index view.
 import '../source/index_map'
+
+// Enables autocomplete on Donation's search bar.
+import 'jquery-ui/ui/widgets/autocomplete'
+import '../source/autocomplete'
