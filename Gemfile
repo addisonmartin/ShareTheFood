@@ -35,12 +35,12 @@ gem 'oj', '~> 3.10'
 # Gon is used to pass variables from Ruby to Javascript.
 gem 'gon', '~> 6.3'
 
-# Local Time is used to get the user's timezone and convert time objects to the user's local timezone.
+# Local Time is used to get the User's timezone and convert datetime objects to the User's local timezone.
 gem 'local_time', '~> 2.1'
 
-# Devise is used to provide user authentication (but not authorization).
+# Devise is used to provide User authentication (but not authorization).
 gem 'devise', '~> 4.7'
-# Pundit is used to provide user authorization (but not authentication).
+# Pundit is used to provide User authorization (but not authentication).
 gem 'pundit', '~> 2.1'
 
 # Paper Trail is used to track and store changes to models.
@@ -54,9 +54,9 @@ gem 'faker', '~> 2.11'
 # AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
 gem 'aws-sdk-s3', '~> 1', require: false
 
-# Authtrail is used to store each user's login attempt, and relevant information about that attempt.
+# Authtrail is used to store each User's login attempt, and relevant information about that attempt.
 gem 'authtrail', '~> 0.2'
-# Ahoy Matey is used to track and store page visits and events in the database, for user analytics without using a 3rd party service.
+# Ahoy Matey is used to track and store page visits and events in the database, for analytics without using a 3rd party service.
 gem 'ahoy_matey', '~> 3.0'
 
 group :development, :test do
