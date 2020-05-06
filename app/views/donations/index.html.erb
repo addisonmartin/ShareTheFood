@@ -1,15 +1,16 @@
 <div class="row justify-content-center">
   <h1>Available Donations</h1>
 </div>
-<div class="row justify-content-center">
-  <h5><%== pagy_info(@pagination) %></h5>
-</div>
-<br>
 
 <%= render 'donations/index/map' %>
 
+<%= render 'donations/index/search_bar' %>
+
 <div class="row justify-content-center">
-  <%== pagy_bootstrap_nav_js(@pagination) %>
+  <h5><%== pagy_info(@pagination) %></h5>
+</div>
+<div class="row justify-content-center">
+  <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
 </div>
 
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
@@ -17,8 +18,8 @@
     <%= render 'donations/index/donation_card', donation: donation %>
   <% end %>
 </div>
-
 <br>
+
 <div class="row justify-content-center">
-  <%== pagy_bootstrap_nav_js(@pagination) %>
+  <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
 </div>

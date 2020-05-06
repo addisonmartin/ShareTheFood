@@ -43,6 +43,21 @@ class Donation < ApplicationRecord
   # Enables soft deleting Donations.
   include Discard::Model
 
+  # Enables searching this model's text attributes with Postgres' built-in full text search.
+  include PgSearch::Model
+  pg_search_scope :search, against: [:name,
+                                                        :description,
+                                                        :pickup_notes],
+                                              associated_against: {user: :email},
+                                              using: {dmetaphone: {},
+                                                      trigram: {
+                                                        word_similarity: true
+                                                      },
+                                                      tsearch: { prefix: true,
+                                                                 any_word: true,
+                                                                 dictionary: "english" }},
+                                              ignoring: :accents
+
   # Enables uploading and attaching images to Donations.
   has_many_attached :images
 
