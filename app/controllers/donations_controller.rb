@@ -51,14 +51,14 @@ class DonationsController < ApplicationController
                    Donation.with_attached_images
                  end
 
+    # Ensure the User has permission to perform this action.
+    authorize @donations
+
     # Only get non-soft deleted Donations.
     @donations = @donations.kept
 
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
-
-    # Ensure the User has permission to perform this action.
-    authorize @donations
 
     # Pass some of the Donation's attributes to Javascript for use within the map.
     donation_location_information = []
