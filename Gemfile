@@ -43,6 +43,9 @@ gem 'devise', '~> 4.7'
 # Pundit is used to provide User authorization (but not authentication).
 gem 'pundit', '~> 2.1'
 
+# PG Search is used to access Postgres' built in full-text search capabilities.
+gem 'pg_search', '~> 2.3'
+
 # Paper Trail is used to track and store changes to models.
 gem 'paper_trail', '~> 10.3'
 # Discard is used to soft delete models, so they can still be viewed after they are deleted.

@@ -44,8 +44,18 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-    # Only get non-soft deleted Donations. Paginate the results.
-    @pagination, @donations = pagy(Donation.with_attached_images.kept)
+    # Search against the Donations, if the user provided a search.
+    if params[:search]
+      @donations = Donation.with_attached_images.search(params[:search])
+    else
+      @donations = Donation.with_attached_images
+    end
+
+    # Only get non-soft deleted Donations.
+    @donations = @donations.kept
+
+    # Paginate the results.
+    @pagination, @donations = pagy(@donations)
 
     # Ensure the User has permission to perform this action.
     authorize @donations
