@@ -34,10 +34,8 @@ class DonationDecorator < ApplicationDecorator
   end
 
   def buttons
-
     h.content_tag(:div, class: 'row justify-content-center') do
       h.content_tag(:div, class: 'btn-group') do
-
         if h.policy(model).edit?
           h.concat(h.link_to(h.edit_donation_path(model), class: 'btn btn-primary') do
             h.icon('pencil') + ' Edit'
@@ -51,7 +49,6 @@ class DonationDecorator < ApplicationDecorator
 
         h.concat(h.link_to('Back', :back, class: 'btn btn-outline-primary'))
       end
-
-      end
+    end
     end
 end

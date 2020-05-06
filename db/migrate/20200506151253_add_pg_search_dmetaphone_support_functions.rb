@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class AddPgSearchDmetaphoneSupportFunctions < ActiveRecord::Migration[6.0]
   def self.up
     safety_assured do
-      say_with_time("Adding support functions for pg_search :dmetaphone") do
+      say_with_time('Adding support functions for pg_search :dmetaphone') do
         execute <<-'SQL'
   CREATE OR REPLACE FUNCTION pg_search_dmetaphone(text) RETURNS text LANGUAGE SQL IMMUTABLE STRICT AS $function$
     SELECT array_to_string(ARRAY(SELECT dmetaphone(unnest(regexp_split_to_array($1, E'\\s+')))), ' ')
@@ -13,7 +15,7 @@ class AddPgSearchDmetaphoneSupportFunctions < ActiveRecord::Migration[6.0]
 
   def self.down
     safety_assured do
-      say_with_time("Dropping support functions for pg_search :dmetaphone") do
+      say_with_time('Dropping support functions for pg_search :dmetaphone') do
         execute <<-'SQL'
   DROP FUNCTION pg_search_dmetaphone(text);
         SQL

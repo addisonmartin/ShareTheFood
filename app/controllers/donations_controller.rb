@@ -45,11 +45,11 @@ class DonationsController < ApplicationController
   # GET /donations
   def index
     # Search against the Donations, if the user provided a search.
-    if params[:search]
-      @donations = Donation.with_attached_images.search(params[:search])
-    else
-      @donations = Donation.with_attached_images
-    end
+    @donations = if params[:search]
+                   Donation.with_attached_images.search(params[:search])
+                 else
+                   Donation.with_attached_images
+                 end
 
     # Only get non-soft deleted Donations.
     @donations = @donations.kept
@@ -63,10 +63,10 @@ class DonationsController < ApplicationController
     # Pass some of the Donation's attributes to Javascript for use within the map.
     donation_location_information = []
     @donations.each do |donation|
-      donation_location_information << {latitude: donation.latitude,
-                                        longitude: donation.longitude,
-                                        name: donation.name,
-                                        pickup_notes: donation.pickup_notes}
+      donation_location_information << { latitude: donation.latitude,
+                                         longitude: donation.longitude,
+                                         name: donation.name,
+                                         pickup_notes: donation.pickup_notes }
     end
 
     gon.donation_location_information = donation_location_information

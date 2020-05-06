@@ -43,18 +43,18 @@ RSpec.describe '/donations', type: :request do
   # end
   #
   describe 'POST /create' do
-  #   context 'with valid parameters' do
-  #     it 'creates a new Donation' do
-  #       expect do
-  #         post donations_url, params: { donation: valid_attributes }
-  #       end.to change(Donation, :count).by(1)
-  #     end
-  #
-  #     it 'redirects to the created donation' do
-  #       post donations_url, params: { donation: valid_attributes }
-  #       expect(response).to redirect_to(donation_url(Donation.last))
-  #     end
-  #   end
+    #   context 'with valid parameters' do
+    #     it 'creates a new Donation' do
+    #       expect do
+    #         post donations_url, params: { donation: valid_attributes }
+    #       end.to change(Donation, :count).by(1)
+    #     end
+    #
+    #     it 'redirects to the created donation' do
+    #       post donations_url, params: { donation: valid_attributes }
+    #       expect(response).to redirect_to(donation_url(Donation.last))
+    #     end
+    #   end
 
     context 'with invalid parameters' do
       it 'does not create a new Donation' do
