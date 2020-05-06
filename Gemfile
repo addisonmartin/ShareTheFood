@@ -115,6 +115,8 @@ group :development do
 
   # Bullet is used to automatically detect N+1 database queries, which should be optimized.
   gem 'bullet', '~> 6.1'
+  # Strong Migrations is used to catch potentially unsafe database migrations.
+  gem 'strong_migrations', '~> 0.6'
 end
 
 group :test do
