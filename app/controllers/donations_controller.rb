@@ -44,21 +44,18 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-    # Search against the Donations, if the user provided a search.
-    @donations = if params[:search]
-                   Donation.with_attached_images.search(params[:search])
-                 else
-                   Donation.with_attached_images
-                 end
+
+    # Only get non-soft deleted Donations.
+    @donations = Donation.with_attached_images.kept
 
     # Ensure the User has permission to perform this action.
     authorize @donations
 
-    # Only get non-soft deleted Donations.
-    @donations = @donations.kept
-
     # Only get Donations where the available until datetime is after the current datetime.
     @donations = @donations.available
+
+    # Search against the Donations, if the user provided a search.
+    @donations = @donations.search(params[:search]) if params[:search]
 
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
@@ -78,15 +75,21 @@ class DonationsController < ApplicationController
     @donations = @donations.decorate
   end
 
-  # Used to return possible donations
+  # Used to return possible matches for the search bar that appear as autocomplete options.
   def autocomplete
     respond_to do |format|
       format.json do
+        # Only get non-soft deleted Donations and Donations where the available until datetime is after the current datetime.
         @donations = Donation.kept.available
-        @donation_names = []
-        @donations.each { |donation| @donation_names << donation.name }
 
-        render json: @donation_names
+        # Ensure the User has permission to perform this action.
+        authorize @donations
+
+        # Search the Donations based on the current term typed into the search bar.
+        @donations = @donations.search(params[:term])
+
+        # Only return the name of the Donation, as an array.
+        render json: @donations.map(&:name).to_json
       end
     end
   end

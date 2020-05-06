@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # Creates RESTful routes for the Donation model.
   resources :donations do
     collection do
+      # Creates the sharethefood.net/donations/autocomplete route.
       get :autocomplete
     end
   end
