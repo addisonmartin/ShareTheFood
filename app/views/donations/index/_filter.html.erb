@@ -1,64 +1,40 @@
 <div class="row justify-content-center">
   <%= search_form_for @query do |f| %>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :is_perishable_true, class: 'form-check-input' %>
-      <%= f.label :is_perishable_true, 'Is Perishable?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :is_perishable_eq, 'Is Perishable?' %>
+    <%= f.select :is_perishable_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :requires_preparation_true, class: 'form-check-input' %>
-      <%= f.label :requires_preparation_true, 'Requires Preparation?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :requires_preparation_eq, 'Requires Preparation?' %>
+    <%= f.select :requires_preparation_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :is_vegetarian_true, class: 'form-check-input' %>
-      <%= f.label :is_vegetarian_true, 'Is Vegetarian?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :is_vegetarian_eq, 'Is Vegetarian?' %>
+    <%= f.select :is_vegetarian_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :is_vegan_true, class: 'form-check-input' %>
-      <%= f.label :is_vegan_true, 'Is Vegan?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :is_vegan_eq, 'Is Vegan?' %>
+    <%= f.select :is_vegan_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_gluten_true, class: 'form-check-input' %>
-      <%= f.label :contains_gluten_true, 'Contains Gluten?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_gluten_eq, 'Contains Gluten?' %>
+    <%= f.select :contains_gluten_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_peanuts_true, class: 'form-check-input' %>
-      <%= f.label :contains_peanuts_true, 'Contains Peanuts?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_peanuts_eq, 'Contains Peanuts?' %>
+    <%= f.select :contains_peanuts_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_tree_nuts_true, class: 'form-check-input' %>
-      <%= f.label :contains_tree_nuts_true, 'Contains Tree Nuts?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_tree_nuts_eq, 'Contains Tree Nuts?' %>
+    <%= f.select :contains_tree_nuts_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_dairy_true, class: 'form-check-input' %>
-      <%= f.label :contains_dairy_true, 'Contains Dairy?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_dairy_eq, 'Contains Dairy?' %>
+    <%= f.select :contains_dairy_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_soy_true, class: 'form-check-input' %>
-      <%= f.label :contains_soy_true, 'Contains Soy?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_soy_eq, 'Contains Soy?' %>
+    <%= f.select :contains_soy_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_egg_true, class: 'form-check-input' %>
-      <%= f.label :contains_egg_true, 'Contains Egg?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_egg_eq, 'Contains Egg?' %>
+    <%= f.select :contains_egg_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_fish_true, class: 'form-check-input' %>
-      <%= f.label :contains_fish_true, 'Contains Fish?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_fish_eq, 'Contains Fish?' %>
+    <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <div class="form-check form-check-inline">
-      <%= f.check_box :contains_shellfish_true, class: 'form-check-input' %>
-      <%= f.label :contains_shellfish_true, 'Contains Shellfish?', class: 'form-check-label' %>
-    </div>
+    <%= f.label :contains_fish_eq, 'Contains Shellfish?' %>
+    <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
     <%= f.submit 'Filter', class: 'btn btn-primary' %>
   <% end %>
