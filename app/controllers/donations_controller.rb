@@ -44,35 +44,59 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-    # Search against the Donations, if the user provided a search.
-    if params[:search]
-      @donations = Donation.with_attached_images.search(params[:search])
-    else
-      @donations = Donation.with_attached_images
-    end
 
     # Only get non-soft deleted Donations.
-    @donations = @donations.kept
-
-    # Paginate the results.
-    @pagination, @donations = pagy(@donations)
+    @donations = Donation.with_attached_images.kept
 
     # Ensure the User has permission to perform this action.
     authorize @donations
 
+    # Only get Donations where the available until datetime is after the current datetime.
+    @donations = @donations.available
+
+    # Search against the Donations, if the user provided a search.
+    @donations = @donations.search(params[:search]) if params[:search]
+
+    # Paginate the results.
+    @pagination, @donations = pagy(@donations)
+
     # Pass some of the Donation's attributes to Javascript for use within the map.
     donation_location_information = []
     @donations.each do |donation|
-      donation_location_information << {latitude: donation.latitude,
-                                        longitude: donation.longitude,
-                                        name: donation.name,
-                                        pickup_notes: donation.pickup_notes}
+      donation_location_information << { latitude: donation.latitude,
+                                         longitude: donation.longitude,
+                                         name: donation.name,
+                                         pickup_notes: donation.pickup_notes }
     end
 
     gon.donation_location_information = donation_location_information
 
     # Decorate the Donations so its decorator methods can be used.
     @donations = @donations.decorate
+  end
+
+  # Used to return possible matches for the search bar that appear as autocomplete options.
+  def autocomplete
+    respond_to do |format|
+      format.json do
+        # Only get non-soft deleted Donations and Donations where the available until datetime is after the current datetime.
+        @donations = Donation.kept.available
+
+        # Ensure the User has permission to perform this action.
+        authorize @donations
+
+        # Search the Donations based on the current term typed into the search bar.
+        @donations = @donations.search(params[:term])
+
+        # Only return the name and description of the Donation, as a single array.
+        @donation_names_and_descriptions = []
+        @donations.map(&:name).zip(@donations.map(&:description)).each do |name, description|
+          @donation_names_and_descriptions << "#{name}: #{description}"
+        end
+
+        render json: @donation_names_and_descriptions.to_json
+      end
+    end
   end
 
   # GET /donations/1

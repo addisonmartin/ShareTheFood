@@ -1,0 +1,16 @@
+ul.ui-autocomplete {
+  list-style: none;
+  padding: 5px;
+  margin: 0px;
+}
+
+li.ui-menu-item {
+  border: 1px solid $primary;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  background-color: $primary !important;
+  border-color: $primary !important;
+}

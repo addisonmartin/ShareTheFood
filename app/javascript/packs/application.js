@@ -56,5 +56,8 @@ import '../source/show_map'
 import '../source/index_map'
 
 // Enables autocomplete on Donation's search bar.
+import 'jquery-ui/themes/base/core.css'
+import 'jquery-ui/themes/base/theme.css'
+import 'jquery-ui/themes/base/autocomplete.css'
 import 'jquery-ui/ui/widgets/autocomplete'
 import '../source/autocomplete'

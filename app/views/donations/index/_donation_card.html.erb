@@ -5,10 +5,10 @@
     </h5>
     <%= donation.card_image %>
     <div class="card-body d-flex flex-column">
-      <h6 class="card-subtitle mb-2 text-muted">
-        <%= donation.allergen_information %>
+      <h6 class="card-subtitle mb-2">
+        <b><%= donation.allergen_information %></b>
+        <hr>
       </h6>
-      <br>
       <p class="card-text">
         <%= donation.description %>
       </p>
@@ -16,7 +16,7 @@
     </div>
     <div class="card-footer">
       <small class="text-muted">
-        Available Until: <%= local_time(donation.available_until) %>
+        Available for <%= donation.available_until_formatted %>
       </small>
     </div>
   </div>

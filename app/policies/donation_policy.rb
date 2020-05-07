@@ -6,6 +6,11 @@ class DonationPolicy < ApplicationPolicy
     true
   end
 
+  # Any User can use autocomplete in the search bar, on the index page.
+  def autocomplete?
+    true
+  end
+
   # Any User can view a Donation.
   def show?
     true
