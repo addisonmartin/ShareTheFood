@@ -1,5 +1,5 @@
-<div class="row justify-content-center">
-  <%= search_form_for @query do |f| %>
+<%= search_form_for @query do |f| %>
+  <div class="row justify-content-center">
     <%= f.label :is_perishable_eq, 'Is Perishable?' %>
     <%= f.select :is_perishable_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
@@ -35,7 +35,11 @@
 
     <%= f.label :contains_fish_eq, 'Contains Shellfish?' %>
     <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.submit 'Filter', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <div class="btn-group">
+      <%= f.submit 'Filter', class: 'btn btn-primary' %>
+      <%= link_to 'Clear', donations_path, class: 'btn btn-outline-danger' %>
+    </div>
+  </div>
+<% end %>
