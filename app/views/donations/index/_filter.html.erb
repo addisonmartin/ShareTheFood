@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+  <%= search_form_for @query do |f| %>
+    <%= f.label :requires_preparation_true, 'Requires Preparation?' %>
+    <%= f.check_box :requires_preparation_true %>
+
+    <%= f.submit 'Filter', class: 'btn btn-primary' %>
+  <% end %>
+</div>
