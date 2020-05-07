@@ -7,7 +7,8 @@ ul.ui-autocomplete {
 li.ui-menu-item {
   border: 1px solid $primary;
   border-radius: 3px;
-  padding: 2px;
+  padding: 1px;
+  margin: 3px;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
