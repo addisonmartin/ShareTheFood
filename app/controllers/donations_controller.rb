@@ -88,8 +88,13 @@ class DonationsController < ApplicationController
         # Search the Donations based on the current term typed into the search bar.
         @donations = @donations.search(params[:term])
 
-        # Only return the name of the Donation, as an array.
-        render json: @donations.map(&:name).to_json
+        # Only return the name and description of the Donation, as a single array.
+        @donation_names_and_descriptions = []
+        @donations.map(&:name).zip(@donations.map(&:description)).each do |name, description|
+          @donation_names_and_descriptions << "#{name}: #{description}"
+        end
+
+        render json: @donation_names_and_descriptions.to_json
       end
     end
   end
