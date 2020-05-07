@@ -1,7 +1,64 @@
 <div class="row justify-content-center">
   <%= search_form_for @query do |f| %>
-    <%= f.label :requires_preparation_true, 'Requires Preparation?' %>
-    <%= f.check_box :requires_preparation_true %>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :is_perishable_true, class: 'form-check-input' %>
+      <%= f.label :is_perishable_true, 'Is Perishable?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :requires_preparation_true, class: 'form-check-input' %>
+      <%= f.label :requires_preparation_true, 'Requires Preparation?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :is_vegetarian_true, class: 'form-check-input' %>
+      <%= f.label :is_vegetarian_true, 'Is Vegetarian?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :is_vegan_true, class: 'form-check-input' %>
+      <%= f.label :is_vegan_true, 'Is Vegan?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_gluten_true, class: 'form-check-input' %>
+      <%= f.label :contains_gluten_true, 'Contains Gluten?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_peanuts_true, class: 'form-check-input' %>
+      <%= f.label :contains_peanuts_true, 'Contains Peanuts?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_tree_nuts_true, class: 'form-check-input' %>
+      <%= f.label :contains_tree_nuts_true, 'Contains Tree Nuts?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_dairy_true, class: 'form-check-input' %>
+      <%= f.label :contains_dairy_true, 'Contains Dairy?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_soy_true, class: 'form-check-input' %>
+      <%= f.label :contains_soy_true, 'Contains Soy?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_egg_true, class: 'form-check-input' %>
+      <%= f.label :contains_egg_true, 'Contains Egg?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_fish_true, class: 'form-check-input' %>
+      <%= f.label :contains_fish_true, 'Contains Fish?', class: 'form-check-label' %>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <%= f.check_box :contains_shellfish_true, class: 'form-check-input' %>
+      <%= f.label :contains_shellfish_true, 'Contains Shellfish?', class: 'form-check-label' %>
+    </div>
 
     <%= f.submit 'Filter', class: 'btn btn-primary' %>
   <% end %>
