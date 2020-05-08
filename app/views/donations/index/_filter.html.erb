@@ -1,7 +1,7 @@
 <%= search_form_for @query do |f| %>
   <div class="row justify-content-center">
     <%= f.label :is_perishable_eq, 'Is Perishable?' %>
-    <%= f.select :is_perishable_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
+    <%= f.select :is_perishable_eq, [['Yes', true], ['No', false]], include_blank: 'Any', :onchange => ("$('#search_form').submit()") %>
 
     <%= f.label :requires_preparation_eq, 'Requires Preparation?' %>
     <%= f.select :requires_preparation_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
@@ -33,8 +33,8 @@
     <%= f.label :contains_fish_eq, 'Contains Fish?' %>
     <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
 
-    <%= f.label :contains_fish_eq, 'Contains Shellfish?' %>
-    <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
+    <%= f.label :contains_shellfish_eq, 'Contains Shellfish?' %>
+    <%= f.select :contains_shellfish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
   </div>
   <div class="row justify-content-center mt-2">
     <div class="btn-group">
