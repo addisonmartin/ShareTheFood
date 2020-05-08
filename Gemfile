@@ -45,6 +45,8 @@ gem 'pundit', '~> 2.1'
 
 # PG Search is used to access Postgres' built in full-text search capabilities.
 gem 'pg_search', '~> 2.3'
+# Ransack is used to filter models.
+gem 'ransack', '~> 2.3'
 
 # Paper Trail is used to track and store changes to models.
 gem 'paper_trail', '~> 10.3'

@@ -45,8 +45,12 @@ class DonationsController < ApplicationController
   # GET /donations
   def index
 
+    # Filter the Donations.
+    @query = Donation.ransack(params[:q])
+    @donations = @query.result.with_attached_images
+
     # Only get non-soft deleted Donations.
-    @donations = Donation.with_attached_images.kept
+    @donations = @donations.kept
 
     # Ensure the User has permission to perform this action.
     authorize @donations
@@ -68,7 +72,6 @@ class DonationsController < ApplicationController
                                          name: donation.name,
                                          pickup_notes: donation.pickup_notes }
     end
-
     gon.donation_location_information = donation_location_information
 
     # Decorate the Donations so its decorator methods can be used.
