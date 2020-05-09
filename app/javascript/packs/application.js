@@ -61,3 +61,6 @@ import 'jquery-ui/themes/base/theme.css'
 import 'jquery-ui/themes/base/autocomplete.css'
 import 'jquery-ui/ui/widgets/autocomplete'
 import '../source/autocomplete'
+
+// Enables submitting the Donation filter each time the User changes a value, without the User having to hit the submit button.
+import '../source/auto_submit'
