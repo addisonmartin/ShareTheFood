@@ -65,6 +65,8 @@ gem 'aws-sdk-s3', '~> 1', require: false
 gem 'authtrail', '~> 0.2'
 # Ahoy Matey is used to track and store page visits and events in the database, for analytics without using a 3rd party service.
 gem 'ahoy_matey', '~> 3.0'
+# Barnes is used to enabled advanced Ruby metrics on Heroku about the production environment.
+gem 'barnes', '~> 0.0.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
