@@ -58,6 +58,9 @@ gem 'faker', '~> 2.11'
 # Strong Migrations is used to catch potentially unsafe database migrations.
 gem 'strong_migrations', '~> 0.6'
 
+# Meta Tags is used to add search engine optimization (SEO) tags to all pages.
+gem 'meta-tags', '~> 2.13'
+
 # AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
 gem 'aws-sdk-s3', '~> 1', require: false
 

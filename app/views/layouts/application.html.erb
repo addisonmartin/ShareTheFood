@@ -18,7 +18,8 @@
     <!-- Used to pass variables from Ruby to Javascript. -->
     <%= Gon::Base.render_data %>
 
-    <title>Share the Food</title>
+    <!-- Render SEO meta tags. -->
+    <%= display_meta_tags site: 'Share the Food' %>
   </head>
 
   <body>
