@@ -1,11 +1,34 @@
 $(document).on('turbolinks:load', function() {
     if (document.getElementById("index_donation_map") != null) {
+
+        var zoom = 13;
+        // If the User does not give their location, use these defaults.
+        var lat =  38.53220;
+        var lng = -77.02069;
+        // Update lat and lng to the User's location if they allow it.
+        var geoSuccess = function(position) {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            index_map.setView([lat, lng], zoom)
+
+            // Add the User's current location on the map.
+            var pin = L.marker({lat: lat, lng: lng}).addTo(index_map);
+            pin.bindPopup("<b>Your current location!</b>").openPopup();
+        };
+        // Log to the console if there is an error getting the User's location.
+        var geoError = function(error) {
+            console.log(error);
+        };
+        // Get the User's current location.
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+
         // Create a leaflet map.
-        var index_map = L.map('index_donation_map').setView([0, 0], 13);
+        var index_map = L.map('index_donation_map').setView([lat, lng], zoom);
         // Use Open Street Maps data.
         var index_osm_layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(index_map);
+
         // A new map layer must be used for the mini map.
         var index_osm_mini_map_layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
