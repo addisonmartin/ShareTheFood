@@ -1,4 +1,4 @@
-$footer-height: 90px;
+$footer-height: 100px;
 
 html {
   position: relative;
@@ -13,4 +13,5 @@ body {
   width: 100%;
   height: $footer-height;
   background-color: #f5f5f5;
+  box-shadow: 0 50vh 0 50vh #f5f5f5;
 }
