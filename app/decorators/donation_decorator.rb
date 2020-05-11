@@ -53,6 +53,6 @@ class DonationDecorator < ApplicationDecorator
   end
 
   def available_until_in_words
-    h.distance_of_time_in_words(h.local_time(model.available_until), h.local_time(Time.now), seconds: true)
+    h.distance_of_time_in_words(h.local_time(model.available_until), h.local_time(Time.zone.now), seconds: true)
   end
 end

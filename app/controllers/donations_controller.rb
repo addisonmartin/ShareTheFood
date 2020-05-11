@@ -44,7 +44,6 @@ class DonationsController < ApplicationController
 
   # GET /donations
   def index
-
     # Filter the Donations.
     @query = Donation.ransack(params[:q])
     @donations = @query.result.with_attached_images
