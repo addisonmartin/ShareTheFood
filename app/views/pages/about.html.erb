@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <h1 class="display-4"><%= title 'About Share the Food' %></h1>
-      <p class="lead m-3">
+      <p class="lead ml-3 mr-3">
         Share the Food aims to connect those who have extra food, with those who are hungry.
         Every year in America, <%= link_to '30-40% of the food supply is thrown away.', 'https://www.usda.gov/foodwaste/faqs' %>
         Meanwhile, <%= link_to 'millions of Americans are food insecure.', 'https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/key-statistics-graphics.aspx' %>
@@ -15,10 +15,8 @@
         Anyone who is hungry can <%= link_to 'browse donations near them', donations_path %> and go pick them up.
         No account is required to browse donations.
       </p>
-      <div class="btn-group btn-group-lg">
-        <%= link_to 'Add a Donation', new_donation_path, class: 'btn btn-outline-primary' %>
-        <%= link_to 'View Nearby Donations', donations_path, class: 'btn btn-outline-primary' %>
-      </div>
+      <%= link_to 'Add a Donation', new_donation_path, class: 'btn btn-primary btn-lg btn-block ml-4 mr-4' %>
+      <%= link_to 'View Nearby Donations', donations_path, class: 'btn btn-primary btn-lg btn-block ml-4 mr-4' %>
     </div>
   </div>
 </div>
