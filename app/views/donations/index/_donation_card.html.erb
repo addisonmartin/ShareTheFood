@@ -15,7 +15,7 @@
       <%= link_to icon('info-circle') + " View Donation", donation, class: 'btn btn-outline-primary mt-auto' %>
     </div>
     <div class="card-footer">
-      <small class="text-muted">
+      <small class="text-muted" data-toggle="tooltip" title="Available until <%= donation.available_until_in_local_time %>">
         <%= icon('clock') %> Available for <%= donation.available_until_in_words %>
       </small>
     </div>
