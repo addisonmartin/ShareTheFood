@@ -55,4 +55,11 @@ class DonationDecorator < ApplicationDecorator
   def available_until_in_words
     h.distance_of_time_in_words(h.local_time(model.available_until), h.local_time(Time.zone.now), seconds: true)
   end
+
+  def available_until_in_local_time
+    time = h.local_time(model.available_until).to_s
+    # Convert time from an HTML object to a plain string just containing the datetime.
+    time = time[time.index('>') + 1 .. time.length]
+    time = time[0 ... time.index('<')]
+  end
 end

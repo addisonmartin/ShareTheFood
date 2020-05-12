@@ -9,7 +9,8 @@
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                hint: "A confirmation email will be sent to this address. You must confirm your email before you can add a donation.",
+                input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
