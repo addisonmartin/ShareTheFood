@@ -63,16 +63,19 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.default_url_options = { host: 'sharethefood.net' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default charset: 'utf-8'
 
   # Configures emails to be sent by SendGrid.
   ActionMailer::Base.smtp_settings = {
-    :user_name => Rails.application.credentials.dig(:sendgird, :username),
-    :password => Rails.application.credentials.dig(:sendgird, :password),
-    :domain => 'sharethefood.net',
-    :address => 'smtp.sendgrid.net',
-    :port => 465,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    user_name: Rails.application.credentials.dig(:sendgird, :username),
+    password: Rails.application.credentials.dig(:sendgird, :password),
+    domain: 'sharethefood.net',
+    address: 'smtp.sendgrid.net',
+    port: 465,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
