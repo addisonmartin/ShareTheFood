@@ -69,8 +69,8 @@ Rails.application.configure do
 
   # Configures emails to be sent by SendGrid.
   ActionMailer::Base.smtp_settings = {
-    user_name: Rails.application.credentials.dig(:sendgird, :username),
-    password: Rails.application.credentials.dig(:sendgird, :password),
+    user_name: Rails.application.credentials.dig(:sendgrid, :username),
+    password: Rails.application.credentials.dig(:sendgrid, :password),
     domain: 'sharethefood.net',
     address: 'smtp.sendgrid.net',
     port: 465,
