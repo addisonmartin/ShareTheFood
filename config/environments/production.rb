@@ -74,7 +74,7 @@ Rails.application.configure do
     domain: 'sharethefood.net',
     address: 'smtp.sendgrid.net',
     port: 587,
-    authentication: :login,
+    authentication: :plain,
     enable_starttls_auto: true
   }
 
