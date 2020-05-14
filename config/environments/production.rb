@@ -71,7 +71,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     user_name: Rails.application.credentials.dig(:sendgird, :username),
     password: Rails.application.credentials.dig(:sendgird, :password),
-    domain: 'sharethefood.net',
+    domain: 'em4090.sharethefood.net',
     address: 'smtp.sendgrid.net',
     port: 465,
     authentication: :plain,
