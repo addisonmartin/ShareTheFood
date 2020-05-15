@@ -35,11 +35,7 @@
 
     <%= f.label :contains_shellfish_eq, 'Contains Shellfish?' %>
     <%= f.select :contains_shellfish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-  </div>
-  <div class="row justify-content-center mt-2">
-    <div class="btn-group">
-      <%= f.submit 'Filter', class: 'btn btn-primary' %>
-      <%= link_to 'Clear', donations_path, class: 'btn btn-outline-danger' %>
-    </div>
+
+    <%= link_to 'Clear Filter', donations_path, class: 'btn btn-outline-danger' %>
   </div>
 <% end %>
