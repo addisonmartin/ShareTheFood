@@ -73,7 +73,7 @@ Rails.application.configure do
     password: Rails.application.credentials.dig(:sendgrid, :password),
     domain: 'sharethefood.net',
     address: 'smtp.sendgrid.net',
-    port: 465,
+    port: 587,
     authentication: :plain,
     enable_starttls_auto: true
   }
