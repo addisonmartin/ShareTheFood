@@ -17,6 +17,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  locked_at              :datetime
+#  name                   :string           not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -38,6 +39,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :user do
+    name { Faker::Name.name }
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }
@@ -49,6 +51,7 @@ FactoryBot.define do
   end
 
   factory :other_user, class: 'User' do
+    name { Faker::Name.name }
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }

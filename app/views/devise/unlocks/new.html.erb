@@ -1,4 +1,6 @@
-<h2 class="text-dark">Resend unlock instructions</h2>
+<% set_meta_tags index: false %>
+
+<h2><%= title 'Resend unlock instructions' %> </h2>
 
 <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.full_error :unlock_token %>

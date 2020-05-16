@@ -1,8 +1,6 @@
-<% description 'Dashboard for admin users of Share the Food.' %>
-<% keywords 'Share the Food, Admin, Dashboard' %>
-<% set_meta_tags noindex: true %>
+<% set_meta_tags noindex: false %>
 
-<h1 class="text-dark"><%= title 'Admin Dashboard' %></h1>
+<h1><%= title 'Admin Dashboard' %></h1>
 
 Total Donations: <%= @donations.count %>
 Total Users: <%= @users.count %>
