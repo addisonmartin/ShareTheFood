@@ -7,7 +7,7 @@
     </div>
     <%= text_field_tag 'search', params[:search], id: 'search', placeholder: "Search donation's name, description, pickup notes, ...", class: 'form-control' %>
     <div class="input-group-append">
-      <%= link_to 'Clear Search', donations_path, class: 'btn btn-outline-danger' %>
+      <%= link_to 'Clear Search', donations_path(params.except(:search, :action, :controller).permit!), class: 'btn btn-outline-danger' %>
     </div>
   </div>
 <% end %>

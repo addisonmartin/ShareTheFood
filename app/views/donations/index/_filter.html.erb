@@ -14,7 +14,7 @@
     <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Shellfish?', search_predicate: :contains_shellfish_eq %>
 
     <div class="col-auto">
-      <%= link_to 'Clear Filter', donations_path, class: 'btn btn-outline-danger' %>
+      <%= link_to 'Clear Filter', donations_path(params.except(:q, :action, :controller).permit!), class: 'btn btn-outline-danger' %>
     </div>
   </div>
 <% end %>
