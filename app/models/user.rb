@@ -46,4 +46,7 @@ class User < ApplicationRecord
 
   # Configures User to have many Donations.
   has_many :donations, inverse_of: :user
+
+  # Requires a User to have a name.
+  validates :name, presence: true
 end
