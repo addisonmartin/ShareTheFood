@@ -14,6 +14,7 @@ MAX_NUMBER_OF_DONATION_IMAGES = 2
   seed_password = Faker::Alphanumeric.alphanumeric(number: rand(8..128))
 
   user = User.new(
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: seed_password,
     password_confirmation: seed_password
