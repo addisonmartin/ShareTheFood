@@ -2,7 +2,7 @@
 <% keywords 'Share the Food, Edit, User, Profile, Account, Edit Profile, Edit Account' %>
 <% set_meta_tags index: true %>
 
-<h1 class="text-dark"><%= title "Edit #{resource_name.to_s.humanize}" %></h1>
+<h1><%= title "Edit #{resource_name.to_s.humanize}" %></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <div class="form-inputs">
