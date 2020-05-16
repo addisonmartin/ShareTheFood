@@ -39,6 +39,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :user do
+    name { Faker::Name.name }
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }
@@ -50,6 +51,7 @@ FactoryBot.define do
   end
 
   factory :other_user, class: 'User' do
+    name { Faker::Name.name }
     email { Faker::Internet.email }
     password { Faker::String.random(length: 8..128) }
     password_confirmation { password }
