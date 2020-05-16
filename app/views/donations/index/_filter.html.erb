@@ -1,41 +1,20 @@
 <%= search_form_for @query do |f| %>
-  <div class="row justify-content-center">
-    <%= f.label :is_perishable_eq, 'Is Perishable?' %>
-    <%= f.select :is_perishable_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
+  <div class="form-row align-items-center">
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Perishable?', search_predicate: :is_perishable_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Requires Preparation?', search_predicate: :requires_preparation_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegetarian?', search_predicate: :is_vegetarian_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegan?', search_predicate: :is_vegan_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Gluten?', search_predicate: :contains_gluten_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Peanuts?', search_predicate: :contains_peanuts_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Tree Nuts?', search_predicate: :contains_tree_nuts_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Dairy?', search_predicate: :contains_dairy_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Soy?', search_predicate: :contains_soy_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Egg?', search_predicate: :contains_egg_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Fish?', search_predicate: :contains_fish_eq %>
+    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Shellfish?', search_predicate: :contains_shellfish_eq %>
 
-    <%= f.label :requires_preparation_eq, 'Requires Preparation?' %>
-    <%= f.select :requires_preparation_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :is_vegetarian_eq, 'Is Vegetarian?' %>
-    <%= f.select :is_vegetarian_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :is_vegan_eq, 'Is Vegan?' %>
-    <%= f.select :is_vegan_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_gluten_eq, 'Contains Gluten?' %>
-    <%= f.select :contains_gluten_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_peanuts_eq, 'Contains Peanuts?' %>
-    <%= f.select :contains_peanuts_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_tree_nuts_eq, 'Contains Tree Nuts?' %>
-    <%= f.select :contains_tree_nuts_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_dairy_eq, 'Contains Dairy?' %>
-    <%= f.select :contains_dairy_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_soy_eq, 'Contains Soy?' %>
-    <%= f.select :contains_soy_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_egg_eq, 'Contains Egg?' %>
-    <%= f.select :contains_egg_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_fish_eq, 'Contains Fish?' %>
-    <%= f.select :contains_fish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= f.label :contains_shellfish_eq, 'Contains Shellfish?' %>
-    <%= f.select :contains_shellfish_eq, [['Yes', true], ['No', false]], include_blank: 'Any' %>
-
-    <%= link_to 'Clear Filter', donations_path, class: 'btn btn-outline-danger' %>
+    <div class="col-auto">
+      <%= link_to 'Clear Filter', donations_path(params.except(:q, :action, :controller).permit!), class: 'btn btn-outline-danger' %>
+    </div>
   </div>
 <% end %>
