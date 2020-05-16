@@ -1,7 +1,7 @@
 <div class="col-auto">
   <div class="btn btn-primary">
+    <%= f.label filter_label %>
     <div class="form-check form-check-inline">
-      <%= f.label filter_label %>
       <%= f.collection_radio_buttons search_predicate, [['', 'Any'], [true, 'Yes'], [false, 'No']], :first, :last do |b| %>
         <%= b.radio_button(class: 'form-check-input') + b.label(class: 'form-check-label') %>&nbsp;
       <% end %>
