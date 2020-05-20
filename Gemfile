@@ -64,6 +64,11 @@ gem 'meta-tags', '~> 2.13'
 # AWS SDK S3 is used to support photo upload to an S3 bucket in production environment.
 gem 'aws-sdk-s3', '~> 1', require: false
 
+# Apex Charts is used to create interactive charts.
+gem 'apexcharts', '~> 0.1.9'
+# Group Date is used to group models by their time attributes.
+gem 'groupdate', '~> 5.0.0'
+
 # Authtrail is used to store each User's login attempt, and relevant information about that attempt.
 gem 'authtrail', '~> 0.2'
 # Ahoy Matey is used to track and store page visits and events in the database, for analytics without using a 3rd party service.

@@ -4,3 +4,5 @@
 
 Total Donations: <%= @donations.count %>
 Total Users: <%= @users.count %>
+
+<%= line_chart(Donation.group_by_minute(:created_at).count) %>
