@@ -1,8 +1,6 @@
-<% set_meta_tags noindex: false %>
+<% set_meta_tags index: false %>
 
 <h1><%= title 'Admin Dashboard' %></h1>
 
-Total Donations: <%= @donations.count %>
-Total Users: <%= @users.count %>
-
-<%= line_chart(Donation.group_by_minute(:created_at).count) %>
+<%= line_chart [{name: 'Donations', data: Donation.group_by_day(:created_at).count}], {title: 'Donations Created', subtitle: 'Grouped By Day', xtitle: 'Day', ytitle: 'Donations Created'} %>
+<%= line_chart [{name: 'Users', data: User.group_by_day(:created_at).count}], {title: 'Users Signed Up', subtitle: 'Grouped By Day', xtitle: 'Day', ytitle: 'Users Signed Up'} %>
