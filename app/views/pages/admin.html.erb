@@ -2,5 +2,5 @@
 
 <h1><%= title 'Admin Dashboard' %></h1>
 
-<%= bar_chart [{name: 'Donations Created', data: Donation.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: Donation.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped By Day', xtitle: 'Day', ytitle: 'Donations Created'} %>
+<%= bar_chart [{name: 'Donations Created', data: Donation.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: Donation.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped By Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 <%= line_chart [{name: 'Users', data: User.group_by_day(:created_at).count}], {title: 'Users Signed Up', subtitle: 'Grouped By Day', xtitle: 'Day', ytitle: 'Users Signed Up'} %>
