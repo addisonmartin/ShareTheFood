@@ -68,6 +68,8 @@ import '../source/auto_submit'
 // Enables the Apexcharts.
 import ApexCharts from 'apexcharts'
 window.ApexCharts = ApexCharts
-// Enables the Chartkick Chart.js charts.
-require("chartkick")
+
+// Enables Chart.js charts (Used for the geographical maps plugin).
 require("chart.js")
+// Enables the US map with number of User visits per state.
+import '../source/visits_map'

@@ -4,11 +4,16 @@
   <h1><%= title 'Admin Dashboard' %></h1>
 </div>
 
+<div class="row justify-content-center">
+  <h4><b>User Visits per State</b></h4>
+</div>
+<canvas id="visits_map"></canvas>
+
 <%= bar_chart [{name: 'Donations Created', data: @donations.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: @donations.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped by Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 <%= line_chart [{name: 'Users', data: @users.group_by_day(:created_at).count}], {title: 'Users Signed Up', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Users Signed Up'} %>
 
 <div class="row justify-content-center">
-  <h3><%= @users.where(admin: true).count %> Admin User(s):</h3>
+  <h4><b><%= @users.where(admin: true).count %> Admin User(s):</b></h4>
 </div>
 <ui class="list-group">
 <% @users.where(admin: true).each do |admin_user| %>
