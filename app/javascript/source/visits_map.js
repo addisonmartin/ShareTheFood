@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function() {
                                 outline: nation,
                                 data: states.map((d) => ({
                                     feature: d,
-                                    value: visits_per_state[d.properties.name],
+                                    value: gon.visits_per_state[d.properties.name],
                                 })),
                             },
                         ],
