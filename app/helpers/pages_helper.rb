@@ -2,11 +2,13 @@
 
 module PagesHelper
 
-  def os_data_for_graph(visits)
+  def user_analytic_data_by_attribute(visits, attribute)
     data = []
 
-    visits.group(:os).count.each_pair do |os, count|
-      data << {name: os, data: count}
+    # Group and count the data by the given attribute.
+    visits.group(attribute).count.each_pair do |key, value|
+      # Convert the data to a format that ApexCharts can read.
+      data << { name: key, data: value}
     end
 
     data
