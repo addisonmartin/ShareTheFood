@@ -64,3 +64,12 @@ import '../source/autocomplete'
 
 // Enables submitting the Donation filter each time the User changes a value, without the User having to hit the submit button.
 import '../source/auto_submit'
+
+// Enables the Apexcharts.
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts
+
+// Enables Chart.js charts (Used for the geographical maps plugin).
+require("chart.js")
+// Enables the US map with number of User visits per state.
+import '../source/visits_map'

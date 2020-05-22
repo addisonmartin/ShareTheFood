@@ -14,7 +14,12 @@
 <br>
 
 <div class="row justify-content-center">
-  <h5><%== pagy_info(@pagination) %></h5>
+  <h5>
+    <%== pagy_info(@pagination) %>
+    <% if @donations.empty? %>
+      <%= link_to 'Add a Donation', new_donation_path, class: 'btn btn-outline-primary' %>
+    <% end %>
+  </h5>
 </div>
 <div class="row justify-content-center">
   <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
