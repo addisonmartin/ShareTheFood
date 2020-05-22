@@ -3,7 +3,7 @@
 </button>
 <div class="collapse" id="filterCollapse">
   <%= search_form_for @query do |f| %>
-    <div class="form-row align-items-center">
+    <div class="form-row align-items-center justify-content-center">
       <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Perishable?', search_predicate: :is_perishable_eq %>
       <%= render 'donations/index/filter_item', f: f, filter_label: 'Requires Preparation?', search_predicate: :requires_preparation_eq %>
       <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegetarian?', search_predicate: :is_vegetarian_eq %>
