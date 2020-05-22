@@ -8,7 +8,7 @@ module PagesHelper
     # Group and count the data by the given attribute.
     visits.group(attribute).count.each_pair do |key, value|
       # Convert the data to a format that ApexCharts can read.
-      data << { name: key, data: value}
+      data << { name: key, data: value }
     end
 
     data
