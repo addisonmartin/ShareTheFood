@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module PagesHelper
-
   def user_analytic_data_by_attribute(visits, attribute)
     data = []
 
@@ -13,5 +12,4 @@ module PagesHelper
 
     data
   end
-
 end

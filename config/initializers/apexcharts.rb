@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ApexCharts.config.default_options = {
   title: {
     align: 'center',
