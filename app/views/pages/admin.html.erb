@@ -7,6 +7,15 @@
 <%= bar_chart [{name: 'Donations Created', data: @donations.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: @donations.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped by Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 <%= line_chart [{name: 'Users', data: @users.group_by_day(:created_at).count}], {title: 'Users Signed Up', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Users Signed Up'} %>
 
+<div class="row justify-content-center">
+  <h3><%= @users.where(admin: true).count %> Admin User(s):</h3>
+</div>
+<ui class="list-group">
+<% @users.where(admin: true).each do |admin_user| %>
+    <li class="list-group-item"><%= admin_user.name %>: <%= admin_user.email %></li>
+<% end %>
+</ui>
+
 <%= line_chart [{name: 'Visits', data: @visits.group_by_day(:started_at).count}], {title: 'Visits', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Visits'} %>
 <%= pie_chart user_analytic_data_by_attribute(@visits, :os), {title: 'User Visits', subtitle: 'Grouped by Operating System'} %>
 <%= pie_chart user_analytic_data_by_attribute(@visits, :browser), {title: 'User Visits', subtitle: 'Grouped by Internet Browser'} %>
