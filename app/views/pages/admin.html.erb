@@ -5,11 +5,14 @@
 </div>
 
 <div class="row justify-content-center">
+  <h2>There Are <%= @visits.count %> Unique Visits To Date</h2>
+</div>
+
+<div class="row justify-content-center">
   <h4><b>User Visits per State</b></h4>
 </div>
 <canvas id="visits_map"></canvas>
 
-<%= bar_chart [{name: 'Donations Created', data: @donations.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: @donations.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped by Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 <%= line_chart [{name: 'Users', data: @users.group_by_day(:created_at).count}], {title: 'Users Signed Up', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Users Signed Up'} %>
 
 <div class="row justify-content-center">
@@ -20,6 +23,9 @@
     <li class="list-group-item"><%= admin_user.name %>: <%= admin_user.email %></li>
 <% end %>
 </ui>
+
+<h2><%= @donations.count %> Donations To Date</h2>
+<%= bar_chart [{name: 'Donations Created', data: @donations.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: @donations.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped by Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 
 <%= line_chart [{name: 'Visits', data: @visits.group_by_day(:started_at).count}], {title: 'Visits', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Visits'} %>
 <%= pie_chart user_analytic_data_by_attribute(@visits, :os), {title: 'User Visits', subtitle: 'Grouped by Operating System'} %>
