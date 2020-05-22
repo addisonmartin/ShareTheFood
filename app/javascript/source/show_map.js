@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
     if (document.getElementById("show_donation_map") != null) {
 
-        var zoom = 13;
+        var zoom = 20;
         // Add a pin at the User's location if they allow it.
         var geoSuccess = function(position) {
             var lat = position.coords.latitude;

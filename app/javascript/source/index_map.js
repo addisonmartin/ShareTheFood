@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
     if (document.getElementById("index_donation_map") != null) {
 
-        var zoom = 13;
+        var zoom = 20;
         // If the User does not give their location, use these defaults.
         var lat =  38.53220;
         var lng = -77.02069;
