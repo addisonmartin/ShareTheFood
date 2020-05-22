@@ -9,5 +9,6 @@ class PagesController < ApplicationController
 
     @donations = Donation.all
     @users = User.all
+    @visits = Ahoy::Visit.all
   end
 end
