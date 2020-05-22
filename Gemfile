@@ -66,6 +66,8 @@ gem 'aws-sdk-s3', '~> 1', require: false
 
 # Apex Charts is used to create interactive charts.
 gem 'apexcharts', '~> 0.1.9'
+# Chartkick is used to create charts with Chart.js.
+gem 'chartkick', '~> 3.3.1'
 # Group Date is used to group models by their time attributes.
 gem 'groupdate', '~> 5.0.0'
 

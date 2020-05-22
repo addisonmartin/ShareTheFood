@@ -65,6 +65,9 @@ import '../source/autocomplete'
 // Enables submitting the Donation filter each time the User changes a value, without the User having to hit the submit button.
 import '../source/auto_submit'
 
-// Enables the charts.
+// Enables the Apexcharts.
 import ApexCharts from 'apexcharts'
 window.ApexCharts = ApexCharts
+// Enables the Chartkick Chart.js charts.
+require("chartkick")
+require("chart.js")
