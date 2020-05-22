@@ -1,20 +1,26 @@
-<%= search_form_for @query do |f| %>
-  <div class="form-row align-items-center">
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Perishable?', search_predicate: :is_perishable_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Requires Preparation?', search_predicate: :requires_preparation_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegetarian?', search_predicate: :is_vegetarian_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegan?', search_predicate: :is_vegan_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Gluten?', search_predicate: :contains_gluten_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Peanuts?', search_predicate: :contains_peanuts_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Tree Nuts?', search_predicate: :contains_tree_nuts_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Dairy?', search_predicate: :contains_dairy_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Soy?', search_predicate: :contains_soy_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Egg?', search_predicate: :contains_egg_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Fish?', search_predicate: :contains_fish_eq %>
-    <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Shellfish?', search_predicate: :contains_shellfish_eq %>
+<button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#filterCollapse">
+  Allergen Filter
+</button>
+<div class="collapse" id="filterCollapse">
+  <%= search_form_for @query do |f| %>
+    <div class="form-row align-items-center">
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Perishable?', search_predicate: :is_perishable_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Requires Preparation?', search_predicate: :requires_preparation_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegetarian?', search_predicate: :is_vegetarian_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Is Vegan?', search_predicate: :is_vegan_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Gluten?', search_predicate: :contains_gluten_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Peanuts?', search_predicate: :contains_peanuts_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Tree Nuts?', search_predicate: :contains_tree_nuts_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Dairy?', search_predicate: :contains_dairy_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Soy?', search_predicate: :contains_soy_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Egg?', search_predicate: :contains_egg_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Fish?', search_predicate: :contains_fish_eq %>
+      <%= render 'donations/index/filter_item', f: f, filter_label: 'Contains Shellfish?', search_predicate: :contains_shellfish_eq %>
 
-    <div class="col-auto">
-      <%= link_to 'Clear Filter', donations_path(params.except(:q, :action, :controller).permit!), class: 'btn btn-outline-danger' %>
+      <div class="col-auto">
+        <%= link_to 'Clear Filter', donations_path(params.except(:q, :action, :controller).permit!), class: 'btn btn-outline-danger' %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+<br>
