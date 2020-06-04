@@ -24,7 +24,9 @@
 <% end %>
 </ui>
 
-<h2><%= @donations.count %> Donations To Date</h2>
+<div class="row justify-content-center">
+  <h2><%= @donations.count %> Donations To Date</h2>
+</div>
 <%= bar_chart [{name: 'Donations Created', data: @donations.kept.group_by_day(:created_at).count}, {name: 'Donations Claimed', data: @donations.discarded.group_by_day(:created_at).count}], {title: 'Donations Created and Claimed', subtitle: 'Grouped by Day', xtitle: 'Donations Created/Claimed', ytitle: 'Day'} %>
 
 <%= line_chart [{name: 'Visits', data: @visits.group_by_day(:started_at).count}], {title: 'Visits', subtitle: 'Grouped by Day', xtitle: 'Day', ytitle: 'Visits'} %>

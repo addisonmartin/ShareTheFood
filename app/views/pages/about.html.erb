@@ -8,8 +8,8 @@
       <h1 class="display-4"><%= title 'About Share the Food' %></h1>
       <p class="lead ml-3 mr-3">
         Share the Food aims to connect those who have extra food, with those who are hungry.
-        Every year in America, <%= link_to '30-40% of the food supply is thrown away.', 'https://www.usda.gov/foodwaste/faqs' %>
-        Meanwhile, <%= link_to 'millions of Americans are food insecure.', 'https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/key-statistics-graphics.aspx' %>
+        Every year in America, <%= link_to '30-40% of the food supply is thrown away.', 'https://www.usda.gov/foodwaste/faqs', target: '_blank', rel: 'noopener noreferrer' %>
+        Meanwhile, <%= link_to 'millions of Americans are food insecure.', 'https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/key-statistics-graphics.aspx', target: '_blank', rel: 'noopener noreferrer'  %>
         Any individual or business that has extra food, that would otherwise be thrown out,
         can <%= link_to 'create an account', new_user_registration_path %> and <%= link_to 'add their food as a donation', new_donation_path %> on this website.
         Anyone who is hungry can <%= link_to 'browse donations near them', donations_path %> and go pick them up.

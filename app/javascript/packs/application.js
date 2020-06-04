@@ -51,9 +51,9 @@ require('leaflet-minimap/dist/Control.MiniMap.min.css')
 import 'leaflet.markercluster/dist/leaflet.markercluster'
 
 // Enables viewing the Donation's locations on Donation's show view.
-import '../source/show_map'
+import '../source/show_donation_map'
 // Enables viewing all Donation's locations on Donation's index view.
-import '../source/index_map'
+import '../source/donation_index_map'
 
 // Enables autocomplete on Donation's search bar.
 import 'jquery-ui/themes/base/core.css'
