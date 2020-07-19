@@ -3,6 +3,10 @@
 class PagesController < ApplicationController
   # Configure the about page to be cached.
   caches_page :about
+  # Configures the cache to be stored in public/pages_cache
+  self.page_cache_directory = -> {
+    Rails.root.join('public', 'pages_cache')
+  }
 
   def about; end
 
