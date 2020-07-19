@@ -62,6 +62,8 @@ import 'jquery-ui/themes/base/autocomplete.css'
 import 'jquery-ui/ui/widgets/autocomplete'
 import '../source/autocomplete'
 
+// Enables automatically setting vegetarian filter to yes when vegan is yes, etc.
+import '../source/vegan_vegetarian'
 // Enables submitting the Donation filter each time the User changes a value, without the User having to hit the submit button.
 import '../source/auto_submit'
 

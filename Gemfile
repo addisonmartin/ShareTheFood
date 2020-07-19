@@ -35,6 +35,13 @@ gem 'oj', '~> 3.10'
 # Gon is used to pass variables from Ruby to Javascript.
 gem 'gon', '~> 6.3'
 
+# Redis is used as a Ruby client to a Redis cache server.
+gem 'redis', '~> 4.2'
+# Hiredis is used as a faster connection library by Redis.
+gem 'hiredis', '~> 0.6'
+# Actionpack Page Caching is used to cache static pages.
+gem 'actionpack-page_caching', '~> 1.2'
+
 # Local Time is used to get the User's timezone and convert datetime objects to the User's local timezone.
 gem 'local_time', '~> 2.1'
 
@@ -42,6 +49,9 @@ gem 'local_time', '~> 2.1'
 gem 'devise', '~> 4.7'
 # Pundit is used to provide User authorization (but not authentication).
 gem 'pundit', '~> 2.1'
+
+# Rack Attack is used to throttle and block abusive requests.
+gem 'rack-attack', '~> 6.3'
 
 # PG Search is used to access Postgres' built in full-text search capabilities.
 gem 'pg_search', '~> 2.3'
