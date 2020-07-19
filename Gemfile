@@ -35,6 +35,11 @@ gem 'oj', '~> 3.10'
 # Gon is used to pass variables from Ruby to Javascript.
 gem 'gon', '~> 6.3'
 
+# Redis is used as a Ruby client to a Redis cache server.
+gem 'redis', '~> 4.2'
+# Hiredis is used as a faster connection library by Redis.
+gem 'hiredis', '~> 0.6'
+
 # Local Time is used to get the User's timezone and convert datetime objects to the User's local timezone.
 gem 'local_time', '~> 2.1'
 
