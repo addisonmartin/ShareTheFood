@@ -109,16 +109,14 @@ class DonationsController < ApplicationController
     # Check to see if the Donation has changed since the last time the user requested it,
     # and if it hasn't changed just return a not modified status to the user's browser.
     if stale?(@donation)
-      respond_to do |wants|
-        # Pass some of the Donation's attributes to Javascript for use within the map.
-        gon.donation_latitude = @donation.latitude
-        gon.donation_longitude = @donation.longitude
-        gon.donation_name = @donation.name
-        gon.donation_pickup_notes = @donation.pickup_notes
+      # Pass some of the Donation's attributes to Javascript for use within the map.
+      gon.donation_latitude = @donation.latitude
+      gon.donation_longitude = @donation.longitude
+      gon.donation_name = @donation.name
+      gon.donation_pickup_notes = @donation.pickup_notes
 
-        # Decorate the Donation so its decorator methods can be used.
-        @donation = @donation.decorate
-      end
+      # Decorate the Donation so its decorator methods can be used.
+      @donation = @donation.decorate
     end
   end
 
