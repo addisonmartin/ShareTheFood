@@ -18,11 +18,20 @@
 <div class="row justify-content-center">
   <h4><b><%= @users.where(admin: true).count %> Admin User(s):</b></h4>
 </div>
-<ui class="list-group">
+<ul class="list-group">
 <% @users.where(admin: true).each do |admin_user| %>
     <li class="list-group-item"><%= admin_user.name %>: <%= admin_user.email %></li>
 <% end %>
-</ui>
+</ul>
+
+<div class="row justify-content-center">
+  <h4><b><%= @users.count %> User(s):</b></h4>
+</div>
+<ul class="list-group">
+  <% @users.each do |user| %>
+    <li class="list-group-item"><%= user.name %>: <%= user.email %></li>
+  <% end %>
+</ul>
 
 <div class="row justify-content-center">
   <h2><%= @donations.count %> Donations To Date</h2>
