@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Use a Redis cache server.
   config.action_controller.perform_caching = true
-  config.cache_store = :redis_cache_store, { url: 'localhost:3000',
+  config.cache_store = :redis_cache_store, { host: 'localhost',
                                              error_handler: -> (method:, returning:, exception:) {
                                                # Report errors to log.
                                                logger.error("Redis Error: #{exception}, method: #{method}, returning: #{returning}")
