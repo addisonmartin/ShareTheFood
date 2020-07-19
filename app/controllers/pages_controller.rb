@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
+  # Configure the about page to be cached.
+  caches_page :about
+
   def about; end
 
   def admin

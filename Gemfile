@@ -39,6 +39,8 @@ gem 'gon', '~> 6.3'
 gem 'redis', '~> 4.2'
 # Hiredis is used as a faster connection library by Redis.
 gem 'hiredis', '~> 0.6'
+# Actionpack Page Caching is used to cache static pages.
+gem 'actionpack-page_caching', '~> 1.2'
 
 # Local Time is used to get the User's timezone and convert datetime objects to the User's local timezone.
 gem 'local_time', '~> 2.1'
