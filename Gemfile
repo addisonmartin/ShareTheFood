@@ -21,6 +21,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
+  # Pry is an IRB and Rails console alternative.
+  # https://github.com/pry/pry
+  gem 'pry', '~> 0.13'
+  # Pry Rails configures the 'rails console' command to launch the pry console instead.
+  # https://github.com/rweng/pry-rails
+  gem 'pry-rails', '~> 0.3'
+  # Pry Byebug adds step-by-step debugging to the pry console.
+  # https://github.com/deivid-rodriguez/pry-byebug
+  gem 'pry-byebug', '~> 3.9'
 end
 
 group :development do
