@@ -52,6 +52,10 @@ group :development, :test do
   # Rubocop Rake adds rake task linting to Rubocop.
   # https://github.com/rubocop-hq/rubocop-rake
   gem 'rubocop-rake', '~> 0.5', require: false
+
+  # Brakeman is a static analysis tool which checks for security vulnerabilities.
+  # https://github.com/presidentbeef/brakeman
+  gem 'brakeman', '~> 4.9'
 end
 
 group :development do
