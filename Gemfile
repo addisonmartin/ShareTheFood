@@ -105,4 +105,8 @@ group :development do
   # Binding of Caller is used by Better Errors to enable Better Error's advanced features.
   # https://github.com/banister/binding_of_caller
   gem 'binding_of_caller', '~> 0.8'
+
+  # Annotate automatically adds a comment summarizing the database schema to the top of relevant files within the application.
+  # https://github.com/ctran/annotate_models
+  gem 'annotate', '~> 3.1'
 end
