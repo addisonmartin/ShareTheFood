@@ -51,7 +51,7 @@ gem 'local_time', '~> 2.1'
 # https://github.com/gazay/gon
 gem 'gon', '~> 6.3'
 
-# ApexCharts adds interactive, Javascript charts written with Ruby.
+# ApexCharts adds interactive, Javascript charts written in Ruby.
 # https://github.com/styd/apexcharts.rb
 gem 'apexcharts', '~> 0.1'
 # Groupdate creates scopes to group data by dates or times.
