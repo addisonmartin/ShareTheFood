@@ -198,6 +198,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    strong_migrations (0.7.1)
+      activerecord (>= 5)
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.7)
@@ -245,6 +247,7 @@ DEPENDENCIES
   rubocop-thread_safety (~> 0.4)
   spring
   spring-watcher-listen (~> 2.0.0)
+  strong_migrations (~> 0.7)
   tzinfo-data
   web-console (>= 3.3.0)
   webpacker (~> 4.0)

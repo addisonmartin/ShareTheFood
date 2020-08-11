@@ -20,6 +20,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Strong Migrations catches potentially unsafe database migrations.
+# https://github.com/ankane/strong_migrations
+gem 'strong_migrations', '~> 0.7'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
