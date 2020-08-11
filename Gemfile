@@ -81,6 +81,9 @@ group :test do
   # Capybara is used by RSpec system tests to test the application by simulating how a real user would interact with it.
   # https://github.com/teamcapybara/capybara#using-capybara-with-rspec
   gem 'capybara', '~> 3.33'
+  # Capybara Screenshot automatically takes a screenshot of every failing Capybara test.
+  # https://github.com/mattheworiordan/capybara-screenshot
+  gem 'capybara-screenshot', '~> 1.0'
 end
 
 group :development do
