@@ -30,6 +30,28 @@ group :development, :test do
   # Pry Byebug adds step-by-step debugging to the pry console.
   # https://github.com/deivid-rodriguez/pry-byebug
   gem 'pry-byebug', '~> 3.9'
+
+  # Rubocop is a Ruby linter.
+  # https://github.com/rubocop-hq/rubocop
+  gem 'rubocop', '~> 0.89', require: false
+  # Rubocop Rails adds Ruby on Rails specific checks to Rubocop.
+  # https://github.com/rubocop-hq/rubocop-rails
+  gem 'rubocop-rails', '~> 2.7', require: false
+  # Rubocop RSpec adds RSpec test specific checks to Rubocop.
+  # https://github.com/rubocop-hq/rubocop-rspec
+  gem 'rubocop-rspec', '~> 1.42', require: false
+  # Rubocop i18n adds Rubocop checks that all strings are i18n decorated.
+  # https://github.com/puppetlabs/rubocop-i18n
+  gem 'rubocop-i18n', '~> 2.0', require: false
+  # Rubocop Performance adds performance optimization analysis checks to Rubocop.
+  # https://github.com/rubocop-hq/rubocop-performance
+  gem 'rubocop-performance', '~> 1.7', require: false
+  # Rubocop Thread Safety add thread safety analysis checks to Rubocop.
+  # https://github.com/covermymeds/rubocop-thread_safety
+  gem 'rubocop-thread_safety', '~> 0.4', require: false
+  # Rubocop Rake adds rake task linting to Rubocop.
+  # https://github.com/rubocop-hq/rubocop-rake
+  gem 'rubocop-rake', '~> 0.5', require: false
 end
 
 group :development do

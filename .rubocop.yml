@@ -1,0 +1,18 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-i18n
+  - rubocop-performance
+  - rubocop-thread_safety
+  - rubocop-rake
+
+# Enable Rails i18n Rubocop cop.
+RailsI18n:
+  Enabled: true
+# Disable Rails GetText Rubocop cop, as i18n is used instead.
+GetText:
+  Enabled: false
+
+# Enable newly released Rubocop cops.
+AllCops:
+  NewCops: enable
