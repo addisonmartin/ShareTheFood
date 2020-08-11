@@ -39,6 +39,10 @@ gem 'pagy', '~> 3.8'
 # https://github.com/ohler55/oj
 gem 'oj', '~> 3.10'
 
+# Paper Trail is used to track and store changes to database models.
+# https://github.com/paper-trail-gem/paper_trail
+gem 'paper_trail', '~> 10.3'
+
 # Ransack is used to sort and filter models in views.
 # https://github.com/activerecord-hackery/ransack
 gem 'ransack', '~> 2.3'

@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
 
   # Enables pagination on the backend.
   include Pagy::Backend
+
+  # Tracks which user made a change to a model.
+  before_action :set_paper_trail_whodunnit
 end
