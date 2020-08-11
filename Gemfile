@@ -68,6 +68,9 @@ group :development, :test do
   # RSpec is used to replace Rail's default testing framework.
   # https://github.com/rspec/rspec-rails
   gem 'rspec-rails', '~> 4.0'
+  # Factory Bot Rails replace Rail's default test fixtures with test factories.
+  # https://github.com/thoughtbot/factory_bot_rails
+  gem 'factory_bot_rails', '~> 6.1'
 end
 
 group :development do
