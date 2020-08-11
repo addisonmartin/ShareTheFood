@@ -42,6 +42,9 @@ gem 'oj', '~> 3.10'
 # Ransack is used to sort and filter models in views.
 # https://github.com/activerecord-hackery/ransack
 gem 'ransack', '~> 2.3'
+# PG Search adds scopes that use PostgreSQL's full text search.
+# https://github.com/Casecommons/pg_search
+gem 'pg_search', '~> 2.3'
 
 # Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
 # https://github.com/kpumuk/meta-tags
