@@ -32,6 +32,10 @@ gem 'draper', '~> 4.0'
 # https://github.com/heartcombo/simple_form
 gem 'simple_form', '~> 5.0'
 
+# Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
+# https://github.com/kpumuk/meta-tags
+gem 'meta-tags', '~> 2.13'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
