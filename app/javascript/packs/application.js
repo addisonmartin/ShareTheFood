@@ -18,3 +18,7 @@ import "controllers"
 
 // Enables pagination's Javascript.
 import '../source/pagy.js.erb'
+
+// Adds the ability to display times and dates to users in their local timezone.
+import LocalTime from "local-time"
+LocalTime.start()

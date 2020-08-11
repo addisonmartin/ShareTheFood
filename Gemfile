@@ -43,6 +43,10 @@ gem 'oj', '~> 3.10'
 # https://github.com/kpumuk/meta-tags
 gem 'meta-tags', '~> 2.13'
 
+# Local Time adds the ability to display times and dates to users in their local timezone.
+# https://github.com/basecamp/local_time
+gem 'local_time', '~> 2.1'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
