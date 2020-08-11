@@ -73,6 +73,12 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.1'
 end
 
+group :test do
+  # Capybara is used by RSpec system tests to test the application by simulating how a real user would interact with it.
+  # https://github.com/teamcapybara/capybara#using-capybara-with-rspec
+  gem 'capybara', '~> 3.33'
+end
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
