@@ -109,4 +109,8 @@ group :development do
   # Annotate automatically adds a comment summarizing the database schema to the top of relevant files within the application.
   # https://github.com/ctran/annotate_models
   gem 'annotate', '~> 3.1'
+
+  # Meta Request enables the Firefox/Chrome extension Rails Panel.
+  # https://github.com/dejan/rails_panel
+  gem 'meta_request', '~> 0.7'
 end
