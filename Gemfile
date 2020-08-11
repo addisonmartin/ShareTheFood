@@ -56,6 +56,10 @@ group :development, :test do
   # Brakeman is a static analysis tool which checks for security vulnerabilities.
   # https://github.com/presidentbeef/brakeman
   gem 'brakeman', '~> 4.9'
+
+  # Bullet is used to detect N+1 queries that should be eager loaded.
+  # https://github.com/flyerhzm/bullet
+  gem 'bullet', '~> 6.1'
 end
 
 group :development do

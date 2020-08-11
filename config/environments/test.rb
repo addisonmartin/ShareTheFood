@@ -46,4 +46,13 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  # Enables Bullet, which detects N+1 queries that should be eager loaded.
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    Bullet.rails_logger = true
+    Bullet.skip_html_injection = false
+    Bullet.raise = true # Raise errors so RSpec tests fails.
+  end
 end
