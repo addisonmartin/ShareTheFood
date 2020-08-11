@@ -42,6 +42,9 @@ gem 'oj', '~> 3.10'
 # Devise is used to add user authentication.
 # https://github.com/heartcombo/devise
 gem 'devise', '~> 4.7'
+# Pundit is used to add user authorization.
+# https://github.com/varvet/pundit
+gem 'pundit', '~> 2.1'
 
 # Paper Trail is used to track and store changes to database models.
 # https://github.com/paper-trail-gem/paper_trail
