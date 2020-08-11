@@ -15,3 +15,6 @@ require("@rails/activestorage").start()
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+
+// Enables pagination's Javascript.
+import '../source/pagy.js.erb'
