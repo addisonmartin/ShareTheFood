@@ -84,6 +84,10 @@ group :test do
   # Capybara Screenshot automatically takes a screenshot of every failing Capybara test.
   # https://github.com/mattheworiordan/capybara-screenshot
   gem 'capybara-screenshot', '~> 1.0'
+
+  # Simplecov is used to calculate and report test coverage.
+  # https://github.com/colszowka/simplecov
+  gem 'simplecov', require: false
 end
 
 group :development do
