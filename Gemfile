@@ -24,6 +24,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # https://github.com/ankane/strong_migrations
 gem 'strong_migrations', '~> 0.7'
 
+# Draper adds an object-oriented layer of presentation logic to the application, called decorators.
+# https://github.com/drapergem/draper
+gem 'draper', '~> 4.0'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
