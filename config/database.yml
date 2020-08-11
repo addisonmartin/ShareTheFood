@@ -20,6 +20,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  connect_timeout: 5 # Prevents database connections from lasting longer than 5 seconds.
+  variables:
+    statement_timeout: 15s # Prevents database statements from lasting longer than 15 seconds.
+    lock_timeout: 10s # Prevents database locks from lasting longer than 10 seconds.
 
 development:
   <<: *default
