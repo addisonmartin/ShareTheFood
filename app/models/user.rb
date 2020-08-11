@@ -36,4 +36,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
          :trackable
+
+  # Associates login activities with the user that performed them.
+  has_many :login_activities, as: :user
 end

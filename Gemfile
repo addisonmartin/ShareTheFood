@@ -79,6 +79,10 @@ gem 'apexcharts', '~> 0.1'
 # https://github.com/ankane/groupdate
 gem 'groupdate', '~> 5.1'
 
+# AuthTrail is used to track devise login activity.
+# https://github.com/ankane/authtrail
+gem 'authtrail', '~> 0.2'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
