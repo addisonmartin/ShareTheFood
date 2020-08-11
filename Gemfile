@@ -47,6 +47,10 @@ gem 'meta-tags', '~> 2.13'
 # https://github.com/basecamp/local_time
 gem 'local_time', '~> 2.1'
 
+# Gon is used to easily pass Ruby variables to Javascript.
+# https://github.com/gazay/gon
+gem 'gon', '~> 6.3'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
