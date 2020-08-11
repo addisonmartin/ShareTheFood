@@ -82,6 +82,9 @@ gem 'groupdate', '~> 5.1'
 # AuthTrail is used to track devise login activity.
 # https://github.com/ankane/authtrail
 gem 'authtrail', '~> 0.2'
+# Ahoy Matey is used to provide user analytics locally.
+# https://github.com/ankane/ahoy
+gem 'ahoy_matey', '~> 3.0'
 
 group :development, :test do
   # Pry is an IRB and Rails console alternative.

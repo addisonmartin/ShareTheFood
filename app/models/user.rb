@@ -39,4 +39,6 @@ class User < ApplicationRecord
 
   # Associates login activities with the user that performed them.
   has_many :login_activities, as: :user
+
+  has_many :visits, class_name: 'Visit'
 end
