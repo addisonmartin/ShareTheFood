@@ -32,12 +32,16 @@ gem 'draper', '~> 4.0'
 # https://github.com/heartcombo/simple_form
 gem 'simple_form', '~> 5.0'
 
-# Pagy adds pagination of models for views.
+# Pagy adds pagination of models in views.
 # https://github.com/ddnexus/pagy
 gem 'pagy', '~> 3.8'
 # OJ (Optimized JSON) is used by Pagy to improve its Javascript performance.
 # https://github.com/ohler55/oj
 gem 'oj', '~> 3.10'
+
+# Ransack is used to sort and filter models in views.
+# https://github.com/activerecord-hackery/ransack
+gem 'ransack', '~> 2.3'
 
 # Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
 # https://github.com/kpumuk/meta-tags
