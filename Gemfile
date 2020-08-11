@@ -51,6 +51,13 @@ gem 'local_time', '~> 2.1'
 # https://github.com/gazay/gon
 gem 'gon', '~> 6.3'
 
+# ApexCharts adds interactive, Javascript charts written with Ruby.
+# https://github.com/styd/apexcharts.rb
+gem 'apexcharts', '~> 0.1'
+# Groupdate creates scopes to group data by dates or times.
+# https://github.com/ankane/groupdate
+gem 'groupdate', '~> 5.1'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry

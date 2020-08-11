@@ -5,6 +5,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "apexcharts": "^3.20.0",
     "local-time": "^2.1.0",
     "rails-erb-loader": "^5.5.2",
     "stimulus": "^1.1.1"
