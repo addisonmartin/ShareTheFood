@@ -88,6 +88,10 @@ group :test do
   # Simplecov is used to calculate and report test coverage.
   # https://github.com/colszowka/simplecov
   gem 'simplecov', '~> 0.18', require: false
+
+  # Shoulda Matchers adds many, common one-line RSpec test matchers.
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem 'shoulda-matchers', '~> 4.3'
 end
 
 group :development do

@@ -80,3 +80,11 @@ RSpec.configure do |config|
     end
   end
 end
+
+# Enables Should Matcher's one-line test matchers.
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
