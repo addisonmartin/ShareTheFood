@@ -64,6 +64,10 @@ group :development, :test do
   # Bullet is used to detect N+1 queries that should be eager loaded.
   # https://github.com/flyerhzm/bullet
   gem 'bullet', '~> 6.1'
+
+  # RSpec is used to replace Rail's default testing framework.
+  # https://github.com/rspec/rspec-rails
+  gem 'rspec-rails', '~> 4.0'
 end
 
 group :development do
