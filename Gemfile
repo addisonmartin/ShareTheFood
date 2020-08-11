@@ -113,4 +113,8 @@ group :development do
   # Meta Request enables the Firefox/Chrome extension Rails Panel.
   # https://github.com/dejan/rails_panel
   gem 'meta_request', '~> 0.7'
+
+  # Letter Opener sends emails directly to the web browser.
+  # https://github.com/ryanb/letter_opener
+  gem 'letter_opener', '~> 1.7'
 end
