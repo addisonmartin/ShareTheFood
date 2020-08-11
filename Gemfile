@@ -28,6 +28,10 @@ gem 'strong_migrations', '~> 0.7'
 # https://github.com/drapergem/draper
 gem 'draper', '~> 4.0'
 
+# Simple Form replaces Rail's default form DSL.
+# https://github.com/heartcombo/simple_form
+gem 'simple_form', '~> 5.0'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry

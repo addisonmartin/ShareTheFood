@@ -252,6 +252,9 @@ GEM
       ffi (~> 1.9)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
+    simple_form (5.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -320,6 +323,7 @@ DEPENDENCIES
   rubocop-rspec (~> 1.42)
   rubocop-thread_safety (~> 0.4)
   shoulda-matchers (~> 4.3)
+  simple_form (~> 5.0)
   simplecov (~> 0.18)
   spring
   spring-watcher-listen (~> 2.0.0)
