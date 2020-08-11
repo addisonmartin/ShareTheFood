@@ -291,7 +291,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.5)
   rubocop-rspec (~> 1.42)
   rubocop-thread_safety (~> 0.4)
-  simplecov
+  simplecov (~> 0.18)
   spring
   spring-watcher-listen (~> 2.0.0)
   strong_migrations (~> 0.7)

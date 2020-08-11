@@ -87,7 +87,7 @@ group :test do
 
   # Simplecov is used to calculate and report test coverage.
   # https://github.com/colszowka/simplecov
-  gem 'simplecov', require: false
+  gem 'simplecov', '~> 0.18', require: false
 end
 
 group :development do
