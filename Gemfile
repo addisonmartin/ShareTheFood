@@ -73,6 +73,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.1'
 
   # Faker is used to generate pseudo-realistic test data.
+  # https://github.com/faker-ruby/faker
   gem 'faker', '~> 2.13'
 end
 
