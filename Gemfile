@@ -39,9 +39,16 @@ gem 'pagy', '~> 3.8'
 # https://github.com/ohler55/oj
 gem 'oj', '~> 3.10'
 
+# Devise is used to add user authentication.
+# https://github.com/heartcombo/devise
+gem 'devise', '~> 4.7'
+
 # Paper Trail is used to track and store changes to database models.
 # https://github.com/paper-trail-gem/paper_trail
 gem 'paper_trail', '~> 10.3'
+# Discard is used to mark a database model as deleted, without actually deleting it.
+# https://github.com/jhawthorn/discard
+gem 'discard', '~> 1.2'
 
 # Ransack is used to sort and filter models in views.
 # https://github.com/activerecord-hackery/ransack
