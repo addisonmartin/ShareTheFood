@@ -80,6 +80,10 @@ gem 'local_time', '~> 2.1'
 # https://github.com/gazay/gon
 gem 'gon', '~> 6.3'
 
+# AWS SDK S3 is used to upload images to an Amazon S3 bucket in the production environment.
+# https://github.com/aws/aws-sdk-ruby
+gem 'aws-sdk-s3', '~> 1.78', require: false
+
 # ApexCharts adds interactive, Javascript charts written in Ruby.
 # https://github.com/styd/apexcharts.rb
 gem 'apexcharts', '~> 0.1'
