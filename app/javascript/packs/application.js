@@ -13,7 +13,11 @@ require("@rails/activestorage").start()
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import "controllers"
+// Enables the application's stylesheets.
+import '../stylesheets/application'
+
+// Include StimulusJS's controllers.
+import 'controllers'
 
 // Enables pagination's Javascript.
 import '../source/pagy.js.erb'
@@ -29,3 +33,12 @@ window.ApexCharts = ApexCharts
 // Enables Action Text's rich text editor.
 require("trix")
 require("@rails/actiontext")
+
+// Enables Bootstrap styling.
+import 'bootstrap';
+
+// Enables Bootstrap's tooltip and popover.
+document.addEventListener("turbolinks:load", () => {
+    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="popover"]').popover()
+})
