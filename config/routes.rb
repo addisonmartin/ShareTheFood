@@ -41,6 +41,7 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   # Sets the user's locale as the first part of the URL. i.e. /en/donations, /en/donations/1, /fr/donations, etc.
+  # Having the /locale parameter is optional. If it is not present the default locale, en, is used.
   scope '(/:locale)' do
     # Creates RESTful routes for donations.
     resources :donations

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # Enables user authorization.
   include Pundit
   # Ensures user authorization was performed.
-  # after_action :verify_authorized
+  after_action :verify_authorized
 
   # Tracks which user made a change to a model.
   before_action :set_paper_trail_whodunnit
