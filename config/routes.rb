@@ -31,4 +31,13 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   devise_for :users
+
+  # Sets up the routes for static pages not backed by a database model.
+  controller :pages do
+    # /about
+    get :about
+  end
+
+  # Sets the application's homepage to /about
+  root 'pages#about'
 end
