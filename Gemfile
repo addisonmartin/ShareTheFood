@@ -24,6 +24,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # https://github.com/ankane/strong_migrations
 gem 'strong_migrations', '~> 0.7'
 
+# Redis is used as a cache store.
+# https://github.com/redis/redis-rb
+gem 'redis', '~> 4.2'
+
+# Rack Attack is used to block and throttle abusive requests.
+# https://github.com/rack/rack-attack
+gem 'rack-attack', '~> 6.3'
+
 # Draper adds an object-oriented layer of presentation logic to the application, called decorators.
 # https://github.com/drapergem/draper
 gem 'draper', '~> 4.0'
