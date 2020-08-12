@@ -162,6 +162,9 @@ group :test do
   # Shoulda Matchers adds many, common one-line RSpec test matchers.
   # https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers', '~> 4.3'
+  # Pundit Matchers adds RSpec test matchers for testing Pundit authorization.
+  # https://github.com/chrisalley/pundit-matchers
+  gem 'pundit-matchers', '~> 1.6'
 end
 
 group :development do
