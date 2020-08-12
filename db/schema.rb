@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_043500) do
+ActiveRecord::Schema.define(version: 2020_08_12_053446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,35 @@ ActiveRecord::Schema.define(version: 2020_08_12_043500) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "name"
+    t.text "description"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.text "pickup_notes"
+    t.datetime "available_until"
+    t.boolean "is_perishable"
+    t.boolean "requires_preparation"
+    t.boolean "is_vegetarian"
+    t.boolean "is_vegan"
+    t.boolean "is_kosher"
+    t.boolean "is_halal"
+    t.boolean "contains_gluten"
+    t.boolean "contains_peanuts"
+    t.boolean "contains_tree_nuts"
+    t.boolean "contains_dairy"
+    t.boolean "contains_soy"
+    t.boolean "contains_egg"
+    t.boolean "contains_fish"
+    t.boolean "contains_shellfish"
+    t.bigint "visit_id"
+    t.boolean "discarded_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -150,4 +179,5 @@ ActiveRecord::Schema.define(version: 2020_08_12_043500) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "donations", "users"
 end
