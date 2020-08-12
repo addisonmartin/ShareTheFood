@@ -40,18 +40,23 @@
 
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  # Creates RESTful routes for donations.
-  resources :donations
+  # Sets the user's locale as the first part of the URL. i.e. /en/donations, /en/donations/1, /fr/donations, etc.
+  scope '(/:locale)' do
+    # Creates RESTful routes for donations.
+    resources :donations
 
-  # Creates user authentication routes.
-  devise_for :users
+    # Creates user authentication routes.
+    devise_for :users
 
-  # Sets up the routes for static pages not backed by a database model.
-  controller :pages do
-    # /about
-    get :about
+    # Sets up the routes for static pages not backed by a database model.
+    controller :pages do
+      # /about
+      get :about
+    end
   end
 
+  # Sets the application's homepage with a locale specified to /about.
+  get '/:locale' => 'pages#about'
   # Sets the application's homepage to /about
   root 'pages#about'
 end
