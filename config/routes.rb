@@ -1,36 +1,45 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
-#                 donations GET    /donations(.:format)                                                                     donations#index
-#                           POST   /donations(.:format)                                                                     donations#create
-#              new_donation GET    /donations/new(.:format)                                                                 donations#new
-#             edit_donation GET    /donations/:id/edit(.:format)                                                            donations#edit
-#                  donation GET    /donations/:id(.:format)                                                                 donations#show
-#                           PATCH  /donations/:id(.:format)                                                                 donations#update
-#                           PUT    /donations/:id(.:format)                                                                 donations#update
-#                           DELETE /donations/:id(.:format)                                                                 donations#destroy
-#          new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
-#              user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
-#      destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
-#         new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
-#        edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
-#             user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
-#                           PUT    /users/password(.:format)                                                                devise/passwords#update
-#                           POST   /users/password(.:format)                                                                devise/passwords#create
-#  cancel_user_registration GET    /users/cancel(.:format)                                                                  devise/registrations#cancel
-#     new_user_registration GET    /users/sign_up(.:format)                                                                 devise/registrations#new
-#    edit_user_registration GET    /users/edit(.:format)                                                                    devise/registrations#edit
-#         user_registration PATCH  /users(.:format)                                                                         devise/registrations#update
-#                           PUT    /users(.:format)                                                                         devise/registrations#update
-#                           DELETE /users(.:format)                                                                         devise/registrations#destroy
-#                           POST   /users(.:format)                                                                         devise/registrations#create
-#     new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
-#         user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
-#                           POST   /users/confirmation(.:format)                                                            devise/confirmations#create
-#           new_user_unlock GET    /users/unlock/new(.:format)                                                              devise/unlocks#new
-#               user_unlock GET    /users/unlock(.:format)                                                                  devise/unlocks#show
-#                           POST   /users/unlock(.:format)                                                                  devise/unlocks#create
-#                     about GET    /about(.:format)                                                                         pages#about
+#                 donations GET    (/:locale)/donations(.:format)                                                           donations#index
+#                           POST   (/:locale)/donations(.:format)                                                           donations#create
+#              new_donation GET    (/:locale)/donations/new(.:format)                                                       donations#new
+#             edit_donation GET    (/:locale)/donations/:id/edit(.:format)                                                  donations#edit
+#                  donation GET    (/:locale)/donations/:id(.:format)                                                       donations#show
+#                           PATCH  (/:locale)/donations/:id(.:format)                                                       donations#update
+#                           PUT    (/:locale)/donations/:id(.:format)                                                       donations#update
+#                           DELETE (/:locale)/donations/:id(.:format)                                                       donations#destroy
+#                     posts GET    (/:locale)/posts(.:format)                                                               posts#index
+#                           POST   (/:locale)/posts(.:format)                                                               posts#create
+#                  new_post GET    (/:locale)/posts/new(.:format)                                                           posts#new
+#                 edit_post GET    (/:locale)/posts/:id/edit(.:format)                                                      posts#edit
+#                      post GET    (/:locale)/posts/:id(.:format)                                                           posts#show
+#                           PATCH  (/:locale)/posts/:id(.:format)                                                           posts#update
+#                           PUT    (/:locale)/posts/:id(.:format)                                                           posts#update
+#                           DELETE (/:locale)/posts/:id(.:format)                                                           posts#destroy
+#          new_user_session GET    (/:locale)/users/sign_in(.:format)                                                       devise/sessions#new
+#              user_session POST   (/:locale)/users/sign_in(.:format)                                                       devise/sessions#create
+#      destroy_user_session DELETE (/:locale)/users/sign_out(.:format)                                                      devise/sessions#destroy
+#         new_user_password GET    (/:locale)/users/password/new(.:format)                                                  devise/passwords#new
+#        edit_user_password GET    (/:locale)/users/password/edit(.:format)                                                 devise/passwords#edit
+#             user_password PATCH  (/:locale)/users/password(.:format)                                                      devise/passwords#update
+#                           PUT    (/:locale)/users/password(.:format)                                                      devise/passwords#update
+#                           POST   (/:locale)/users/password(.:format)                                                      devise/passwords#create
+#  cancel_user_registration GET    (/:locale)/users/cancel(.:format)                                                        devise/registrations#cancel
+#     new_user_registration GET    (/:locale)/users/sign_up(.:format)                                                       devise/registrations#new
+#    edit_user_registration GET    (/:locale)/users/edit(.:format)                                                          devise/registrations#edit
+#         user_registration PATCH  (/:locale)/users(.:format)                                                               devise/registrations#update
+#                           PUT    (/:locale)/users(.:format)                                                               devise/registrations#update
+#                           DELETE (/:locale)/users(.:format)                                                               devise/registrations#destroy
+#                           POST   (/:locale)/users(.:format)                                                               devise/registrations#create
+#     new_user_confirmation GET    (/:locale)/users/confirmation/new(.:format)                                              devise/confirmations#new
+#         user_confirmation GET    (/:locale)/users/confirmation(.:format)                                                  devise/confirmations#show
+#                           POST   (/:locale)/users/confirmation(.:format)                                                  devise/confirmations#create
+#           new_user_unlock GET    (/:locale)/users/unlock/new(.:format)                                                    devise/unlocks#new
+#               user_unlock GET    (/:locale)/users/unlock(.:format)                                                        devise/unlocks#show
+#                           POST   (/:locale)/users/unlock(.:format)                                                        devise/unlocks#create
+#                     about GET    (/:locale)/about(.:format)                                                               pages#about
+#                           GET    /:locale(.:format)                                                                       pages#about
 #                      root GET    /                                                                                        pages#about
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
@@ -45,6 +54,9 @@ Rails.application.routes.draw do
   scope '(/:locale)' do
     # Creates RESTful routes for donations.
     resources :donations
+
+    # Creates RESTful routes for posts.
+    resources :posts
 
     # Creates user authentication routes.
     devise_for :users
