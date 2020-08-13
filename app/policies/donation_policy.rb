@@ -1,0 +1,3 @@
+class DonationPolicy < ApplicationPolicy
+
+end
