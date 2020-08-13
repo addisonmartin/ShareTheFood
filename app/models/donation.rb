@@ -40,5 +40,8 @@
 class Donation < ApplicationRecord
   belongs_to :user, inverse_of: :donations
 
+  # Links the user analytic visit when the user created the donation to the donation.
   visitable :visit_id
+
+  has_many_attached :images
 end

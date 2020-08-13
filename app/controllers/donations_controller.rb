@@ -91,6 +91,7 @@ class DonationsController < ApplicationController
                                      :contains_egg,
                                      :contains_fish,
                                      :contains_shellfish,
-                                     :visit_id)
+                                     :visit_id,
+                                     :images)
   end
 end

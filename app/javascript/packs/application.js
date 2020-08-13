@@ -4,7 +4,9 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("@rails/activestorage").start()
+
+import * as ActiveStorage from "@rails/activestorage"
+ActiveStorage.start()
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -42,3 +44,6 @@ document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()
 })
+
+// Enables viewing file upload progress.
+import '../source/direct_uploads';
