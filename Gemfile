@@ -108,6 +108,10 @@ gem 'authtrail', '~> 0.2'
 # https://github.com/ankane/ahoy
 gem 'ahoy_matey', '~> 3.0'
 
+# Barnes is used to enable advanced Ruby metrics on Heroku.
+# https://github.com/heroku/barnes
+gem 'barnes', '~> 0.0.8'
+
 group :development, :test do
   # Pry is an IRB and Rails console alternative.
   # https://github.com/pry/pry
