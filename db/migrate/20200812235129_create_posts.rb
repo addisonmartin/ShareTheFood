@@ -7,8 +7,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.text :subtitle
       t.boolean :published
 
+      # Used to mark this post as deleted.
       t.datetime :discarded_at
-
+      # Creates the created_at/updated_at columns.
       t.timestamps
     end
   end

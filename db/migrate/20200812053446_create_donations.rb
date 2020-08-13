@@ -26,8 +26,9 @@ class CreateDonations < ActiveRecord::Migration[6.0]
 
       t.bigint :visit_id
 
+      # Used to mark this donation as deleted.
       t.boolean :discarded_at
-
+      # Creates the created_at/updated_at columns.
       t.timestamps
     end
   end
