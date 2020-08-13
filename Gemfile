@@ -47,6 +47,10 @@ gem 'pagy', '~> 3.8'
 # https://github.com/ohler55/oj
 gem 'oj', '~> 3.10'
 
+# Friendly ID allows configuring the URL slug based on model attributes other than ID.
+# https://github.com/norman/friendly_id/
+gem 'friendly_id', '~> 5.3'
+
 # Devise is used to add user authentication.
 # https://github.com/heartcombo/devise
 gem 'devise', '~> 4.7'

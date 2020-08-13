@@ -5,6 +5,7 @@
 #  id           :bigint           not null, primary key
 #  discarded_at :datetime
 #  published    :boolean
+#  slug         :string
 #  subtitle     :text
 #  title        :text
 #  created_at   :datetime         not null
@@ -13,6 +14,7 @@
 #
 # Indexes
 #
+#  index_posts_on_slug     (slug)
 #  index_posts_on_user_id  (user_id)
 #
 # Foreign Keys
@@ -29,4 +31,8 @@ class Post < ApplicationRecord
 
   # Tracks and stores changes to posts.
   has_paper_trail
+
+  # Configures the post's title to be used as the slug in the URL.
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end

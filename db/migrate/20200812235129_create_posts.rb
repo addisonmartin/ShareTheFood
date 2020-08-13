@@ -7,6 +7,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.text :subtitle
       t.boolean :published
 
+      # Used as part of the URL when viewing a post.
+      t.string :slug, index: true, unique: true
+
       # Used to mark this post as deleted.
       t.datetime :discarded_at
       # Creates the created_at/updated_at columns.
