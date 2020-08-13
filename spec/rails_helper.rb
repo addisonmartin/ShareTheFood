@@ -80,6 +80,9 @@ RSpec.configure do |config|
       Bullet.end_request
     end
   end
+
+  # Enables Factory Bot's methods within tests.
+  config.include FactoryBot::Syntax::Methods
 end
 
 # Enables Should Matcher's one-line test matchers.
