@@ -49,5 +49,5 @@ class User < ApplicationRecord
   has_many :visits, class_name: 'Visit'
 
   validates :name, :email, presence: true
-  validate :admin, inclusion: { in: [true, false] }
+  validates :admin, inclusion: { in: [true, false] }
 end
