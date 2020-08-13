@@ -24,6 +24,9 @@ class Post < ApplicationRecord
 
   has_rich_text :body
 
-  # Enables soft deleting this post (the post is marked as deleted, but not actually deleted).
+  # Enables soft deleting posts (a post is marked as deleted, but not actually deleted).
   include Discard::Model
+
+  # Tracks and stores changes to posts.
+  has_paper_trail
 end

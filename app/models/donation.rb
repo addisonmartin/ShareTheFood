@@ -42,8 +42,11 @@ class Donation < ApplicationRecord
 
   has_many_attached :images
 
-  # Enables soft deleting this donation (the donation is marked as deleted, but not actually deleted).
+  # Enables soft deleting donations (a donation is marked as deleted, but not actually deleted).
   include Discard::Model
+
+  # Tracks and stores changes to donations.
+  has_paper_trail
 
   # Links the user analytic visit when the user created the donation to the donation.
   visitable :visit_id
