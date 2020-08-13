@@ -6,6 +6,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # Adds the name attribute used when a user is signing up.
       t.string :name, null: false
 
+      # Adds an admin attribute to users, that is false by default.
+      t.boolean :admin, default: false, null: false
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
