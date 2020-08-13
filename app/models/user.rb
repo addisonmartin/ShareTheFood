@@ -40,7 +40,6 @@ class User < ApplicationRecord
          :trackable
 
   has_many :donations, inverse_of: :user
-
   has_many :posts, inverse_of: :user
 
   # Associates login activities with the user that performed them.
@@ -48,4 +47,7 @@ class User < ApplicationRecord
 
   # Links user analytic visits with the user, if they are signed in.
   has_many :visits, class_name: 'Visit'
+
+  validates :name, :email, presence: true
+  validate :admin, inclusion: { in: [true, false] }
 end
