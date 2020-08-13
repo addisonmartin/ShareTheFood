@@ -71,6 +71,9 @@ gem 'pg_search', '~> 2.3'
 # Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
 # https://github.com/kpumuk/meta-tags
 gem 'meta-tags', '~> 2.13'
+# HTTP Accept Language provides a robust implementation of parsing the user's preferred locale from the HTTP header item HTTP_ACCEPT_LANGUAGE.
+# https://github.com/iain/http_accept_language/tree/master
+gem 'http_accept_language', '~> 2.1'
 
 # Local Time adds the ability to display times and dates to users in their local timezone.
 # https://github.com/basecamp/local_time
