@@ -31,6 +31,9 @@ gem 'redis', '~> 4.2'
 # Rack Attack is used to block and throttle abusive requests.
 # https://github.com/rack/rack-attack
 gem 'rack-attack', '~> 6.3'
+# Logstop is used, along with Rail's config.filter_parameters, to filter sensitive data from logs.
+# https://github.com/ankane/logstop
+gem 'logstop', '~> 0.2'
 
 # Draper adds an object-oriented layer of presentation logic to the application, called decorators.
 # https://github.com/drapergem/draper
