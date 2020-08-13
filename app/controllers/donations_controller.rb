@@ -4,27 +4,35 @@ class DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.kept
+    # Only get donations that have not been deleted.
+    # Ensure the user is allowed to perform this action.
+    @donations = authorize Donation.kept
   end
 
   # GET /donations/1
   # GET /donations/1.json
   def show
+    # Ensure the user is allowed to perform this action.
+    authorize @donation
   end
 
   # GET /donations/new
   def new
-    @donation = Donation.new
+    # Ensure the user is allowed to perform this action.
+    @donation = authorize Donation.new
   end
 
   # GET /donations/1/edit
   def edit
+    # Ensure the user is allowed to perform this action.
+    authorize @donation
   end
 
   # POST /donations
   # POST /donations.json
   def create
-    @donation = Donation.new(donation_params)
+    # Ensure the user is allowed to perform this action.
+    @donation = authorize Donation.new(donation_params)
 
     respond_to do |format|
       if @donation.save
@@ -40,6 +48,9 @@ class DonationsController < ApplicationController
   # PATCH/PUT /donations/1
   # PATCH/PUT /donations/1.json
   def update
+    # Ensure the user is allowed to perform this action.
+    authorize @donation
+
     respond_to do |format|
       if @donation.update(donation_params)
         format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
@@ -54,6 +65,9 @@ class DonationsController < ApplicationController
   # DELETE /donations/1
   # DELETE /donations/1.json
   def destroy
+    # Ensure the user is allowed to perform this action.
+    authorize @donation
+
     @donation.discard
     respond_to do |format|
       format.html { redirect_to donations_url, notice: 'Donation was successfully deleted.' }
