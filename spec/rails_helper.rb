@@ -83,6 +83,11 @@ RSpec.configure do |config|
 
   # Enables Factory Bot's methods within tests.
   config.include FactoryBot::Syntax::Methods
+
+  # Enables Devise's user authentication helper methods within tests.
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
 
 # Enables Should Matcher's one-line test matchers.
