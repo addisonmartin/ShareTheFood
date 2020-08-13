@@ -23,4 +23,7 @@ class Post < ApplicationRecord
   belongs_to :user, inverse_of: :posts
 
   has_rich_text :body
+
+  # Enables soft deleting this post (the post is marked as deleted, but not actually deleted).
+  include Discard::Model
 end

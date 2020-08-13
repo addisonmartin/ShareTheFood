@@ -40,8 +40,11 @@
 class Donation < ApplicationRecord
   belongs_to :user, inverse_of: :donations
 
+  has_many_attached :images
+
+  # Enables soft deleting this donation (the donation is marked as deleted, but not actually deleted).
+  include Discard::Model
+
   # Links the user analytic visit when the user created the donation to the donation.
   visitable :visit_id
-
-  has_many_attached :images
 end

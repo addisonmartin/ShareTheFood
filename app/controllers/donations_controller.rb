@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all
+    @donations = Donation.kept
   end
 
   # GET /donations/1
@@ -54,9 +54,9 @@ class DonationsController < ApplicationController
   # DELETE /donations/1
   # DELETE /donations/1.json
   def destroy
-    @donation.destroy
+    @donation.discard
     respond_to do |format|
-      format.html { redirect_to donations_url, notice: 'Donation was successfully destroyed.' }
+      format.html { redirect_to donations_url, notice: 'Donation was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class DonationsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_donation
-    @donation = Donation.find(params[:id])
+    @donation = Donation.kept.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

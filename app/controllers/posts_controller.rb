@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.kept
   end
 
   # GET /posts/1
@@ -54,9 +54,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
+    @post.discard
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.kept.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
