@@ -100,6 +100,9 @@ gem 'apexcharts', '~> 0.1'
 # Groupdate creates scopes to group data by dates or times.
 # https://github.com/ankane/groupdate
 gem 'groupdate', '~> 5.1'
+# Hightop provides a shortcut for group count queries.
+# https://github.com/ankane/hightop
+gem 'hightop', '~> 0.2'
 
 # AuthTrail is used to track devise login activity.
 # https://github.com/ankane/authtrail
