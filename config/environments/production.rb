@@ -22,8 +22,10 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://assets.example.com'
+  # Prevents external assets from being served on the website.
+  config.action_controller.asset_host = 'www.sharethefood.net'
+
+  config.action_controller.default_url_options = {host: 'www.sharethefood.net'}
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -34,6 +36,10 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
+
+  # Adds this domain to the HSTS Preload List.
+  # https://hstspreload.org/
+  config.ssl_options = {hsts: {subdomains: true, preload: true, expires: 1.year}}
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
