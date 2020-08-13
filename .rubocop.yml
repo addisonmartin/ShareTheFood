@@ -16,3 +16,12 @@ GetText:
 # Enable newly released Rubocop cops.
 AllCops:
   NewCops: enable
+
+Style/SymbolArray:
+    Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Rails/FilePath:
+    Enabled: false
