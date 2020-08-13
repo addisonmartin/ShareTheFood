@@ -21,12 +21,15 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+
+require 'faker'
+
 FactoryBot.define do
   factory :post do
-    title { "MyText" }
-    subtitle { "MyText" }
-    published { false }
-    user { nil }
-    discarded_at { "2020-08-12 19:51:29" }
+    user { create(:user) }
+
+    title { Faker::Lorem.sentence }
+    subtitle { Faker::Lorem.sentence }
+    body { Faker::Markdown.sandwich }
   end
 end

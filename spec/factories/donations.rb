@@ -37,30 +37,32 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+
+require 'faker'
+
 FactoryBot.define do
   factory :donation do
-    user { nil }
-    name { "MyText" }
-    description { "MyText" }
-    latitude { "9.99" }
-    longitude { "9.99" }
-    pickup_notes { "MyText" }
-    available_until { "2020-08-12 01:34:46" }
-    is_perishable { false }
-    requires_preparation { false }
-    is_vegetarian { false }
-    is_vegan { false }
-    is_kosher { false }
-    is_halal { false }
-    contains_gluten { false }
-    contains_peanuts { false }
-    contains_tree_nuts { false }
-    contains_dairy { false }
-    contains_soy { false }
-    contains_egg { false }
-    contains_fish { false }
-    contains_shellfish { false }
-    visit_id { "" }
-    discarded_at { false }
+    user { create(:user) }
+
+    name { Faker::Food.dish }
+    description { Faker::Food.description }
+    latitude { rand(-90..90) }
+    longitude { rand(-180..180) }
+    pickup_notes { Faker::Lorem.sentence }
+    available_until { Faker::Time.between(from: DateTime.now, to: DateTime.now + 3.months) }
+    is_perishable { Faker::Boolean.boolean }
+    requires_preparation { Faker::Boolean.boolean }
+    is_vegetarian { Faker::Boolean.boolean }
+    is_vegan { Faker::Boolean.boolean }
+    is_kosher { Faker::Boolean.boolean }
+    is_halal { Faker::Boolean.boolean }
+    contains_gluten { Faker::Boolean.boolean }
+    contains_peanuts { Faker::Boolean.boolean }
+    contains_tree_nuts { Faker::Boolean.boolean }
+    contains_dairy { Faker::Boolean.boolean }
+    contains_soy { Faker::Boolean.boolean }
+    contains_egg { Faker::Boolean.boolean }
+    contains_fish { Faker::Boolean.boolean }
+    contains_shellfish { Faker::Boolean.boolean }
   end
 end

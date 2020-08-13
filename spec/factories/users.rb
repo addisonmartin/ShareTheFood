@@ -31,8 +31,14 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
+
+require 'faker'
+
 FactoryBot.define do
   factory :user do
-    
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+    password { Faker::Internet.password(min_length: 10, max_length: 256) }
+    confirmed_at { DateTime.now }
   end
 end
