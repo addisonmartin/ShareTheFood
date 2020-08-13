@@ -11,16 +11,16 @@ class PostPolicy < ApplicationPolicy
 
   # Only admin users can create a post.
   def create?
-    user.admin?
+    user.try(:admin?)
   end
 
   # Only admin users can update a post.
   def update?
-    user.admin?
+    user.try(:admin?)
   end
 
   # Only admin users can destroy a post.
   def destroy?
-    user.admin?
+    user.try(:admin?)
   end
 end

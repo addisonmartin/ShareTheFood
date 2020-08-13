@@ -16,11 +16,11 @@ class DonationPolicy < ApplicationPolicy
 
   # Only the owner of a donation, or an admin user, can update a donation.
   def update?
-    (record.user == user) or user.admin?
+    (record.user == user) or user.try(:admin?)
   end
 
   # Only the owner of a donation, or an admin user, can destroy a donation.
   def destroy?
-    (record.user == user) or user.admin?
+    (record.user == user) or user.try(:admin?)
   end
 end
