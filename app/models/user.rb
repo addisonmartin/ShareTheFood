@@ -31,7 +31,7 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
-  # Include default devise modules. Others available are: :omniauthable
+  # Include Devise user authentication modules. Others available are: :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
@@ -40,5 +40,10 @@ class User < ApplicationRecord
   # Associates login activities with the user that performed them.
   has_many :login_activities, as: :user
 
+  # Links user analytic visits with the user, if they are signed in.
   has_many :visits, class_name: 'Visit'
+
+  has_many :donations, inverse_of: :user
+
+  has_many :posts, inverse_of: :user
 end

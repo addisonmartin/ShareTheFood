@@ -38,7 +38,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Donation < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, inverse_of: :donations
 
   visitable :visit_id
 end
