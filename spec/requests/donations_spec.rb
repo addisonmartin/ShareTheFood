@@ -16,11 +16,11 @@ RSpec.describe "/donations", type: :request do
   # Donation. As you add validations to Donation, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:donation)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:post)
   }
 
   describe "GET /index" do
