@@ -4,10 +4,10 @@
 #
 #  id           :bigint           not null, primary key
 #  discarded_at :datetime
-#  published    :boolean
+#  published    :boolean          default(FALSE), not null
 #  slug         :string
 #  subtitle     :text
-#  title        :text
+#  title        :text             not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint           not null
@@ -24,5 +24,32 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should belong_to(:user) }
+  end
+
+  describe 'validations' do
+    subject { build(:post) }
+
+    it { should validate_presence_of(:title) }
+    it { should validate_presence_of(:user) }
+    it { should validate_uniqueness_of(:title) }
+
+    it { should have_rich_text(:body) }
+  end
+
+  describe 'database' do
+    it { should have_db_column(:id) }
+    it { should have_db_column(:discarded_at) }
+    it { should have_db_column(:published) }
+    it { should have_db_column(:slug) }
+    it { should have_db_column(:subtitle) }
+    it { should have_db_column(:title) }
+    it { should have_db_column(:created_at) }
+    it { should have_db_column(:updated_at) }
+    it { should have_db_column(:user_id) }
+
+    it { should have_db_index(:slug) }
+    it { should have_db_index(:user_id) }
+  end
 end

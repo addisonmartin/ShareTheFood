@@ -3,9 +3,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.belongs_to :user, null: false, foreign_key: true
 
-      t.text :title
+      t.text :title, null: false, unique: true
       t.text :subtitle
-      t.boolean :published
+      t.boolean :published, null: false, default: false
 
       # Used as part of the URL when viewing a post.
       t.string :slug, index: true, unique: true

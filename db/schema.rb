@@ -123,9 +123,9 @@ ActiveRecord::Schema.define(version: 2020_08_13_024147) do
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.text "title"
+    t.text "title", null: false
     t.text "subtitle"
-    t.boolean "published"
+    t.boolean "published", default: false, null: false
     t.string "slug"
     t.datetime "discarded_at"
     t.datetime "created_at", precision: 6, null: false

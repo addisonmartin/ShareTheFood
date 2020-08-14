@@ -4,10 +4,10 @@
 #
 #  id           :bigint           not null, primary key
 #  discarded_at :datetime
-#  published    :boolean
+#  published    :boolean          default(FALSE), not null
 #  slug         :string
 #  subtitle     :text
-#  title        :text
+#  title        :text             not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint           not null
@@ -35,4 +35,8 @@ class Post < ApplicationRecord
   # Configures the post's title to be used as the slug in the URL.
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  validates :title, :user, presence: true
+  validates :title, uniqueness: true
+  validates :published, inclusion: { in: [true, false] }
 end
