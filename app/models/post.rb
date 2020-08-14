@@ -32,7 +32,7 @@ class Post < ApplicationRecord
   # Tracks and stores changes to posts.
   has_paper_trail
 
-  # Configures the post's title to be used as the slug in the URL.
+  # Configures the post's URL slug to use the post's title, not its ID.
   extend FriendlyId
   friendly_id :title, use: :slugged
 
