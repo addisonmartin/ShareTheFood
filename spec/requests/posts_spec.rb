@@ -1,8 +1,6 @@
  require 'rails_helper'
 
 RSpec.describe "/posts", type: :request do
-  # Post. As you add validations to Post, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) {
     attributes_for(:post)
   }

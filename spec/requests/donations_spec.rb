@@ -1,8 +1,6 @@
  require 'rails_helper'
 
 RSpec.describe "/donations", type: :request do
-  # Donation. As you add validations to Donation, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) {
     attributes_for(:donation)
   }
