@@ -3,27 +3,27 @@
 # Table name: donations
 #
 #  id                   :bigint           not null, primary key
-#  available_until      :datetime
-#  contains_dairy       :boolean
-#  contains_egg         :boolean
-#  contains_fish        :boolean
-#  contains_gluten      :boolean
-#  contains_peanuts     :boolean
-#  contains_shellfish   :boolean
-#  contains_soy         :boolean
-#  contains_tree_nuts   :boolean
+#  available_until      :datetime         not null
+#  contains_dairy       :boolean          not null
+#  contains_egg         :boolean          not null
+#  contains_fish        :boolean          not null
+#  contains_gluten      :boolean          not null
+#  contains_peanuts     :boolean          not null
+#  contains_shellfish   :boolean          not null
+#  contains_soy         :boolean          not null
+#  contains_tree_nuts   :boolean          not null
 #  description          :text
 #  discarded_at         :boolean
-#  is_halal             :boolean
-#  is_kosher            :boolean
-#  is_perishable        :boolean
-#  is_vegan             :boolean
-#  is_vegetarian        :boolean
-#  latitude             :decimal(, )
-#  longitude            :decimal(, )
-#  name                 :text
-#  pickup_notes         :text
-#  requires_preparation :boolean
+#  is_halal             :boolean          not null
+#  is_kosher            :boolean          not null
+#  is_perishable        :boolean          not null
+#  is_vegan             :boolean          not null
+#  is_vegetarian        :boolean          not null
+#  latitude             :decimal(, )      not null
+#  longitude            :decimal(, )      not null
+#  name                 :text             not null
+#  pickup_notes         :text             not null
+#  requires_preparation :boolean          not null
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  user_id              :bigint           not null
@@ -50,4 +50,12 @@ class Donation < ApplicationRecord
 
   # Links the user analytic visit when the user created the donation to the donation.
   visitable :visit_id
+
+  validates :user, :name, :available_until, :latitude, :longitude, :pickup_notes, presence: true
+  validates :is_perishable, :requires_preparation, :is_vegetarian, :is_vegan, :is_kosher, :is_halal,
+            :contains_gluten, :contains_peanuts, :contains_tree_nuts, :contains_dairy, :contains_soy,
+            :contains_egg, :contains_fish, :contains_shellfish, inclusion: { in: [true, false] }
+  # Validates that latitude and longitude are valid latitude/longitude coordinates on Earth.
+  validates :latitude, inclusion: { in: -90..90, message: 'must be between -90 and 90.' }
+  validates :longitude, inclusion: { in: -180..180, message: 'must be between -180 and 180.' }
 end

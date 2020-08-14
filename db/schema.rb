@@ -48,26 +48,26 @@ ActiveRecord::Schema.define(version: 2020_08_13_024147) do
 
   create_table "donations", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.text "name"
+    t.text "name", null: false
     t.text "description"
-    t.decimal "latitude"
-    t.decimal "longitude"
-    t.text "pickup_notes"
-    t.datetime "available_until"
-    t.boolean "is_perishable"
-    t.boolean "requires_preparation"
-    t.boolean "is_vegetarian"
-    t.boolean "is_vegan"
-    t.boolean "is_kosher"
-    t.boolean "is_halal"
-    t.boolean "contains_gluten"
-    t.boolean "contains_peanuts"
-    t.boolean "contains_tree_nuts"
-    t.boolean "contains_dairy"
-    t.boolean "contains_soy"
-    t.boolean "contains_egg"
-    t.boolean "contains_fish"
-    t.boolean "contains_shellfish"
+    t.decimal "latitude", null: false
+    t.decimal "longitude", null: false
+    t.text "pickup_notes", null: false
+    t.datetime "available_until", null: false
+    t.boolean "is_perishable", null: false
+    t.boolean "requires_preparation", null: false
+    t.boolean "is_vegetarian", null: false
+    t.boolean "is_vegan", null: false
+    t.boolean "is_kosher", null: false
+    t.boolean "is_halal", null: false
+    t.boolean "contains_gluten", null: false
+    t.boolean "contains_peanuts", null: false
+    t.boolean "contains_tree_nuts", null: false
+    t.boolean "contains_dairy", null: false
+    t.boolean "contains_soy", null: false
+    t.boolean "contains_egg", null: false
+    t.boolean "contains_fish", null: false
+    t.boolean "contains_shellfish", null: false
     t.bigint "visit_id"
     t.boolean "discarded_at"
     t.datetime "created_at", precision: 6, null: false
