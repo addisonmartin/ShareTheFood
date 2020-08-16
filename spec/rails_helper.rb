@@ -13,8 +13,6 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'pundit/matchers'
-require_relative 'support/controller_macros'
-require 'devise'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -87,10 +85,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   # Enables Devise's user authentication helper methods within tests.
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.extend ControllerMacros # Enables the sign_in_user and sign_in_admin methods from support/controller_macros.rb
-  config.include Devise::Test::ControllerHelpers, type: :view
-  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Devise::Test::IntegrationHelpers
 end
 
 # Enables Should Matcher's one-line test matchers.

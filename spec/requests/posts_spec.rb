@@ -26,17 +26,19 @@ RSpec.describe "/posts", type: :request do
   end
 
   describe "GET /new" do
-    it "renders an unauthorized error" do
+    it "renders an unauthorized error if not signed in" do
       expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
     end
 
-    it "renders an unauthorized error" do
-      # sign in user
+    it "renders an unauthorized error if not an admin user" do
+      user = create(:user)
+      sign_in user
       expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
     end
 
-    it "renders a successful response" do
-      # sign in ADMIN user
+    it "renders a successful response if an admin user" do
+      user = create(:user, admin: true)
+      sign_in user
       get new_post_url
       expect(response).to be_successful
     end
