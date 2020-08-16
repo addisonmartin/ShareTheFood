@@ -37,16 +37,30 @@ RSpec.describe "/posts", type: :request do
     end
 
     it "renders a successful response if an admin user" do
-      user = create(:user, admin: true)
-      sign_in user
+      admin = create(:user, admin: true)
+      sign_in admin
       get new_post_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
-    it "render a successful response" do
+    it "renders an unauthorized error if not signed in" do
       post = Post.create! valid_attributes
+      expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+    end
+
+    it "renders an unauthorized error if not an admin user" do
+      post = Post.create! valid_attributes
+      user = create(:user)
+      sign_in user
+      expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+    end
+
+    it "render a successful response if an admin user" do
+      post = Post.create! valid_attributes
+      admin = create(:user, admin: true)
+      sign_in admin
       get edit_post_url(post)
       expect(response).to be_successful
     end
