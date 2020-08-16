@@ -41,5 +41,9 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password(min_length: 10, max_length: 256) }
     confirmed_at { DateTime.now }
+
+    factory :admin do
+      admin { true }
+    end
   end
 end
