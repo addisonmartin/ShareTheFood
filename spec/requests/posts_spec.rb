@@ -10,59 +10,123 @@ RSpec.describe "/posts", type: :request do
   }
 
   describe "GET /index" do
-    it "renders a successful response" do
-      Post.create! valid_attributes
-      get posts_url
-      expect(response).to be_successful
+    context "not signed in" do
+      it "renders a successful response" do
+        Post.create! valid_attributes
+        get posts_url
+        expect(response).to be_successful
+      end
+    end
+
+    context "signed in" do
+      it "renders a successful response" do
+        user = create(:user)
+        sign_in user
+
+        Post.create! valid_attributes
+        get posts_url
+        expect(response).to be_successful
+      end
+    end
+
+    context "signed in as an admin" do
+      it "renders a successful response" do
+        admin = create(:admin)
+        sign_in admin
+
+        Post.create! valid_attributes
+        get posts_url
+        expect(response).to be_successful
+      end
     end
   end
 
   describe "GET /show" do
-    it "renders a successful response" do
-      post = Post.create! valid_attributes
-      get post_url(post)
-      expect(response).to be_successful
+    context "not signed in" do
+      it "renders a successful response" do
+        post = Post.create! valid_attributes
+        get post_url(post)
+        expect(response).to be_successful
+      end
+    end
+
+    context "signed in" do
+      it "renders a successful response" do
+        user = create(:user)
+        sign_in user
+
+        post = Post.create! valid_attributes
+        get post_url(post)
+        expect(response).to be_successful
+      end
+    end
+
+    context "signed in as an admin" do
+      it "renders a successful response" do
+        admin = create(:admin)
+        sign_in admin
+
+        post = Post.create! valid_attributes
+        get post_url(post)
+        expect(response).to be_successful
+      end
     end
   end
 
   describe "GET /new" do
-    it "renders an unauthorized error if not signed in" do
-      expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
+    context "not signed in" do
+      it "renders an unauthorized error" do
+        expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
-    it "renders an unauthorized error if not an admin user" do
-      user = create(:user)
-      sign_in user
-      expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
+    context "signed in" do
+      it "renders an unauthorized error" do
+        user = create(:user)
+        sign_in user
+
+        expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
-    it "renders a successful response if an admin user" do
-      admin = create(:user, admin: true)
-      sign_in admin
-      get new_post_url
-      expect(response).to be_successful
+    context "signed in as an admin" do
+      it "renders a successful response" do
+        admin = create(:admin)
+        sign_in admin
+
+        get new_post_url
+        expect(response).to be_successful
+      end
     end
   end
 
   describe "GET /edit" do
-    it "renders an unauthorized error if not signed in" do
-      post = Post.create! valid_attributes
-      expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+    context "not signed in" do
+      it "renders an unauthorized error" do
+        post = Post.create! valid_attributes
+        expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
-    it "renders an unauthorized error if not an admin user" do
-      post = Post.create! valid_attributes
-      user = create(:user)
-      sign_in user
-      expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+    context "signed in" do
+      it "renders an unauthorized error" do
+        user = create(:user)
+        sign_in user
+
+        post = Post.create! valid_attributes
+        expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
-    it "render a successful response if an admin user" do
-      post = Post.create! valid_attributes
-      admin = create(:user, admin: true)
-      sign_in admin
-      get edit_post_url(post)
-      expect(response).to be_successful
+    context "signed in as an admin" do
+      it "render a successful response" do
+        admin = create(:user, admin: true)
+        sign_in admin
+
+        post = Post.create! valid_attributes
+        get edit_post_url(post)
+        expect(response).to be_successful
+      end
     end
   end
 
