@@ -167,9 +167,6 @@ group :development, :test do
   # Database Consistency checks the consistency of database constraints with model validations.
   # https://github.com/djezzzl/database_consistency
   gem 'database_consistency', '~> 0.8'
-  # Lol DBA is used to scan for database columns that should be indexed.
-  # https://github.com/plentz/lol_dba
-  gem 'lol_dba', '~> 2.2'
 
   # RSpec is used to replace Rail's default testing framework.
   # https://github.com/rspec/rspec-rails

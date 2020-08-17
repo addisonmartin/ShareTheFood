@@ -42,5 +42,4 @@ jobs:
           bundle exec bundle leak check --update
           bundle exec rubocop
           bundle exec database_consistency
-          bundle exec lol_dba db:find_indexes
           yarn stylelint "**/*.scss"
