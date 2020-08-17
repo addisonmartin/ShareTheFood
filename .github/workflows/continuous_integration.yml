@@ -41,4 +41,5 @@ jobs:
           bundle exec bundle-audit check --update
           bundle exec bundle leak check --update
           bundle exec rubocop
+          bundle exec database_consistency
           yarn stylelint "**/*.scss"
