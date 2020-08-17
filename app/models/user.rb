@@ -48,6 +48,9 @@ class User < ApplicationRecord
   # Links user analytic visits with the user, if they are signed in.
   has_many :visits, class_name: 'Visit'
 
+  # Links email analytics to the user that received the email.
+  has_many :email_analytics, class_name: 'EmailAnalytic', as: :user
+
   validates :name, :email, presence: true
   validates :email, uniqueness: true
   validates :admin, inclusion: { in: [true, false] }

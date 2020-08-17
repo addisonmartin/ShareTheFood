@@ -107,9 +107,12 @@ gem 'hightop', '~> 0.2'
 # AuthTrail is used to track devise login activity.
 # https://github.com/ankane/authtrail
 gem 'authtrail', '~> 0.2'
-# Ahoy Matey is used to provide user analytics locally.
+# Ahoy Matey is used to provide user analytics locally, without using a 3rd party service.
 # https://github.com/ankane/ahoy
 gem 'ahoy_matey', '~> 3.0'
+# Ahoy Email is used to provide analytics about emails.
+# https://github.com/ankane/ahoy_email
+gem 'ahoy_email', '~> 1.1'
 
 # Barnes is used to enable advanced Ruby metrics on Heroku.
 # https://github.com/heroku/barnes
