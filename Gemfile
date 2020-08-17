@@ -164,6 +164,9 @@ group :development, :test do
   # Bullet is used to detect N+1 queries that should be eager loaded.
   # https://github.com/flyerhzm/bullet
   gem 'bullet', '~> 6.1'
+  # Database Consistency checks the consistency of database constraints with model validations.
+  # https://github.com/djezzzl/database_consistency
+  gem 'database_consistency', '~> 0.8'
 
   # RSpec is used to replace Rail's default testing framework.
   # https://github.com/rspec/rspec-rails
