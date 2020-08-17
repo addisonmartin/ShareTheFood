@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_192335) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slug"], name: "index_posts_on_slug"
+    t.index ["title"], name: "index_posts_on_title", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -220,5 +221,6 @@ ActiveRecord::Schema.define(version: 2020_08_17_192335) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "donations", "users"
+  add_foreign_key "events", "visits"
   add_foreign_key "posts", "users"
 end

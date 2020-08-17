@@ -15,6 +15,7 @@
 # Indexes
 #
 #  index_posts_on_slug     (slug)
+#  index_posts_on_title    (title) UNIQUE
 #  index_posts_on_user_id  (user_id)
 #
 # Foreign Keys

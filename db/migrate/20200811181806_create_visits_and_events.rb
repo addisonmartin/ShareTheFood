@@ -49,7 +49,7 @@ class CreateVisitsAndEvents < ActiveRecord::Migration[6.0]
     add_index :visits, [:visit_token], unique: true
 
     create_table :events do |t|
-      t.references :visit
+      t.references :visit, foreign_key: true
       t.references :user
 
       t.string :name

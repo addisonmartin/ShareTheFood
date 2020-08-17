@@ -16,6 +16,10 @@
 #  index_events_on_user_id        (user_id)
 #  index_events_on_visit_id       (visit_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (visit_id => visits.id)
+#
 class Event < ApplicationRecord
   include Ahoy::QueryMethods
 

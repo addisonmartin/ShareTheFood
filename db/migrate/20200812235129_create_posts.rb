@@ -15,5 +15,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       # Creates the created_at/updated_at columns.
       t.timestamps
     end
+
+    add_index :posts, :title, unique: true
   end
 end
