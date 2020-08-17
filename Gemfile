@@ -200,6 +200,19 @@ group :development do
   # https://github.com/banister/binding_of_caller
   gem 'binding_of_caller', '~> 0.8'
 
+  # Rack Mini Profiler adds a speed page on every page.
+  # https://github.com/MiniProfiler/rack-mini-profiler
+  gem 'rack-mini-profiler', '~> 2.0'
+  # Memory Profiler is used by Rack Mini Profiler to add memory profiling.
+  # https://github.com/SamSaffron/memory_profiler
+  gem 'memory_profiler', '~> 0.9'
+  # Flamegraph is used by Rack Mini Profiler to add call stack profiling of flamegraphs.
+  # https://github.com/SamSaffron/flamegraph
+  gem 'flamegraph', '~> 0.9'
+  # Stackprof is used by Rack Mini Profiler to add call stack profiling of flamegraphs.
+  # https://github.com/tmm1/stackprof
+  gem 'stackprof', '~> 0.2'
+
   # Annotate automatically adds a comment summarizing the database schema to the top of relevant files within the application.
   # https://github.com/ctran/annotate_models
   gem 'annotate', '~> 3.1'
