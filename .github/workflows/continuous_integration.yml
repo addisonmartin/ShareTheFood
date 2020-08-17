@@ -39,5 +39,6 @@ jobs:
           bundle exec rspec
           bundle exec brakeman
           bundle exec bundle-audit check --update
+          bundle exec bundle leak check --update
           bundle exec rubocop
           yarn stylelint "**/*.scss"

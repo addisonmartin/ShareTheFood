@@ -157,6 +157,9 @@ group :development, :test do
   # Bundler Audit is used to scan for and detect insecure gem versions in Gemfile.lock.
   # https://github.com/rubysec/bundler-audit
   gem 'bundler-audit', '~> 0.7'
+  # Bundler Leak is used to scan for and detect gems in Gemfile.lock that have known memory leaks.
+  # https://github.com/rubymem/bundler-leak
+  gem 'bundler-leak', '~> 0.2'
 
   # Bullet is used to detect N+1 queries that should be eager loaded.
   # https://github.com/flyerhzm/bullet
