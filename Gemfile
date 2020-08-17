@@ -154,6 +154,9 @@ group :development, :test do
   # Brakeman is a static analysis tool which checks for security vulnerabilities.
   # https://github.com/presidentbeef/brakeman
   gem 'brakeman', '~> 4.9'
+  # Bundler Audit is used to scan for and detect insecure gem versions in Gemfile.lock.
+  # https://github.com/rubysec/bundler-audit
+  gem 'bundler-audit', '~> 0.7'
 
   # Bullet is used to detect N+1 queries that should be eager loaded.
   # https://github.com/flyerhzm/bullet

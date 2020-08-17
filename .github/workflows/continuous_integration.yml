@@ -38,5 +38,6 @@ jobs:
           bundle exec rails db:prepare
           bundle exec rspec
           bundle exec brakeman
+          bundle exec bundle-audit check --update
           bundle exec rubocop
           yarn stylelint "**/*.scss"
