@@ -1,15 +1,15 @@
-# frozen_string_literal: true
+ # frozen_string_literal: true
 
  require 'rails_helper'
 
  RSpec.describe '/donations', type: :request do
-   let(:valid_attributes) {
+   let(:valid_attributes) do
      attributes_for(:donation)
-   }
+   end
 
-   let(:invalid_attributes) {
+   let(:invalid_attributes) do
      attributes_for(:post)
-   }
+   end
 
    describe 'GET /index' do
      it 'renders a successful response' do
@@ -45,9 +45,9 @@
    describe 'POST /create' do
      context 'with valid parameters' do
        it 'creates a new Donation' do
-         expect {
+         expect do
            post donations_url, params: { donation: valid_attributes }
-         }.to change(Donation, :count).by(1)
+         end.to change(Donation, :count).by(1)
        end
 
        it 'redirects to the created donation' do
@@ -58,9 +58,9 @@
 
      context 'with invalid parameters' do
        it 'does not create a new Donation' do
-         expect {
+         expect do
            post donations_url, params: { donation: invalid_attributes }
-         }.to change(Donation, :count).by(0)
+         end.to change(Donation, :count).by(0)
        end
 
        it "renders a successful response (i.e. to display the 'new' template)" do
@@ -72,9 +72,9 @@
 
    describe 'PATCH /update' do
      context 'with valid parameters' do
-       let(:new_attributes) {
+       let(:new_attributes) do
          skip('Add a hash of attributes valid for your model')
-       }
+       end
 
        it 'updates the requested donation' do
          donation = Donation.create! valid_attributes
@@ -103,9 +103,9 @@
    describe 'DELETE /destroy' do
      it 'destroys the requested donation' do
        donation = Donation.create! valid_attributes
-       expect {
+       expect do
          delete donation_url(donation)
-       }.to change(Donation, :count).by(-1)
+       end.to change(Donation, :count).by(-1)
      end
 
      it 'redirects to the donations list' do

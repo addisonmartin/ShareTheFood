@@ -7,7 +7,7 @@ SimpleCov.start 'rails' do
   enable_coverage :branch
 
   # Ignore these path from test coverage calculations.
-  add_filter ['/bin/', '/config/', '/coverage/', '/db/', '/lib/', '/log/','/node_modules/',
+  add_filter ['/bin/', '/config/', '/coverage/', '/db/', '/lib/', '/log/', '/node_modules/',
               '/public/', '/spec/', '/storage/', '/tmp/', '/vendor/']
 
   add_group 'Views', 'app/views'
