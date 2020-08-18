@@ -25,7 +25,7 @@ Rails.application.configure do
   # Prevents external assets from being served on the website.
   config.action_controller.asset_host = 'www.sharethefood.net'
 
-  config.action_controller.default_url_options = { host: 'www.sharethefood.net' }
+  config.action_controller.default_url_options = {host: 'www.sharethefood.net'}
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -39,14 +39,14 @@ Rails.application.configure do
 
   # Adds this domain to the HSTS Preload List.
   # https://hstspreload.org/
-  config.ssl_options = { hsts: { subdomains: true, preload: true, expires: 1.year } }
+  config.ssl_options = {hsts: {subdomains: true, preload: true, expires: 1.year}}
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [:request_id]
+  config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
   config.cache_store = :redis_cache_store
@@ -75,8 +75,8 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = ActiveSupport::Logger.new($stdout)
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
