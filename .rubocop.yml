@@ -18,10 +18,25 @@ AllCops:
   NewCops: enable
 
 Style/SymbolArray:
-    Enabled: false
+  Enabled: false
 
 Style/AndOr:
   Enabled: false
 
 Rails/FilePath:
-    Enabled: false
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
