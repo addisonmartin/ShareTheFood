@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Sets the available i18n locales.
 I18n.available_locales = [:en]
 

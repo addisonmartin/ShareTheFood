@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class DonationPolicy < ApplicationPolicy
   # Everyone can view all donations.
   def index?
