@@ -1,5 +1,4 @@
 class Rack::Attack
-
   ### Configure Cache ###
 
   # If you don't want to use Rails.cache (Rack::Attack's default), then
@@ -41,9 +40,7 @@ class Rack::Attack
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/ip:#{req.ip}"
   throttle('logins/ip', limit: 5, period: 20.seconds) do |req|
-    if req.path == '/users/sign_in' && req.post?
-      req.ip
-    end
+    req.ip if req.path == '/users/sign_in' && req.post?
   end
 
   # Throttle POST requests to /login by email param
@@ -54,11 +51,11 @@ class Rack::Attack
   # throttle logins for another user and force their login requests to be
   # denied, but that's not very common and shouldn't happen to you. (Knock
   # on wood!)
-  throttle("logins/email", limit: 5, period: 20.seconds) do |req|
+  throttle('logins/email', limit: 5, period: 20.seconds) do |req|
     if req.path == '/users/sign_in' && req.post?
       # Normalize the email, using the same logic as your authentication process, to
       # protect against rate limit bypasses. Return the normalized email if present, nil otherwise.
-      req.params['user']['email'].to_s.downcase.gsub(/\s+/, "").presence
+      req.params['user']['email'].to_s.downcase.gsub(/\s+/, '').presence
     end
   end
 
@@ -77,10 +74,8 @@ class Rack::Attack
   # end
 
   # Throttle requests to Ahoy Analytics.
-  throttle("ahoy/ip", limit: 20, period: 1.minute) do |req|
-    if req.path.start_with?("/ahoy/")
-      req.ip
-    end
+  throttle('ahoy/ip', limit: 20, period: 1.minute) do |req|
+    req.ip if req.path.start_with?('/ahoy/')
   end
 end
 
@@ -95,7 +90,6 @@ Rack::Attack.blocklist('fail2ban pentesters') do |req|
       req.path.include?('/etc/passwd') ||
       req.path.include?('wp-admin') ||
       req.path.include?('wp-login')
-
   end
 end
 

@@ -85,7 +85,6 @@ RSpec.describe Donation, type: :model do
     it { should have_db_column(:user_id) }
     it { should have_db_column(:visit_id) }
 
-
     it { should have_db_index(:user_id) }
   end
 end

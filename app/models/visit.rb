@@ -36,8 +36,8 @@
 #  index_visits_on_visit_token  (visit_token) UNIQUE
 #
 class Visit < ApplicationRecord
-  self.table_name = "visits"
+  self.table_name = 'visits'
 
-  has_many :events, class_name: "Event"
+  has_many :events, class_name: 'Event'
   belongs_to :user, optional: true
 end

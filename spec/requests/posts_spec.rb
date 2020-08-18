@@ -1,25 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe "/posts", type: :request do
-  let(:valid_attributes) {
+RSpec.describe '/posts', type: :request do
+  let(:valid_attributes) do
     attributes_for(:post)
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     attributes_for(:donation)
-  }
+  end
 
-  describe "GET /index" do
-    context "when not signed in" do
-      it "renders a successful response" do
+  describe 'GET /index' do
+    context 'when not signed in' do
+      it 'renders a successful response' do
         Post.create! valid_attributes
         get posts_url
         expect(response).to be_successful
       end
     end
 
-    context "when signed in" do
-      it "renders a successful response" do
+    context 'when signed in' do
+      it 'renders a successful response' do
         user = create(:user)
         sign_in user
 
@@ -29,8 +29,8 @@ RSpec.describe "/posts", type: :request do
       end
     end
 
-    context "when signed in as an admin" do
-      it "renders a successful response" do
+    context 'when signed in as an admin' do
+      it 'renders a successful response' do
         admin = create(:admin)
         sign_in admin
 
@@ -41,17 +41,17 @@ RSpec.describe "/posts", type: :request do
     end
   end
 
-  describe "GET /show" do
-    context "when not signed in" do
-      it "renders a successful response" do
+  describe 'GET /show' do
+    context 'when not signed in' do
+      it 'renders a successful response' do
         post = Post.create! valid_attributes
         get post_url(post)
         expect(response).to be_successful
       end
     end
 
-    context "when signed in" do
-      it "renders a successful response" do
+    context 'when signed in' do
+      it 'renders a successful response' do
         user = create(:user)
         sign_in user
 
@@ -61,8 +61,8 @@ RSpec.describe "/posts", type: :request do
       end
     end
 
-    context "when signed in as an admin" do
-      it "renders a successful response" do
+    context 'when signed in as an admin' do
+      it 'renders a successful response' do
         admin = create(:admin)
         sign_in admin
 
@@ -73,15 +73,15 @@ RSpec.describe "/posts", type: :request do
     end
   end
 
-  describe "GET /new" do
-    context "when not signed in" do
-      it "raises an unauthorized error" do
+  describe 'GET /new' do
+    context 'when not signed in' do
+      it 'raises an unauthorized error' do
         expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
-    context "when signed in" do
-      it "raises an unauthorized error" do
+    context 'when signed in' do
+      it 'raises an unauthorized error' do
         user = create(:user)
         sign_in user
 
@@ -89,8 +89,8 @@ RSpec.describe "/posts", type: :request do
       end
     end
 
-    context "when signed in as an admin" do
-      it "renders a successful response" do
+    context 'when signed in as an admin' do
+      it 'renders a successful response' do
         admin = create(:admin)
         sign_in admin
 
@@ -100,16 +100,16 @@ RSpec.describe "/posts", type: :request do
     end
   end
 
-  describe "GET /edit" do
-    context "when not signed in" do
-      it "raises an unauthorized error" do
+  describe 'GET /edit' do
+    context 'when not signed in' do
+      it 'raises an unauthorized error' do
         post = Post.create! valid_attributes
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
-    context "when signed in" do
-      it "raises an unauthorized error" do
+    context 'when signed in' do
+      it 'raises an unauthorized error' do
         user = create(:user)
         sign_in user
 
@@ -118,8 +118,8 @@ RSpec.describe "/posts", type: :request do
       end
     end
 
-    context "when signed in as an admin" do
-      it "render a successful response" do
+    context 'when signed in as an admin' do
+      it 'render a successful response' do
         admin = create(:admin)
         sign_in admin
 
@@ -130,190 +130,186 @@ RSpec.describe "/posts", type: :request do
     end
   end
 
-  describe "POST /create" do
-    context "when not signed in" do
-      context "with valid parameters" do
-        it "raises an unauthorized error" do
-          expect {
-            post posts_url, params: {post: valid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
+  describe 'POST /create' do
+    context 'when not signed in' do
+      context 'with valid parameters' do
+        it 'raises an unauthorized error' do
+          expect do
+            post posts_url, params: { post: valid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "raises an unauthorized error" do
-          expect {
-            post posts_url, params: {post: valid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
-        end
-      end
-
-      context "with invalid parameters" do
-        it "raises an unauthorized error" do
-          expect {
-            post posts_url, params: {post: invalid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
-        end
-
-        it "raises an unauthorized error" do
-          expect {
-            post posts_url, params: {post: invalid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
-        end
-      end
-    end
-
-    context "when signed in" do
-      context "with valid parameters" do
-        it "raises an unauthorized error" do
-          user = create(:user)
-          sign_in user
-
-          expect {
-            post posts_url, params: {post: valid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
-        end
-
-        it "raises an unauthorized error" do
-          user = create(:user)
-          sign_in user
-
-          expect {
-            post posts_url, params: {post: valid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
+        it 'raises an unauthorized error' do
+          expect do
+            post posts_url, params: { post: valid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
-      context "with invalid parameters" do
-        it "raises an unauthorized error" do
-          user = create(:user)
-          sign_in user
-
-          expect {
-            post posts_url, params: {post: invalid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
+      context 'with invalid parameters' do
+        it 'raises an unauthorized error' do
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "raises an unauthorized error" do
-          user = create(:user)
-          sign_in user
-
-          expect {
-            post posts_url, params: {post: invalid_attributes}
-          }.to raise_error(Pundit::NotAuthorizedError)
+        it 'raises an unauthorized error' do
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
     end
 
-    context "when signed in as an admin" do
-      context "with valid parameters" do
-        it "creates a new Post" do
-          admin = create(:admin)
-          sign_in admin
+    context 'when signed in' do
+      context 'with valid parameters' do
+        it 'raises an unauthorized error' do
+          user = create(:user)
+          sign_in user
 
-          expect {
-            post posts_url, params: {post: valid_attributes}
-          }.to change(Post, :count).by(1)
+          expect do
+            post posts_url, params: { post: valid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "redirects to the created post" do
+        it 'raises an unauthorized error' do
+          user = create(:user)
+          sign_in user
+
+          expect do
+            post posts_url, params: { post: valid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
+      end
+
+      context 'with invalid parameters' do
+        it 'raises an unauthorized error' do
+          user = create(:user)
+          sign_in user
+
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
+
+        it 'raises an unauthorized error' do
+          user = create(:user)
+          sign_in user
+
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
+      end
+    end
+
+    context 'when signed in as an admin' do
+      context 'with valid parameters' do
+        it 'creates a new Post' do
           admin = create(:admin)
           sign_in admin
 
-          post posts_url, params: {post: valid_attributes}
+          expect do
+            post posts_url, params: { post: valid_attributes }
+          end.to change(Post, :count).by(1)
+        end
+
+        it 'redirects to the created post' do
+          admin = create(:admin)
+          sign_in admin
+
+          post posts_url, params: { post: valid_attributes }
           expect(response).to redirect_to(post_url(Post.last))
         end
       end
 
-      context "with invalid parameters" do
-        it "does not create a new Post" do
+      context 'with invalid parameters' do
+        it 'does not create a new Post' do
           admin = create(:admin)
           sign_in admin
 
-          expect {
-            post posts_url, params: {post: invalid_attributes}
-          }.to change(Post, :count).by(0)
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to change(Post, :count).by(0)
         end
 
         it "renders a successful response (i.e. to display the 'new' template)" do
           admin = create(:admin)
           sign_in admin
 
-          post posts_url, params: {post: invalid_attributes}
+          post posts_url, params: { post: invalid_attributes }
           expect(response).to be_successful
         end
       end
     end
   end
 
-  describe "PATCH /update" do
-    context "when not signed in" do
-
+  describe 'PATCH /update' do
+    context 'when not signed in' do
     end
 
-    context "when signed in" do
-
+    context 'when signed in' do
     end
 
-    context "when signed in as an admin" do
-      context "with valid parameters" do
-        let(:new_attributes) {
+    context 'when signed in as an admin' do
+      context 'with valid parameters' do
+        let(:new_attributes) do
           attributes_for(:post)
-        }
-
-        it "updates the requested post" do
-          admin = create(:admin)
-          sign_in admin
-
-          post = Post.create! valid_attributes
-          patch post_url(post), params: {post: new_attributes}
-          post.reload
-          skip("Add assertions for updated state")
         end
 
-        it "redirects to the post" do
+        it 'updates the requested post' do
           admin = create(:admin)
           sign_in admin
 
           post = Post.create! valid_attributes
-          patch post_url(post), params: {post: new_attributes}
+          patch post_url(post), params: { post: new_attributes }
+          post.reload
+          skip('Add assertions for updated state')
+        end
+
+        it 'redirects to the post' do
+          admin = create(:admin)
+          sign_in admin
+
+          post = Post.create! valid_attributes
+          patch post_url(post), params: { post: new_attributes }
           post.reload
           expect(response).to redirect_to(post_url(post, locale: 'en'))
         end
       end
 
-      context "with invalid parameters" do
+      context 'with invalid parameters' do
         it "renders a successful response (i.e. to display the 'edit' template)" do
           admin = create(:admin)
           sign_in admin
 
           post = Post.create! valid_attributes
-          patch post_url(post), params: {post: invalid_attributes}
+          patch post_url(post), params: { post: invalid_attributes }
           expect(response).to be_successful
         end
       end
     end
   end
 
-  describe "DELETE /destroy" do
-    context "when not signed in" do
-
+  describe 'DELETE /destroy' do
+    context 'when not signed in' do
     end
 
-    context "when signed in" do
-
+    context 'when signed in' do
     end
 
-    context "when signed in as an admin" do
-      it "destroys the requested post" do
+    context 'when signed in as an admin' do
+      it 'destroys the requested post' do
         admin = create(:admin)
         sign_in admin
 
         post = Post.create! valid_attributes
-        expect {
+        expect do
           delete post_url(post)
-        }.to change(Post.kept, :count).by(-1)
+        end.to change(Post.kept, :count).by(-1)
       end
 
-      it "redirects to the posts list" do
+      it 'redirects to the posts list' do
         admin = create(:admin)
         sign_in admin
 

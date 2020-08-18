@@ -1,4 +1,4 @@
-class PagePolicy < Struct.new(:user, :page)
+PagePolicy = Struct.new(:user, :page) do
   # All users are allowed to view the about page.
   def about?
     true
