@@ -27,14 +27,13 @@ RSpec.describe 'donations/new', type: :view do
                         contains_shellfish: false,
                         visit_id: '',
                         discarded_at: false
-    ))
+                      ))
   end
 
   it 'renders new donation form' do
     render
 
     assert_select 'form[action=?][method=?]', donations_path, 'post' do
-
       assert_select 'input[name=?]', 'donation[user_id]'
 
       assert_select 'textarea[name=?]', 'donation[name]'

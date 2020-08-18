@@ -9,14 +9,13 @@ RSpec.describe 'posts/edit', type: :view do
                             subtitle: 'MyText',
                             published: false,
                             user: nil
-    ))
+                          ))
   end
 
   it 'renders the edit post form' do
     render
 
     assert_select 'form[action=?][method=?]', post_path(@post), 'post' do
-
       assert_select 'textarea[name=?]', 'post[title]'
 
       assert_select 'textarea[name=?]', 'post[subtitle]'

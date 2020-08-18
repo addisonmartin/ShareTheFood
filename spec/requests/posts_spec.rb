@@ -248,11 +248,9 @@ RSpec.describe '/posts', type: :request do
 
   describe 'PATCH /update' do
     context 'when not signed in' do
-
     end
 
     context 'when signed in' do
-
     end
 
     context 'when signed in as an admin' do
@@ -297,11 +295,9 @@ RSpec.describe '/posts', type: :request do
 
   describe 'DELETE /destroy' do
     context 'when not signed in' do
-
     end
 
     context 'when signed in' do
-
     end
 
     context 'when signed in as an admin' do

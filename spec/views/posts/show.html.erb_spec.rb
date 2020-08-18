@@ -9,7 +9,7 @@ RSpec.describe 'posts/show', type: :view do
                             subtitle: 'MyText',
                             published: false,
                             user: nil
-    ))
+                          ))
   end
 
   it 'renders attributes in <p>' do

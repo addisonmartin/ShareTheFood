@@ -27,7 +27,7 @@ RSpec.describe 'donations/show', type: :view do
                                     contains_shellfish: false,
                                     visit_id: '',
                                     discarded_at: false
-    ))
+                                  ))
   end
 
   it 'renders attributes in <p>' do
