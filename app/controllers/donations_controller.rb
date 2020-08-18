@@ -2,6 +2,8 @@
 
 class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  # Redirect the user to sign in before performing any actions that require a user to be signed in.
+  before_action :authenticate_user!, only: [:create, :new, :update, :edit, :destroy]
 
   # GET /donations
   # GET /donations.json
