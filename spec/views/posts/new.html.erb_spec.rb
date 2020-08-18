@@ -4,10 +4,10 @@ require 'rails_helper'
 RSpec.describe 'posts/new', type: :view do
   before(:each) do
     assign(:post, Post.new(
-      title: 'MyText',
-      subtitle: 'MyText',
-      published: false,
-      user: nil
+                    title: 'MyText',
+                    subtitle: 'MyText',
+                    published: false,
+                    user: nil
     ))
   end
 
