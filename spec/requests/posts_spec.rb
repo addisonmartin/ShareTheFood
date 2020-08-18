@@ -75,13 +75,13 @@ RSpec.describe "/posts", type: :request do
 
   describe "GET /new" do
     context "when not signed in" do
-      it "renders an unauthorized error" do
+      it "raises an unauthorized error" do
         expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
     context "when signed in" do
-      it "renders an unauthorized error" do
+      it "raises an unauthorized error" do
         user = create(:user)
         sign_in user
 
@@ -102,14 +102,14 @@ RSpec.describe "/posts", type: :request do
 
   describe "GET /edit" do
     context "when not signed in" do
-      it "renders an unauthorized error" do
+      it "raises an unauthorized error" do
         post = Post.create! valid_attributes
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
     context "when signed in" do
-      it "renders an unauthorized error" do
+      it "raises an unauthorized error" do
         user = create(:user)
         sign_in user
 
@@ -133,13 +133,13 @@ RSpec.describe "/posts", type: :request do
   describe "POST /create" do
     context "when not signed in" do
       context "with valid parameters" do
-        it "creates a new Post" do
+        it "raises an unauthorized error" do
           expect {
             post posts_url, params: {post: valid_attributes}
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "redirects to the created post" do
+        it "raises an unauthorized error" do
           expect {
             post posts_url, params: {post: valid_attributes}
           }.to raise_error(Pundit::NotAuthorizedError)
@@ -147,13 +147,13 @@ RSpec.describe "/posts", type: :request do
       end
 
       context "with invalid parameters" do
-        it "does not create a new Post" do
+        it "raises an unauthorized error" do
           expect {
             post posts_url, params: {post: invalid_attributes}
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "renders a successful response (i.e. to display the 'new' template)" do
+        it "raises an unauthorized error" do
           expect {
             post posts_url, params: {post: invalid_attributes}
           }.to raise_error(Pundit::NotAuthorizedError)
@@ -163,28 +163,42 @@ RSpec.describe "/posts", type: :request do
 
     context "when signed in" do
       context "with valid parameters" do
-        it "creates a new Post" do
+        it "raises an unauthorized error" do
+          user = create(:user)
+          sign_in user
+
           expect {
             post posts_url, params: {post: valid_attributes}
-          }.to change(Post, :count).by(1)
+          }.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "redirects to the created post" do
-          post posts_url, params: {post: valid_attributes}
-          expect(response).to redirect_to(post_url(Post.last))
+        it "raises an unauthorized error" do
+          user = create(:user)
+          sign_in user
+
+          expect {
+            post posts_url, params: {post: valid_attributes}
+          }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
       context "with invalid parameters" do
-        it "does not create a new Post" do
+        it "raises an unauthorized error" do
+          user = create(:user)
+          sign_in user
+
           expect {
             post posts_url, params: {post: invalid_attributes}
-          }.to change(Post, :count).by(0)
+          }.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it "renders a successful response (i.e. to display the 'new' template)" do
-          post posts_url, params: {post: invalid_attributes}
-          expect(response).to be_successful
+        it "raises an unauthorized error" do
+          user = create(:user)
+          sign_in user
+
+          expect {
+            post posts_url, params: {post: invalid_attributes}
+          }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
     end
@@ -262,7 +276,7 @@ RSpec.describe "/posts", type: :request do
           post = Post.create! valid_attributes
           patch post_url(post), params: {post: new_attributes}
           post.reload
-          expect(response).to redirect_to(post_url(post))
+          expect(response).to redirect_to(post_url(post, locale: 'en'))
         end
       end
 
@@ -280,17 +294,33 @@ RSpec.describe "/posts", type: :request do
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested post" do
-      post = Post.create! valid_attributes
-      expect {
-        delete post_url(post)
-      }.to change(Post, :count).by(-1)
+    context "when not signed in" do
+
     end
 
-    it "redirects to the posts list" do
-      post = Post.create! valid_attributes
-      delete post_url(post)
-      expect(response).to redirect_to(posts_url)
+    context "when signed in" do
+
+    end
+
+    context "when signed in as an admin" do
+      it "destroys the requested post" do
+        admin = create(:admin)
+        sign_in admin
+
+        post = Post.create! valid_attributes
+        expect {
+          delete post_url(post)
+        }.to change(Post.kept, :count).by(-1)
+      end
+
+      it "redirects to the posts list" do
+        admin = create(:admin)
+        sign_in admin
+
+        post = Post.create! valid_attributes
+        delete post_url(post)
+        expect(response).to redirect_to(posts_url(locale: 'en'))
+      end
     end
   end
 end
