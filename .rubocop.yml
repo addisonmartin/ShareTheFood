@@ -23,19 +23,25 @@ Style/SymbolArray:
 Style/AndOr:
   Enabled: false
 
+Style/Not:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
 Rails/FilePath:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Metrics/BlockLength:
   Enabled: false
 
 RSpec/ExampleLength:
   Enabled: false
 
 RSpec/MultipleExpectations:
-  Enabled: false
-
-Metrics/BlockLength:
-  Enabled: false
-
-Style/BlockComments:
   Enabled: false
 
 RSpec/NestedGroups:
