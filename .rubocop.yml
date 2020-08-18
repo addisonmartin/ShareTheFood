@@ -29,6 +29,9 @@ Style/Not:
 Style/BlockComments:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Rails/FilePath:
   Enabled: false
 
@@ -36,6 +39,12 @@ Rails/CreateTableWithTimestamps:
   Enabled: false
 
 Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
   Enabled: false
 
 RSpec/ExampleLength:
