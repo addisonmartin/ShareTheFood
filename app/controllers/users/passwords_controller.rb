@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Users::PasswordsController < Devise::PasswordsController
+  # Don't ensure user authorization was performed.
+  skip_after_action :verify_authorized
+
   # GET /resource/password/new
   def new
     super
