@@ -55,11 +55,11 @@ class Rack::Attack
   # throttle logins for another user and force their login requests to be
   # denied, but that's not very common and shouldn't happen to you. (Knock
   # on wood!)
-  throttle("logins/email", limit: 5, period: 20.seconds) do |req|
+  throttle('logins/email', limit: 5, period: 20.seconds) do |req|
     if req.path == '/users/sign_in' && req.post?
       # Normalize the email, using the same logic as your authentication process, to
       # protect against rate limit bypasses. Return the normalized email if present, nil otherwise.
-      req.params['user']['email'].to_s.downcase.gsub(/\s+/, "").presence
+      req.params['user']['email'].to_s.downcase.gsub(/\s+/, '').presence
     end
   end
 
@@ -78,8 +78,8 @@ class Rack::Attack
   # end
 
   # Throttle requests to Ahoy Analytics.
-  throttle("ahoy/ip", limit: 20, period: 1.minute) do |req|
-    if req.path.start_with?("/ahoy/")
+  throttle('ahoy/ip', limit: 20, period: 1.minute) do |req|
+    if req.path.start_with?('/ahoy/')
       req.ip
     end
   end

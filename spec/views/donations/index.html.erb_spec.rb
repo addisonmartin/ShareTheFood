@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe "donations/index", type: :view do
+RSpec.describe 'donations/index', type: :view do
   before(:each) do
     assign(:donations, [
       Donation.create!(
         user: nil,
-        name: "MyText",
-        description: "MyText",
-        latitude: "9.99",
-        longitude: "9.99",
-        pickup_notes: "MyText",
+        name: 'MyText',
+        description: 'MyText',
+        latitude: '9.99',
+        longitude: '9.99',
+        pickup_notes: 'MyText',
         is_perishable: false,
         requires_preparation: false,
         is_vegetarian: false,
@@ -25,16 +25,16 @@ RSpec.describe "donations/index", type: :view do
         contains_egg: false,
         contains_fish: false,
         contains_shellfish: false,
-        visit_id: "",
+        visit_id: '',
         discarded_at: false
       ),
       Donation.create!(
         user: nil,
-        name: "MyText",
-        description: "MyText",
-        latitude: "9.99",
-        longitude: "9.99",
-        pickup_notes: "MyText",
+        name: 'MyText',
+        description: 'MyText',
+        latitude: '9.99',
+        longitude: '9.99',
+        pickup_notes: 'MyText',
         is_perishable: false,
         requires_preparation: false,
         is_vegetarian: false,
@@ -49,35 +49,35 @@ RSpec.describe "donations/index", type: :view do
         contains_egg: false,
         contains_fish: false,
         contains_shellfish: false,
-        visit_id: "",
+        visit_id: '',
         discarded_at: false
       )
     ])
   end
 
-  it "renders a list of donations" do
+  it 'renders a list of donations' do
     render
-    assert_select "tr>td", text: nil.to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: "9.99".to_s, count: 2
-    assert_select "tr>td", text: "9.99".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: "".to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
+    assert_select 'tr>td', text: nil.to_s, count: 2
+    assert_select 'tr>td', text: 'MyText'.to_s, count: 2
+    assert_select 'tr>td', text: 'MyText'.to_s, count: 2
+    assert_select 'tr>td', text: '9.99'.to_s, count: 2
+    assert_select 'tr>td', text: '9.99'.to_s, count: 2
+    assert_select 'tr>td', text: 'MyText'.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
+    assert_select 'tr>td', text: ''.to_s, count: 2
+    assert_select 'tr>td', text: false.to_s, count: 2
   end
 end

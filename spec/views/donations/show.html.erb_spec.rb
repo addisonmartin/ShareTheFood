@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-RSpec.describe "donations/show", type: :view do
+RSpec.describe 'donations/show', type: :view do
   before(:each) do
     @donation = assign(:donation, Donation.create!(
       user: nil,
-      name: "MyText",
-      description: "MyText",
-      latitude: "9.99",
-      longitude: "9.99",
-      pickup_notes: "MyText",
+      name: 'MyText',
+      description: 'MyText',
+      latitude: '9.99',
+      longitude: '9.99',
+      pickup_notes: 'MyText',
       is_perishable: false,
       requires_preparation: false,
       is_vegetarian: false,
@@ -24,12 +24,12 @@ RSpec.describe "donations/show", type: :view do
       contains_egg: false,
       contains_fish: false,
       contains_shellfish: false,
-      visit_id: "",
+      visit_id: '',
       discarded_at: false
     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(//)
     expect(rendered).to match(/MyText/)
