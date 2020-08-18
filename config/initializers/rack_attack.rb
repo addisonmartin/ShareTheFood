@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Rack::Attack
-
   ### Configure Cache ###
 
   # If you don't want to use Rails.cache (Rack::Attack's default), then
@@ -43,9 +42,7 @@ class Rack::Attack
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/ip:#{req.ip}"
   throttle('logins/ip', limit: 5, period: 20.seconds) do |req|
-    if req.path == '/users/sign_in' && req.post?
-      req.ip
-    end
+    req.ip if req.path == '/users/sign_in' && req.post?
   end
 
   # Throttle POST requests to /login by email param
@@ -80,9 +77,7 @@ class Rack::Attack
 
   # Throttle requests to Ahoy Analytics.
   throttle('ahoy/ip', limit: 20, period: 1.minute) do |req|
-    if req.path.start_with?('/ahoy/')
-      req.ip
-    end
+    req.ip if req.path.start_with?('/ahoy/')
   end
 end
 
