@@ -137,13 +137,13 @@ RSpec.describe '/posts', type: :request do
       context 'with valid parameters' do
         it 'raises an unauthorized error' do
           expect {
-            post posts_url, params: {post: valid_attributes}
+            post posts_url, params: { post: valid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
         it 'raises an unauthorized error' do
           expect {
-            post posts_url, params: {post: valid_attributes}
+            post posts_url, params: { post: valid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -151,13 +151,13 @@ RSpec.describe '/posts', type: :request do
       context 'with invalid parameters' do
         it 'raises an unauthorized error' do
           expect {
-            post posts_url, params: {post: invalid_attributes}
+            post posts_url, params: { post: invalid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
         it 'raises an unauthorized error' do
           expect {
-            post posts_url, params: {post: invalid_attributes}
+            post posts_url, params: { post: invalid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -170,7 +170,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect {
-            post posts_url, params: {post: valid_attributes}
+            post posts_url, params: { post: valid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
@@ -179,7 +179,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect {
-            post posts_url, params: {post: valid_attributes}
+            post posts_url, params: { post: valid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -190,7 +190,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect {
-            post posts_url, params: {post: invalid_attributes}
+            post posts_url, params: { post: invalid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
 
@@ -199,7 +199,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect {
-            post posts_url, params: {post: invalid_attributes}
+            post posts_url, params: { post: invalid_attributes }
           }.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -212,7 +212,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           expect {
-            post posts_url, params: {post: valid_attributes}
+            post posts_url, params: { post: valid_attributes }
           }.to change(Post, :count).by(1)
         end
 
@@ -220,7 +220,7 @@ RSpec.describe '/posts', type: :request do
           admin = create(:admin)
           sign_in admin
 
-          post posts_url, params: {post: valid_attributes}
+          post posts_url, params: { post: valid_attributes }
           expect(response).to redirect_to(post_url(Post.last))
         end
       end
@@ -231,7 +231,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           expect {
-            post posts_url, params: {post: invalid_attributes}
+            post posts_url, params: { post: invalid_attributes }
           }.to change(Post, :count).by(0)
         end
 
@@ -239,7 +239,7 @@ RSpec.describe '/posts', type: :request do
           admin = create(:admin)
           sign_in admin
 
-          post posts_url, params: {post: invalid_attributes}
+          post posts_url, params: { post: invalid_attributes }
           expect(response).to be_successful
         end
       end
@@ -264,7 +264,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           post = Post.create! valid_attributes
-          patch post_url(post), params: {post: new_attributes}
+          patch post_url(post), params: { post: new_attributes }
           post.reload
           skip('Add assertions for updated state')
         end
@@ -274,7 +274,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           post = Post.create! valid_attributes
-          patch post_url(post), params: {post: new_attributes}
+          patch post_url(post), params: { post: new_attributes }
           post.reload
           expect(response).to redirect_to(post_url(post, locale: 'en'))
         end
@@ -286,7 +286,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           post = Post.create! valid_attributes
-          patch post_url(post), params: {post: invalid_attributes}
+          patch post_url(post), params: { post: invalid_attributes }
           expect(response).to be_successful
         end
       end

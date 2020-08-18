@@ -27,7 +27,7 @@ Rails.application.configure do
   # Prevents external assets from being served on the website.
   config.action_controller.asset_host = 'www.sharethefood.net'
 
-  config.action_controller.default_url_options = {host: 'www.sharethefood.net'}
+  config.action_controller.default_url_options = { host: 'www.sharethefood.net' }
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -41,7 +41,7 @@ Rails.application.configure do
 
   # Adds this domain to the HSTS Preload List.
   # https://hstspreload.org/
-  config.ssl_options = {hsts: {subdomains: true, preload: true, expires: 1.year}}
+  config.ssl_options = { hsts: { subdomains: true, preload: true, expires: 1.year } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.

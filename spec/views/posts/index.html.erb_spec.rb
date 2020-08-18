@@ -11,12 +11,12 @@ RSpec.describe 'posts/index', type: :view do
                published: false,
                user: nil
              ),
-      Post.create!(
-        title: 'MyText',
-        subtitle: 'MyText',
-        published: false,
-        user: nil
-      )
+             Post.create!(
+               title: 'MyText',
+               subtitle: 'MyText',
+               published: false,
+               user: nil
+             )
            ])
   end
 
