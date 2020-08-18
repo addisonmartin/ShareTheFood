@@ -19,27 +19,27 @@
 #                           PATCH  (/:locale)/posts/:id(.:format)                                                           posts#update
 #                           PUT    (/:locale)/posts/:id(.:format)                                                           posts#update
 #                           DELETE (/:locale)/posts/:id(.:format)                                                           posts#destroy
-#          new_user_session GET    (/:locale)/users/sign_in(.:format)                                                       devise/sessions#new
-#              user_session POST   (/:locale)/users/sign_in(.:format)                                                       devise/sessions#create
-#      destroy_user_session DELETE (/:locale)/users/sign_out(.:format)                                                      devise/sessions#destroy
-#         new_user_password GET    (/:locale)/users/password/new(.:format)                                                  devise/passwords#new
-#        edit_user_password GET    (/:locale)/users/password/edit(.:format)                                                 devise/passwords#edit
-#             user_password PATCH  (/:locale)/users/password(.:format)                                                      devise/passwords#update
-#                           PUT    (/:locale)/users/password(.:format)                                                      devise/passwords#update
-#                           POST   (/:locale)/users/password(.:format)                                                      devise/passwords#create
-#  cancel_user_registration GET    (/:locale)/users/cancel(.:format)                                                        devise/registrations#cancel
-#     new_user_registration GET    (/:locale)/users/sign_up(.:format)                                                       devise/registrations#new
-#    edit_user_registration GET    (/:locale)/users/edit(.:format)                                                          devise/registrations#edit
-#         user_registration PATCH  (/:locale)/users(.:format)                                                               devise/registrations#update
-#                           PUT    (/:locale)/users(.:format)                                                               devise/registrations#update
-#                           DELETE (/:locale)/users(.:format)                                                               devise/registrations#destroy
-#                           POST   (/:locale)/users(.:format)                                                               devise/registrations#create
-#     new_user_confirmation GET    (/:locale)/users/confirmation/new(.:format)                                              devise/confirmations#new
-#         user_confirmation GET    (/:locale)/users/confirmation(.:format)                                                  devise/confirmations#show
-#                           POST   (/:locale)/users/confirmation(.:format)                                                  devise/confirmations#create
-#           new_user_unlock GET    (/:locale)/users/unlock/new(.:format)                                                    devise/unlocks#new
-#               user_unlock GET    (/:locale)/users/unlock(.:format)                                                        devise/unlocks#show
-#                           POST   (/:locale)/users/unlock(.:format)                                                        devise/unlocks#create
+#          new_user_session GET    (/:locale)/users/sign_in(.:format)                                                       users/sessions#new
+#              user_session POST   (/:locale)/users/sign_in(.:format)                                                       users/sessions#create
+#      destroy_user_session DELETE (/:locale)/users/sign_out(.:format)                                                      users/sessions#destroy
+#         new_user_password GET    (/:locale)/users/password/new(.:format)                                                  users/passwords#new
+#        edit_user_password GET    (/:locale)/users/password/edit(.:format)                                                 users/passwords#edit
+#             user_password PATCH  (/:locale)/users/password(.:format)                                                      users/passwords#update
+#                           PUT    (/:locale)/users/password(.:format)                                                      users/passwords#update
+#                           POST   (/:locale)/users/password(.:format)                                                      users/passwords#create
+#  cancel_user_registration GET    (/:locale)/users/cancel(.:format)                                                        users/registrations#cancel
+#     new_user_registration GET    (/:locale)/users/sign_up(.:format)                                                       users/registrations#new
+#    edit_user_registration GET    (/:locale)/users/edit(.:format)                                                          users/registrations#edit
+#         user_registration PATCH  (/:locale)/users(.:format)                                                               users/registrations#update
+#                           PUT    (/:locale)/users(.:format)                                                               users/registrations#update
+#                           DELETE (/:locale)/users(.:format)                                                               users/registrations#destroy
+#                           POST   (/:locale)/users(.:format)                                                               users/registrations#create
+#     new_user_confirmation GET    (/:locale)/users/confirmation/new(.:format)                                              users/confirmations#new
+#         user_confirmation GET    (/:locale)/users/confirmation(.:format)                                                  users/confirmations#show
+#                           POST   (/:locale)/users/confirmation(.:format)                                                  users/confirmations#create
+#           new_user_unlock GET    (/:locale)/users/unlock/new(.:format)                                                    users/unlocks#new
+#               user_unlock GET    (/:locale)/users/unlock(.:format)                                                        users/unlocks#show
+#                           POST   (/:locale)/users/unlock(.:format)                                                        users/unlocks#create
 #                     about GET    (/:locale)/about(.:format)                                                               pages#about
 #                           GET    /:locale(.:format)                                                                       pages#about
 #                      root GET    /                                                                                        pages#about
@@ -66,7 +66,13 @@ Rails.application.routes.draw do
     resources :posts
 
     # Creates user authentication routes.
-    devise_for :users
+    devise_for :users, controllers: {
+      confirmations: 'users/confirmations',
+      passwords: 'users/passwords',
+      registrations: 'users/registrations',
+      sessions: 'users/sessions',
+      unlocks: 'users/unlocks'
+    }
 
     # Sets up the routes for static pages not backed by a database model.
     controller :pages do

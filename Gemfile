@@ -106,7 +106,7 @@ gem 'groupdate', '~> 5.1'
 # https://github.com/ankane/hightop
 gem 'hightop', '~> 0.2'
 
-# AuthTrail is used to track devise login activity.
+# AuthTrail is used to track user's login activity.
 # https://github.com/ankane/authtrail
 gem 'authtrail', '~> 0.2'
 # Ahoy Matey is used to provide user analytics locally, without using a 3rd party service.
