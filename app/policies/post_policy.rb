@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class PostPolicy < ApplicationPolicy
   # Everyone can view all posts.
   def index?

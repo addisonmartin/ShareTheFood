@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 AhoyEmail.api = true
 AhoyEmail.message_model = -> { EmailAnalytic }
 

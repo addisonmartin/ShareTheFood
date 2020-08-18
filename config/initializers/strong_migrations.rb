@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Set timeouts for migrations
 # If you use PgBouncer in transaction mode, delete these lines and set timeouts on the database user
 StrongMigrations.lock_timeout = 10.seconds

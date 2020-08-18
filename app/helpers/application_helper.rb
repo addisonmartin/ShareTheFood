@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module ApplicationHelper
   # Enables pagination on the frontend.
   include Pagy::Frontend

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CreateEmailAnalytics < ActiveRecord::Migration[6.0]
   def change
     create_table :email_analytics do |t|

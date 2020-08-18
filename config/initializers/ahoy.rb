@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Ahoy::Store < Ahoy::DatabaseStore
 
   # Configures Ahoy to use the Visit database model, as opposed to the default Ahoy::Visit.
