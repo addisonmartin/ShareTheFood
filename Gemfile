@@ -28,6 +28,9 @@ gem 'strong_migrations', '~> 0.7'
 # Redis is used as a cache store.
 # https://github.com/redis/redis-rb
 gem 'redis', '~> 4.2'
+# Hiredis is a faster connection library used by Redis.
+# https://github.com/redis/hiredis
+gem 'hiredis', '~> 0.6'
 
 # Rack Attack is used to block and throttle abusive requests.
 # https://github.com/rack/rack-attack
