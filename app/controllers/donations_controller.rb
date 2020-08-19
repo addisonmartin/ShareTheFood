@@ -13,7 +13,7 @@ class DonationsController < ApplicationController
     @donations = authorize Donation.kept
 
     # Decorate the donations so its decorator methods can be used within views.
-    @donations.decorate
+    @donations = @donations.decorate
   end
 
   # GET /donations/1
@@ -23,7 +23,7 @@ class DonationsController < ApplicationController
     authorize @donation
 
     # Decorate the donation so its decorator methods can be used within views.
-    @donation.decorate
+    @donation = @donation.decorate
 
     # Use conditional GET to only return the donation if the user's locally cached version is stale.
     fresh_when last_modified: @donation.updated_at.utc, etag: @donation

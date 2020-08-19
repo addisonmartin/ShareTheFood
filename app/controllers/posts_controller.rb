@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @posts = authorize Post.kept
 
     # Decorate the posts so its decorator methods can be used within views.
-    @posts.decorate
+    @posts = @posts.decorate
   end
 
   # GET /posts/1
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     authorize @post
 
     # Decorate the post so its decorator methods can be used within views.
-    @post.decorate
+    @post = @post.decorate
 
     # Use conditional GET to only return the post if the user's locally cached version is stale.
     fresh_when last_modified: @post.updated_at.utc, etag: @post
