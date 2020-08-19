@@ -4,12 +4,54 @@ module ApplicationHelper
   # Enables pagination on the frontend.
   include Pagy::Frontend
 
+  # Used to convert Rails alerts to Bootstrap styling.
   def flash_class(level)
     case level
       when 'notice' then 'alert-info'
       when 'success' then 'alert-success'
       when 'error' then 'alert-danger'
       when 'alert' then 'alert-warning'
+    end
+  end
+
+  # Used to load Bootstrap's SVG icons into HTML pages.
+  def icon(icon, options = {})
+    file = File.read("node_modules/bootstrap-icons/icons/#{icon}.svg")
+    doc = Nokogiri::HTML::DocumentFragment.parse file
+    svg = doc.at_css('svg')
+
+    # Add any of Bootstrap's class options, if provided.
+    svg['class'] += " #{options[:class]}" if options[:class].present?
+
+    doc.to_html.html_safe
+  end
+
+  # Used from within the navigation bar, adds sign up and sign in or sign out and edit profile links.
+  def user_authentication_links
+    content_tag(:ul, class: 'navbar-nav ml-auto') do
+      if user_signed_in?
+        concat(content_tag(:li, class: 'nav-item active') do
+          link_to edit_user_registration_path, class: 'nav-link active' do
+            icon('person-lines-fill') + ' Edit Profile'
+          end
+        end)
+        concat(content_tag(:li, class: 'nav-item active') do
+          link_to destroy_user_session_path, method: :delete, class: 'nav-link active' do
+            icon('person-dash') + ' Sign Out'
+          end
+        end)
+      else
+        concat(content_tag(:li, class: 'nav-item active') do
+          link_to new_user_session_path, class: 'nav-link active' do
+            icon('person-check-fill') + ' Sign In'
+          end
+        end)
+        concat(content_tag(:li, class: 'nav-item active') do
+          link_to new_user_registration_path, class: 'nav-link active' do
+            icon('person-plus') + ' Sign Up'
+          end
+        end)
+      end
     end
   end
 end
