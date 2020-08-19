@@ -21,8 +21,8 @@
 #  is_perishable        :boolean          not null
 #  is_vegan             :boolean          not null
 #  is_vegetarian        :boolean          not null
-#  latitude             :decimal(, )      not null
-#  longitude            :decimal(, )      not null
+#  latitude             :decimal(10, 6)   not null
+#  longitude            :decimal(10, 6)   not null
 #  name                 :text             not null
 #  pickup_notes         :text             not null
 #  requires_preparation :boolean          not null

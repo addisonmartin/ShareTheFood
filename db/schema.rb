@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_08_17_192335) do
     t.bigint "user_id", null: false
     t.text "name", null: false
     t.text "description"
-    t.decimal "latitude", null: false
-    t.decimal "longitude", null: false
+    t.decimal "latitude", precision: 10, scale: 6, null: false
+    t.decimal "longitude", precision: 10, scale: 6, null: false
     t.text "pickup_notes", null: false
     t.datetime "available_until", null: false
     t.boolean "is_perishable", null: false
