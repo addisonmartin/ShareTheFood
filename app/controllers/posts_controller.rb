@@ -16,6 +16,9 @@ class PostsController < ApplicationController
   def show
     # Ensure the user is allowed to perform this action.
     authorize @post
+
+    # Use conditional GET to only return the post if the user's locally cached version is stale.
+    fresh_when last_modified: @post.updated_at.utc, etag: @post
   end
 
   # GET /posts/new

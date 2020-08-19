@@ -18,6 +18,9 @@ class DonationsController < ApplicationController
   def show
     # Ensure the user is allowed to perform this action.
     authorize @donation
+
+    # Use conditional GET to only return the donation if the user's locally cached version is stale.
+    fresh_when last_modified: @donation.updated_at.utc, etag: @donation
   end
 
   # GET /donations/new
