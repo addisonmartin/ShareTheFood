@@ -11,6 +11,9 @@ class DonationsController < ApplicationController
     # Only get donations that have not been deleted.
     # Ensure the user is allowed to perform this action.
     @donations = authorize Donation.kept
+
+    # Decorate the donations so its decorator methods can be used within views.
+    @donations.decorate
   end
 
   # GET /donations/1
@@ -18,6 +21,9 @@ class DonationsController < ApplicationController
   def show
     # Ensure the user is allowed to perform this action.
     authorize @donation
+
+    # Decorate the donation so its decorator methods can be used within views.
+    @donation.decorate
 
     # Use conditional GET to only return the donation if the user's locally cached version is stale.
     fresh_when last_modified: @donation.updated_at.utc, etag: @donation
