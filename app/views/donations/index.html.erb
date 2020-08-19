@@ -32,6 +32,7 @@
 
   <tbody>
     <% @donations.each do |donation| %>
+      <% cache donation do %>
       <tr>
         <td><%= donation.user_id %></td>
         <td><%= donation.name %></td>
@@ -60,6 +61,7 @@
         <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
         <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
