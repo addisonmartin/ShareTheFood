@@ -51,5 +51,8 @@ import '../source/direct_uploads';
 // Enables the datetime picker.
 import 'jquery-datetimepicker/build/jquery.datetimepicker.full.min';
 $(function () {
-    $('#donation_available_until').datetimepicker();
+    $('#donation_available_until').datetimepicker({
+        inline: true,
+        minDate: 'yesterday'
+    });
 })
