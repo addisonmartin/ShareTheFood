@@ -47,3 +47,9 @@ $(function () {
 
 // Enables viewing file upload progress.
 import '../source/direct_uploads';
+
+// Enables the datetime picker.
+import 'jquery-datetimepicker/build/jquery.datetimepicker.full.min';
+$(function () {
+    $('#donation_available_until').datetimepicker();
+})
