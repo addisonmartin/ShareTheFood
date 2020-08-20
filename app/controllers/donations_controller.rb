@@ -9,7 +9,7 @@ class DonationsController < ApplicationController
   # GET /donations.json
   def index
     # Only get donations that have not been deleted.
-    # Eager load attached images.
+    # Eager load images.
     # Ensure the user is allowed to perform this action.
     # Decorate the donations so its decorator methods can be used within views.
     # Paginate the results.

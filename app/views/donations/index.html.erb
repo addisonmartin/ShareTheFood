@@ -1,3 +1,9 @@
 <h1>Donations</h1>
 
-<%= render partial: 'donations/card', collection: @donations, as: :donation, cached: true %>
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+  <%= render partial: 'donations/card', collection: @donations, as: :donation, cached: true %>
+</div>
+
+<div class="row justify-content-center">
+  <%== pagy_bootstrap_nav_js(@pagination) if @pagination.pages > 1 %>
+</div>

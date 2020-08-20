@@ -1,11 +1,18 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">
-
-    </h5>
+<div class="card border-primary m-1">
+  <%= donation.image_for_card %>
+  <div class="card-header border-primary">
+    <b>
+      <%= donation.name %> <%= donation.dietary_restrictions_badges %>
+    </b>
+  </div>
+  <div class="card-body d-flex flex-column">
     <p class="card-text">
-
+      <%= donation.description %>
     </p>
-    <%= link_to 'View', donation, class: 'btn btn-secondary' %>
+    <h6 class="card-subtitle mb-3 mt-auto"><%= donation.allergen_information %></h6>
+    <%= link_to icon('info-circle') + ' View Donation', donation, class: 'btn btn-block btn-secondary' %>
+  </div>
+  <div class="card-footer border-primary">
+    <%= icon('clock')%> Available for: <%= donation.available_until_in_words %>
   </div>
 </div>
