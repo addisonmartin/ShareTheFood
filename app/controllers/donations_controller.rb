@@ -48,6 +48,8 @@ class DonationsController < ApplicationController
   def create
     # Ensure the user is allowed to perform this action.
     @donation = authorize Donation.new(donation_params)
+    # Attach the current user to the donation.
+    @donation.user = current_user
 
     respond_to do |format|
       if @donation.save
