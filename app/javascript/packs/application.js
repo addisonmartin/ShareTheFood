@@ -40,9 +40,9 @@ require("@rails/actiontext")
 import 'bootstrap';
 
 // Enables Bootstrap's tooltip and popover.
-document.addEventListener("turbolinks:load", () => {
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[data-toggle="popover"]').popover()
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 })
 
 // Enables viewing file upload progress.
