@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/index', type: :view do
-  before(:each) do
+  before do
     assign(:posts, [
              Post.create!(
                title: 'MyText',

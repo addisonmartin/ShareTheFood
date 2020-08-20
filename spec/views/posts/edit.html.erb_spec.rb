@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/edit', type: :view do
-  before(:each) do
+  before do
     @post = assign(:post, Post.create!(
                             title: 'MyText',
                             subtitle: 'MyText',

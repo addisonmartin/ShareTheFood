@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'donations/new', type: :view do
-  before(:each) do
+  before do
     assign(:donation, Donation.new(
                         user: nil,
                         name: 'MyText',
