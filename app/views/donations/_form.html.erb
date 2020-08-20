@@ -10,21 +10,30 @@
     <%= f.input :longitude %>
     <%= f.input :pickup_notes %>
     <%= f.input :available_until %>
-    <%= f.file_field :images, multiple: true, direct_upload: true %>
-    <%= f.input :is_perishable %>
-    <%= f.input :requires_preparation %>
-    <%= f.input :is_vegetarian %>
-    <%= f.input :is_vegan %>
-    <%= f.input :is_kosher %>
-    <%= f.input :is_halal %>
-    <%= f.input :contains_gluten %>
-    <%= f.input :contains_peanuts %>
-    <%= f.input :contains_tree_nuts %>
-    <%= f.input :contains_dairy %>
-    <%= f.input :contains_soy %>
-    <%= f.input :contains_egg %>
-    <%= f.input :contains_fish %>
-    <%= f.input :contains_shellfish %>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <%= f.input :is_perishable %>
+        <%= f.input :requires_preparation %>
+        <%= f.input :is_vegetarian %>
+        <%= f.input :is_vegan %>
+        <%= f.input :is_kosher %>
+        <%= f.input :is_halal %>
+        <%= f.input :contains_gluten %>
+      </div>
+      <div class="col">
+        <%= f.input :contains_peanuts %>
+        <%= f.input :contains_tree_nuts %>
+        <%= f.input :contains_dairy %>
+        <%= f.input :contains_soy %>
+        <%= f.input :contains_egg %>
+        <%= f.input :contains_fish %>
+        <%= f.input :contains_shellfish %>
+      </div>
+    </div>
+    <hr>
+    <%= f.file_field :images, multiple: true, direct_upload: true, class: 'form-control-file' %>
+    <br><br>
   </div>
 
   <div class="form-actions btn-group btn-group-lg">
