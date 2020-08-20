@@ -41,17 +41,17 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable,
          :trackable
 
-  has_many :donations, inverse_of: :user
-  has_many :posts, inverse_of: :user
+  has_many :donations, inverse_of: :user, dependent: :destroy
+  has_many :posts, inverse_of: :user, dependent: :nullify
 
   # Associates login activities with the user that performed them.
-  has_many :login_activities, as: :user
+  has_many :login_activities, as: :user, dependent: :nullify
 
   # Links user analytic visits with the user, if they are signed in.
-  has_many :visits, class_name: 'Visit'
+  has_many :visits, class_name: 'Visit', dependent: :nullify
 
   # Links email analytics to the user that received the email.
-  has_many :email_analytics, class_name: 'EmailAnalytic', as: :user
+  has_many :email_analytics, class_name: 'EmailAnalytic', as: :user, dependent: :nullify
 
   validates :name, :email, presence: true
   validates :email, uniqueness: true
