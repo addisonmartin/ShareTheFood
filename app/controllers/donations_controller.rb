@@ -8,12 +8,14 @@ class DonationsController < ApplicationController
   # GET /donations
   # GET /donations.json
   def index
-    # Only get donations that have not been deleted.
-    # Eager load images.
     # Ensure the user is allowed to perform this action.
-    # Decorate the donations so its decorator methods can be used within views.
+    # Eager load the donation's images.
+    # Only get donations that have not been deleted.
+    @donations = authorize Donation.with_attached_images.kept
     # Paginate the results.
-    @pagination, @donations = pagy((authorize Donation.with_attached_images.kept).decorate)
+    @pagination, @donations = pagy(@donations)
+    # Decorate the donations so its decorator methods can be used within views.
+    @donations = @donations.decorate
   end
 
   # GET /donations/1
