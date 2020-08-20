@@ -32,36 +32,22 @@ class DonationDecorator < ApplicationDecorator
   def dietary_restrictions_badges
     badges = ''
 
-    if model.is_vegetarian?
-      badges += h.content_tag(:span, class: 'badge badge-pill badge-primary ml-1') do
-        'Vegetarian'
-      end
-    end
-    if model.is_vegan?
-      badges += h.content_tag(:span, class: 'badge badge-pill badge-primary ml-1') do
-        'Vegan'
-      end
-    end
-    if model.is_kosher?
-      badges += h.content_tag(:span, class: 'badge badge-pill badge-primary ml-1') do
-        'Kosher'
-      end
-    end
-    if model.is_halal?
-      badges += h.content_tag(:span, class: 'badge badge-pill badge-primary ml-1') do
-        'Halal'
-      end
-    end
-    unless model.contains_gluten?
-      badges += h.content_tag(:span, class: 'badge badge-pill badge-primary ml-1') do
-        'Gluten Free'
-      end
-    end
+    badges += dietary_restriction_badge('Vegetarian') if model.is_vegetarian?
+    badges += dietary_restriction_badge('Vegan') if model.is_vegan?
+    badges += dietary_restriction_badge('Kosher') if model.is_kosher?
+    badges += dietary_restriction_badge('Halal') if model.is_halal?
+    badges += dietary_restriction_badge('Gluten Free') unless model.contains_gluten?
 
     badges.html_safe
   end
 
   def available_until_in_words
     h.distance_of_time_in_words(h.local_time(model.available_until), h.local_time(Time.zone.now))
+  end
+
+  private
+
+  def dietary_restriction_badge(name)
+    h.tag.span(name, class: 'badge badge-pill badge-primary ml-1')
   end
 end
