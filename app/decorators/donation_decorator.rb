@@ -51,11 +51,14 @@ class DonationDecorator < ApplicationDecorator
     'Vegetarian': 'asdf',
     'Vegan': 'asdf',
     'Kosher': 'asdf',
-    'Halal': 'Halal refers to meat that must abide by these restrictions: An animal should not be dead prior to slaughter. A Muslim should perform slaughter. Any flowing blood of the carcass should be completely drained.',
+    'Halal': 'Halal refers to meat that must abide by these restrictions: An animal should not be dead prior to
+              slaughter. A Muslim should perform slaughter. Any flowing blood of the carcass should be completely
+              drained.',
     'Gluten Free': 'asdf'
-  }
+  }.freeze
 
   def dietary_restriction_badge(name)
-    h.tag.span(name, class: 'badge badge-pill badge-primary ml-1', :"data-toggle" => 'tooltip', :"data-placement" => 'bottom', :"title" => DIETARY_RESTRICTION_DESCRIPTION[name.to_sym])
+    h.tag.span(name, class: 'badge badge-pill badge-primary ml-1', "data-toggle": 'tooltip',
+                     "data-placement": 'bottom', title: DIETARY_RESTRICTION_DESCRIPTION[name.to_sym])
   end
 end

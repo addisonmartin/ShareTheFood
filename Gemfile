@@ -82,7 +82,8 @@ gem 'pg_search', '~> 2.3'
 # Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
 # https://github.com/kpumuk/meta-tags
 gem 'meta-tags', '~> 2.13'
-# HTTP Accept Language provides a robust implementation of parsing the user's preferred locale from the HTTP header item HTTP_ACCEPT_LANGUAGE.
+# HTTP Accept Language provides a robust implementation of parsing the user's preferred locale
+# from the HTTP header item HTTP_ACCEPT_LANGUAGE.
 # https://github.com/iain/http_accept_language/tree/master
 gem 'http_accept_language', '~> 2.1'
 
@@ -205,7 +206,8 @@ group :test do
 end
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
@@ -229,7 +231,8 @@ group :development do
   # https://github.com/tmm1/stackprof
   gem 'stackprof', '~> 0.2'
 
-  # Annotate automatically adds a comment summarizing the database schema to the top of relevant files within the application.
+  # Annotate automatically adds a comment summarizing the database schema to
+  # the top of relevant files within the application.
   # https://github.com/ctran/annotate_models
   gem 'annotate', '~> 3.1'
 
