@@ -4,10 +4,10 @@ class DonationDecorator < ApplicationDecorator
   delegate_all
 
   def image_for_card
-    if model.images.attached?
-      h.image_tag(model.images.first.variant(resize_to_limit: [250, 250]), class: 'card-img-top',
-                                                                           alt: "#{model.name}'s Image")
-    end
+    return unless model.images.attached?
+
+    h.image_tag(model.images.first.variant(resize_to_limit: [250, 250]), class: 'card-img-top',
+                                                                         alt: "#{model.name}'s Image")
   end
 
   def allergen_information

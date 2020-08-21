@@ -4,14 +4,16 @@ module ApplicationHelper
   # Enables pagination on the frontend.
   include Pagy::Frontend
 
+  FLASH_LEVEL_TO_BOOTSTRAP_CLASS = {
+    'notice': 'alert-info',
+    'success': 'alert-success',
+    'error': 'alert-danger',
+    'alert': 'alert-warning'
+  }.freeze
+
   # Used to convert Rails alerts to Bootstrap styling.
   def flash_class(level)
-    case level
-      when 'notice' then 'alert-info'
-      when 'success' then 'alert-success'
-      when 'error' then 'alert-danger'
-      when 'alert' then 'alert-warning'
-    end
+    FLASH_LEVEL_TO_BOOTSTRAP_CLASS[level.to_sym]
   end
 
   # Used to load Bootstrap's SVG icons into HTML pages.
@@ -28,27 +30,27 @@ module ApplicationHelper
 
   # Used from within the navigation bar, adds sign up and sign in or sign out and edit profile links.
   def user_authentication_links
-    content_tag(:ul, class: 'navbar-nav ml-auto') do
+    tag.ul(class: 'navbar-nav ml-auto') do
       if user_signed_in?
-        concat(content_tag(:li, class: 'nav-item active') do
+        concat(tag.li(class: 'nav-item active') do
           link_to edit_user_registration_path, class: 'nav-link active' do
-            icon('person-lines-fill') + ' Edit Profile'
+            "#{icon('person-lines-fill')} Edit Profile"
           end
         end)
-        concat(content_tag(:li, class: 'nav-item active') do
+        concat(tag.li(class: 'nav-item active') do
           link_to destroy_user_session_path, method: :delete, class: 'nav-link active' do
-            icon('person-dash') + ' Sign Out'
+            "#{icon('person-dash')} Sign Out"
           end
         end)
       else
-        concat(content_tag(:li, class: 'nav-item active') do
+        concat(tag.li(class: 'nav-item active') do
           link_to new_user_session_path, class: 'nav-link active' do
-            icon('person-check-fill') + ' Sign In'
+            "#{icon('person-check-fill')} Sign In"
           end
         end)
-        concat(content_tag(:li, class: 'nav-item active') do
+        concat(tag.li(class: 'nav-item active') do
           link_to new_user_registration_path, class: 'nav-link active' do
-            icon('person-plus') + ' Sign Up'
+            "#{icon('person-plus')} Sign Up"
           end
         end)
       end
