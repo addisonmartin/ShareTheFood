@@ -86,7 +86,8 @@ end
 Rack::Attack.blocklist('fail2ban pentesters') do |req|
   # `filter` returns truthy value if request fails, or if it's from a previously banned IP
   # so the request is blocked
-  Rack::Attack::Fail2Ban.filter("pentesters-#{req.ip}", maxretry: 3, findtime: 10.minutes, bantime: 5.minutes) do
+  Rack::Attack::Fail2Ban.filter("pentesters-#{req.ip}", maxretry: 3, findtime: 10.minutes,
+                                                        bantime: 5.minutes) do
     # The count for the IP is incremented if the return value is truthy
     CGI.unescape(req.query_string) =~ %r{/etc/passwd} ||
       req.path.include?('/etc/passwd') ||
@@ -97,5 +98,6 @@ end
 
 # Log all Rack Attack actions.
 ActiveSupport::Notifications.subscribe(/rack_attack/) do |name, start, finish, request_id, payload|
-  Rails.logger.info "Rack Attack: Name: #{name}, Start: #{start}, Finish: #{finish}, Request ID: #{request_id}, Payload ID: #{payload},"
+  Rails.logger.info "Rack Attack: Name: #{name}, Start: #{start}, Finish: #{finish}, Request ID: #{request_id},
+                     Payload ID: #{payload}"
 end
