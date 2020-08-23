@@ -34,23 +34,23 @@ module ApplicationHelper
       if user_signed_in?
         concat(tag.li(class: 'nav-item active') do
           link_to edit_user_registration_path, class: 'nav-link active' do
-            "#{icon('person-lines-fill')} Edit Profile"
+            icon('person-lines-fill') + ' Edit Profile'
           end
         end)
         concat(tag.li(class: 'nav-item active') do
           link_to destroy_user_session_path, method: :delete, class: 'nav-link active' do
-            "#{icon('person-dash')} Sign Out"
+            icon('person-dash') + ' Sign Out'
           end
         end)
       else
         concat(tag.li(class: 'nav-item active') do
           link_to new_user_session_path, class: 'nav-link active' do
-            "#{icon('person-check-fill')} Sign In"
+            icon('person-check-fill') + ' Sign In'
           end
         end)
         concat(tag.li(class: 'nav-item active') do
           link_to new_user_registration_path, class: 'nav-link active' do
-            "#{icon('person-plus')} Sign Up"
+            icon('person-plus') + ' Sign Up'
           end
         end)
       end
