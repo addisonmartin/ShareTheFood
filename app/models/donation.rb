@@ -51,7 +51,7 @@ class Donation < ApplicationRecord
   has_paper_trail
 
   # Links the user analytic visit when the user created the donation to the donation.
-  visitable :visit
+  visitable :visit, class_name: 'Visit'
 
   validates :user, :name, :available_until, :latitude, :longitude, :pickup_notes, presence: true
   validates :is_perishable, :requires_preparation, :is_vegetarian, :is_vegan, :is_kosher, :is_halal,
