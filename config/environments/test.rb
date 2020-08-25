@@ -58,4 +58,7 @@ Rails.application.configure do
     Bullet.skip_html_injection = false
     Bullet.raise = true # Raise errors so RSpec tests fails.
   end
+
+  # Disable rack attack during tests.
+  Rack::Attack.enabled = false
 end
