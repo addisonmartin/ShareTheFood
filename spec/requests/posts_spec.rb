@@ -3,10 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe '/posts', type: :request do
-  let(:valid_attributes) do
-    attributes_for(:post)
-  end
-
   let(:invalid_attributes) do
     attributes_for(:donation)
   end
@@ -14,7 +10,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /index' do
     context 'when not signed in' do
       it 'renders a successful response' do
-        Post.create! valid_attributes
+        Post.create! attributes_for(:post)
         get posts_url
         expect(response).to be_successful
       end
@@ -25,7 +21,7 @@ RSpec.describe '/posts', type: :request do
         user = create(:user)
         sign_in user
 
-        Post.create! valid_attributes
+        Post.create! attributes_for(:post)
         get posts_url
         expect(response).to be_successful
       end
@@ -36,7 +32,7 @@ RSpec.describe '/posts', type: :request do
         admin = create(:admin)
         sign_in admin
 
-        Post.create! valid_attributes
+        Post.create! attributes_for(:post)
         get posts_url
         expect(response).to be_successful
       end
@@ -46,7 +42,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /show' do
     context 'when not signed in' do
       it 'renders a successful response' do
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -57,7 +53,7 @@ RSpec.describe '/posts', type: :request do
         user = create(:user)
         sign_in user
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -68,7 +64,7 @@ RSpec.describe '/posts', type: :request do
         admin = create(:admin)
         sign_in admin
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -105,7 +101,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /edit' do
     context 'when not signed in' do
       it 'raises an unauthorized error' do
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
@@ -115,7 +111,7 @@ RSpec.describe '/posts', type: :request do
         user = create(:user)
         sign_in user
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
@@ -125,7 +121,7 @@ RSpec.describe '/posts', type: :request do
         admin = create(:admin)
         sign_in admin
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         get edit_post_url(post)
         expect(response).to be_successful
       end
@@ -137,13 +133,13 @@ RSpec.describe '/posts', type: :request do
       context 'with valid parameters' do
         it 'raises an unauthorized error' do
           expect do
-            post posts_url, params: { post: valid_attributes }
+            post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
         it 'raises an unauthorized error' do
           expect do
-            post posts_url, params: { post: valid_attributes }
+            post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -170,7 +166,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect do
-            post posts_url, params: { post: valid_attributes }
+            post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
@@ -179,7 +175,7 @@ RSpec.describe '/posts', type: :request do
           sign_in user
 
           expect do
-            post posts_url, params: { post: valid_attributes }
+            post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
@@ -212,7 +208,7 @@ RSpec.describe '/posts', type: :request do
           sign_in admin
 
           expect do
-            post posts_url, params: { post: valid_attributes }
+            post posts_url, params: { post: attributes_for(:post) }
           end.to change(Post, :count).by(1)
         end
 
@@ -220,7 +216,7 @@ RSpec.describe '/posts', type: :request do
           admin = create(:admin)
           sign_in admin
 
-          post posts_url, params: { post: valid_attributes }
+          post posts_url, params: { post: attributes_for(:post) }
           expect(response).to redirect_to(post_url(Post.last))
         end
       end
@@ -263,7 +259,7 @@ RSpec.describe '/posts', type: :request do
           admin = create(:admin)
           sign_in admin
 
-          post = Post.create! valid_attributes
+          post = Post.create! attributes_for(:post)
           patch post_url(post), params: { post: new_attributes }
           post.reload
           skip('Add assertions for updated state')
@@ -285,7 +281,7 @@ RSpec.describe '/posts', type: :request do
           admin = create(:admin)
           sign_in admin
 
-          post = Post.create! valid_attributes
+          post = Post.create! attributes_for(:post)
           patch post_url(post), params: { post: invalid_attributes }
           expect(response).to be_successful
         end
@@ -305,7 +301,7 @@ RSpec.describe '/posts', type: :request do
         admin = create(:admin)
         sign_in admin
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         expect do
           delete post_url(post)
         end.to change(Post.kept, :count).by(-1)
@@ -315,7 +311,7 @@ RSpec.describe '/posts', type: :request do
         admin = create(:admin)
         sign_in admin
 
-        post = Post.create! valid_attributes
+        post = Post.create! attributes_for(:post)
         delete post_url(post)
         expect(response).to redirect_to(posts_url(locale: 'en'))
       end
