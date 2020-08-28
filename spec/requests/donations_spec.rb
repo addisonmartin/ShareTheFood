@@ -326,7 +326,7 @@ RSpec.describe '/donations', type: :request do
 
     context 'with invalid parameters' do
       context 'when not signed in' do
-        it "renders a successful response (i.e. to display the 'edit' template)" do
+        it 'redirects to the sign in page' do
           donation = create(:donation)
           patch donation_url(donation), params: { donation: invalid_attributes }
           expect(response).to redirect_to(new_user_session_path)
@@ -360,7 +360,7 @@ RSpec.describe '/donations', type: :request do
       end
 
       context 'when signed in as an admin' do
-        it "renders a successful response (i.e. to display the 'edit' template)" do
+        it "renders the donation's page" do
           sign_in create(:admin)
 
           donation = create(:donation)
