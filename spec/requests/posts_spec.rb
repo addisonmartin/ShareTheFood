@@ -175,7 +175,7 @@ RSpec.describe '/posts', type: :request do
           sign_in create(:admin)
 
           post posts_url, params: { post: attributes_for(:post) }
-          expect(response).to redirect_to(post_url(Post.last))
+          expect(response).to redirect_to(post_url(Post.last, locale: 'en'))
         end
       end
 
@@ -199,18 +199,26 @@ RSpec.describe '/posts', type: :request do
   end
 
   describe 'PATCH /update' do
-    context 'when not signed in' do
-    end
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        attributes_for(:post)
+      end
 
-    context 'when signed in' do
-    end
+      context 'when not signed in' do
+        it 'raises a not authorized error' do
 
-    context 'when signed in as an admin' do
-      context 'with valid parameters' do
-        let(:new_attributes) do
-          attributes_for(:post)
         end
+      end
 
+      context 'when signed in' do
+        it 'raises a not authorized error' do
+          sign_in create(:user)
+
+
+        end
+      end
+
+      context 'when signed in as an admin' do
         it 'updates the requested post' do
           sign_in create(:admin)
 
@@ -229,8 +237,18 @@ RSpec.describe '/posts', type: :request do
           expect(response).to redirect_to(post_url(post, locale: 'en'))
         end
       end
+    end
 
-      context 'with invalid parameters' do
+    context 'with invalid parameters' do
+      context 'when not signed in' do
+
+      end
+
+      context 'when signed in' do
+        sign_in create(:user)
+      end
+
+      context 'when signed in as an admin' do
         it "renders a successful response (i.e. to display the 'edit' template)" do
           sign_in create(:admin)
 
