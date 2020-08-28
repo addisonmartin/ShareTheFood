@@ -69,13 +69,13 @@ RSpec.describe '/posts', type: :request do
 
   describe 'GET /new' do
     context 'when not signed in' do
-      it 'raises an unauthorized error' do
+      it 'raises a not authorized error' do
         expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
     context 'when signed in' do
-      it 'raises an unauthorized error' do
+      it 'raises a not authorized error' do
         sign_in create(:user)
 
         expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
@@ -94,14 +94,14 @@ RSpec.describe '/posts', type: :request do
 
   describe 'GET /edit' do
     context 'when not signed in' do
-      it 'raises an unauthorized error' do
+      it 'raises a not authorized error' do
         post = Post.create! attributes_for(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
 
     context 'when signed in' do
-      it 'raises an unauthorized error' do
+      it 'raises a not authorized error' do
         sign_in create(:user)
 
         post = Post.create! attributes_for(:post)
@@ -123,13 +123,13 @@ RSpec.describe '/posts', type: :request do
   describe 'POST /create' do
     context 'when not signed in' do
       context 'with valid parameters' do
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           expect do
             post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           expect do
             post posts_url, params: { post: attributes_for(:post) }
           end.to raise_error(Pundit::NotAuthorizedError)
@@ -137,13 +137,13 @@ RSpec.describe '/posts', type: :request do
       end
 
       context 'with invalid parameters' do
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           expect do
             post posts_url, params: { post: invalid_attributes }
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           expect do
             post posts_url, params: { post: invalid_attributes }
           end.to raise_error(Pundit::NotAuthorizedError)
@@ -153,7 +153,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in' do
       context 'with valid parameters' do
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           sign_in create(:user)
 
           expect do
@@ -161,7 +161,7 @@ RSpec.describe '/posts', type: :request do
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           sign_in create(:user)
 
           expect do
@@ -171,7 +171,7 @@ RSpec.describe '/posts', type: :request do
       end
 
       context 'with invalid parameters' do
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           sign_in create(:user)
 
           expect do
@@ -179,7 +179,7 @@ RSpec.describe '/posts', type: :request do
           end.to raise_error(Pundit::NotAuthorizedError)
         end
 
-        it 'raises an unauthorized error' do
+        it 'raises a not authorized error' do
           sign_in create(:user)
 
           expect do
