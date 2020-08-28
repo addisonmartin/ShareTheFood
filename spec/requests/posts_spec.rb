@@ -18,8 +18,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in' do
       it 'renders a successful response' do
-        user = create(:user)
-        sign_in user
+        sign_in create(:user)
 
         Post.create! attributes_for(:post)
         get posts_url
@@ -29,8 +28,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in as an admin' do
       it 'renders a successful response' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         Post.create! attributes_for(:post)
         get posts_url
@@ -50,8 +48,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in' do
       it 'renders a successful response' do
-        user = create(:user)
-        sign_in user
+        sign_in create(:user)
 
         post = Post.create! attributes_for(:post)
         get post_url(post)
@@ -61,8 +58,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in as an admin' do
       it 'renders a successful response' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         post = Post.create! attributes_for(:post)
         get post_url(post)
@@ -80,8 +76,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in' do
       it 'raises an unauthorized error' do
-        user = create(:user)
-        sign_in user
+        sign_in create(:user)
 
         expect { get new_post_url }.to raise_error(Pundit::NotAuthorizedError)
       end
@@ -89,8 +84,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in as an admin' do
       it 'renders a successful response' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         get new_post_url
         expect(response).to be_successful
@@ -108,8 +102,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in' do
       it 'raises an unauthorized error' do
-        user = create(:user)
-        sign_in user
+        sign_in create(:user)
 
         post = Post.create! attributes_for(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
@@ -118,8 +111,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in as an admin' do
       it 'render a successful response' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         post = Post.create! attributes_for(:post)
         get edit_post_url(post)
@@ -162,8 +154,7 @@ RSpec.describe '/posts', type: :request do
     context 'when signed in' do
       context 'with valid parameters' do
         it 'raises an unauthorized error' do
-          user = create(:user)
-          sign_in user
+          sign_in create(:user)
 
           expect do
             post posts_url, params: { post: attributes_for(:post) }
@@ -171,8 +162,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it 'raises an unauthorized error' do
-          user = create(:user)
-          sign_in user
+          sign_in create(:user)
 
           expect do
             post posts_url, params: { post: attributes_for(:post) }
@@ -182,8 +172,7 @@ RSpec.describe '/posts', type: :request do
 
       context 'with invalid parameters' do
         it 'raises an unauthorized error' do
-          user = create(:user)
-          sign_in user
+          sign_in create(:user)
 
           expect do
             post posts_url, params: { post: invalid_attributes }
@@ -191,8 +180,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it 'raises an unauthorized error' do
-          user = create(:user)
-          sign_in user
+          sign_in create(:user)
 
           expect do
             post posts_url, params: { post: invalid_attributes }
@@ -204,8 +192,7 @@ RSpec.describe '/posts', type: :request do
     context 'when signed in as an admin' do
       context 'with valid parameters' do
         it 'creates a new Post' do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           expect do
             post posts_url, params: { post: attributes_for(:post) }
@@ -213,8 +200,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it 'redirects to the created post' do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           post posts_url, params: { post: attributes_for(:post) }
           expect(response).to redirect_to(post_url(Post.last))
@@ -223,8 +209,7 @@ RSpec.describe '/posts', type: :request do
 
       context 'with invalid parameters' do
         it 'does not create a new Post' do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           expect do
             post posts_url, params: { post: invalid_attributes }
@@ -232,8 +217,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it "renders a successful response (i.e. to display the 'new' template)" do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           post posts_url, params: { post: invalid_attributes }
           expect(response).to be_successful
@@ -256,8 +240,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it 'updates the requested post' do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           post = Post.create! attributes_for(:post)
           patch post_url(post), params: { post: new_attributes }
@@ -266,8 +249,7 @@ RSpec.describe '/posts', type: :request do
         end
 
         it 'redirects to the post' do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           post = Post.create! valid_attributes
           patch post_url(post), params: { post: new_attributes }
@@ -278,8 +260,7 @@ RSpec.describe '/posts', type: :request do
 
       context 'with invalid parameters' do
         it "renders a successful response (i.e. to display the 'edit' template)" do
-          admin = create(:admin)
-          sign_in admin
+          sign_in create(:admin)
 
           post = Post.create! attributes_for(:post)
           patch post_url(post), params: { post: invalid_attributes }
@@ -298,8 +279,7 @@ RSpec.describe '/posts', type: :request do
 
     context 'when signed in as an admin' do
       it 'destroys the requested post' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         post = Post.create! attributes_for(:post)
         expect do
@@ -308,8 +288,7 @@ RSpec.describe '/posts', type: :request do
       end
 
       it 'redirects to the posts list' do
-        admin = create(:admin)
-        sign_in admin
+        sign_in create(:admin)
 
         post = Post.create! attributes_for(:post)
         delete post_url(post)
