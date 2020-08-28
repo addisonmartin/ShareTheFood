@@ -44,6 +44,8 @@ class PostsController < ApplicationController
   def create
     # Ensure the user is allowed to perform this action.
     @post = authorize Post.new(post_params)
+    # Attach the current admin user to the post.
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -95,6 +97,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :subtitle, :body, :published, :user_id)
+    params.require(:post).permit(:title, :subtitle, :body, :published)
   end
 end
