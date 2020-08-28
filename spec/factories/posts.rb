@@ -29,8 +29,6 @@ require 'faker'
 
 FactoryBot.define do
   factory :post do
-    user { create(:user) }
-
     title { Faker::Lorem.sentence }
     subtitle { Faker::Lorem.sentence }
     body { Faker::Markdown.sandwich }
