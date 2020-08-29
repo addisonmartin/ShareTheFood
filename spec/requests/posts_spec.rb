@@ -10,7 +10,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /index' do
     context 'when not signed in' do
       it 'renders a successful response' do
-        Post.create! attributes_for(:post)
+        create(:post)
         get posts_url
         expect(response).to be_successful
       end
@@ -20,7 +20,7 @@ RSpec.describe '/posts', type: :request do
       it 'renders a successful response' do
         sign_in create(:user)
 
-        Post.create! attributes_for(:post)
+        create(:post)
         get posts_url
         expect(response).to be_successful
       end
@@ -40,7 +40,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /show' do
     context 'when not signed in' do
       it 'renders a successful response' do
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -50,7 +50,7 @@ RSpec.describe '/posts', type: :request do
       it 'renders a successful response' do
         sign_in create(:user)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -60,7 +60,7 @@ RSpec.describe '/posts', type: :request do
       it 'renders a successful response' do
         sign_in create(:admin)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         get post_url(post)
         expect(response).to be_successful
       end
@@ -95,7 +95,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /edit' do
     context 'when not signed in' do
       it 'raises a not authorized error' do
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
@@ -104,7 +104,7 @@ RSpec.describe '/posts', type: :request do
       it 'raises a not authorized error' do
         sign_in create(:user)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         expect { get edit_post_url(post) }.to raise_error(Pundit::NotAuthorizedError)
       end
     end
@@ -113,7 +113,7 @@ RSpec.describe '/posts', type: :request do
       it 'render a successful response' do
         sign_in create(:admin)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         get edit_post_url(post)
         expect(response).to be_successful
       end
@@ -131,7 +131,13 @@ RSpec.describe '/posts', type: :request do
       end
 
       context 'when signed in' do
+        it 'raises a not authorized error' do
+          sign_in create(:user)
 
+          expect do
+            post posts_url, params: { post: attributes_for(:post) }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
       end
 
       context 'when signed in as an admin' do
@@ -198,7 +204,7 @@ RSpec.describe '/posts', type: :request do
 
       context 'when not signed in' do
         it 'raises a not authorized error' do
-          post = Post.create! attributes_for(:post)
+          post = create(:post)
           expect do
             patch post_url(post), params: { post: new_attributes }
           end.to raise_error(Pundit::NotAuthorizedError)
@@ -209,7 +215,7 @@ RSpec.describe '/posts', type: :request do
         it 'raises a not authorized error' do
           sign_in create(:user)
 
-          post = Post.create! attributes_for(:post)
+          post = create(:post)
           expect do
             patch post_url(post), params: { post: new_attributes }
           end.to raise_error(Pundit::NotAuthorizedError)
@@ -220,16 +226,18 @@ RSpec.describe '/posts', type: :request do
         it 'updates the requested post' do
           sign_in create(:admin)
 
-          post = Post.create! attributes_for(:post)
+          post = create(:post)
           patch post_url(post), params: { post: new_attributes }
           post.reload
-          skip('Add assertions for updated state')
+
+          expect(post.title).to eq(new_attributes[:title])
+          expect(post.subtitle).to eq(new_attributes[:subtitle])
         end
 
         it 'redirects to the post' do
           sign_in create(:admin)
 
-          post = Post.create! attributes_for(:post)
+          post = create(:post)
           patch post_url(post), params: { post: new_attributes }
           post.reload
           expect(response).to redirect_to(post_url(post, locale: 'en'))
@@ -240,7 +248,10 @@ RSpec.describe '/posts', type: :request do
     context 'with invalid parameters' do
       context 'when not signed in' do
         it 'raises a not authorized error' do
-
+          post = create(:post)
+          expect do
+            patch post_url(post), params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
@@ -248,6 +259,10 @@ RSpec.describe '/posts', type: :request do
         it 'raises a not authorized error' do
           sign_in create(:user)
 
+          post = create(:post)
+          expect do
+            patch post_url(post), params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
@@ -255,9 +270,9 @@ RSpec.describe '/posts', type: :request do
         it "renders a successful response (i.e. to display the 'edit' template)" do
           sign_in create(:admin)
 
-          post = Post.create! attributes_for(:post)
+          post = create(:post)
           patch post_url(post), params: { post: invalid_attributes }
-          expect(response).to be_successful
+          expect(response).to redirect_to(post_url(post, locale: 'en'))
         end
       end
     end
@@ -265,16 +280,30 @@ RSpec.describe '/posts', type: :request do
 
   describe 'DELETE /destroy' do
     context 'when not signed in' do
+      it 'raises a not authorized error' do
+        post = create(:post)
+        expect do
+          delete post_url(post)
+        end.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
     context 'when signed in' do
+      it 'raises a not authorized error' do
+        sign_in create(:user)
+
+        post = create(:post)
+        expect do
+          delete post_url(post)
+        end.to raise_error(Pundit::NotAuthorizedError)
+      end
     end
 
     context 'when signed in as an admin' do
       it 'destroys the requested post' do
         sign_in create(:admin)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         expect do
           delete post_url(post)
         end.to change(Post.kept, :count).by(-1)
@@ -283,7 +312,7 @@ RSpec.describe '/posts', type: :request do
       it 'redirects to the posts list' do
         sign_in create(:admin)
 
-        post = Post.create! attributes_for(:post)
+        post = create(:post)
         delete post_url(post)
         expect(response).to redirect_to(posts_url(locale: 'en'))
       end
