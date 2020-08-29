@@ -121,8 +121,8 @@ RSpec.describe '/posts', type: :request do
   end
 
   describe 'POST /create' do
-    context 'when not signed in' do
-      context 'with valid parameters' do
+    context 'with valid parameters' do
+      context 'when not signed in' do
         it 'raises a not authorized error' do
           expect do
             post posts_url, params: { post: attributes_for(:post) }
@@ -130,40 +130,12 @@ RSpec.describe '/posts', type: :request do
         end
       end
 
-      context 'with invalid parameters' do
-        it 'raises a not authorized error' do
-          expect do
-            post posts_url, params: { post: invalid_attributes }
-          end.to raise_error(Pundit::NotAuthorizedError)
-        end
-      end
-    end
+      context 'when signed in' do
 
-    context 'when signed in' do
-      context 'with valid parameters' do
-        it 'raises a not authorized error' do
-          sign_in create(:user)
-
-          expect do
-            post posts_url, params: { post: attributes_for(:post) }
-          end.to raise_error(Pundit::NotAuthorizedError)
-        end
       end
 
-      context 'with invalid parameters' do
-        it 'raises a not authorized error' do
-          sign_in create(:user)
-
-          expect do
-            post posts_url, params: { post: invalid_attributes }
-          end.to raise_error(Pundit::NotAuthorizedError)
-        end
-      end
-    end
-
-    context 'when signed in as an admin' do
-      context 'with valid parameters' do
-        it 'creates a new Post' do
+      context 'when signed in as an admin' do
+        it 'creates a new post' do
           sign_in create(:admin)
 
           expect do
@@ -178,8 +150,28 @@ RSpec.describe '/posts', type: :request do
           expect(response).to redirect_to(post_url(Post.last, locale: 'en'))
         end
       end
+    end
 
-      context 'with invalid parameters' do
+    context 'with invalid parameters' do
+      context 'when not signed in' do
+        it 'raises a not authorized error' do
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
+      end
+
+      context 'when signed in' do
+        it 'raises a not authorized error' do
+          sign_in create(:user)
+
+          expect do
+            post posts_url, params: { post: invalid_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
+        end
+      end
+
+      context 'when signed in as an admin' do
         it 'does not create a new Post' do
           sign_in create(:admin)
 
@@ -206,7 +198,10 @@ RSpec.describe '/posts', type: :request do
 
       context 'when not signed in' do
         it 'raises a not authorized error' do
-
+          post = Post.create! attributes_for(:post)
+          expect do
+            patch post_url(post), params: { post: new_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
@@ -214,7 +209,10 @@ RSpec.describe '/posts', type: :request do
         it 'raises a not authorized error' do
           sign_in create(:user)
 
-
+          post = Post.create! attributes_for(:post)
+          expect do
+            patch post_url(post), params: { post: new_attributes }
+          end.to raise_error(Pundit::NotAuthorizedError)
         end
       end
 
@@ -231,7 +229,7 @@ RSpec.describe '/posts', type: :request do
         it 'redirects to the post' do
           sign_in create(:admin)
 
-          post = Post.create! valid_attributes
+          post = Post.create! attributes_for(:post)
           patch post_url(post), params: { post: new_attributes }
           post.reload
           expect(response).to redirect_to(post_url(post, locale: 'en'))
@@ -241,11 +239,16 @@ RSpec.describe '/posts', type: :request do
 
     context 'with invalid parameters' do
       context 'when not signed in' do
+        it 'raises a not authorized error' do
 
+        end
       end
 
       context 'when signed in' do
-        sign_in create(:user)
+        it 'raises a not authorized error' do
+          sign_in create(:user)
+
+        end
       end
 
       context 'when signed in as an admin' do
