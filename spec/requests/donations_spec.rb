@@ -356,7 +356,6 @@ RSpec.describe '/donations', type: :request do
             expect(response).to redirect_to(donation_path(donation, locale: 'en'))
           end
         end
-
       end
 
       context 'when signed in as an admin' do
@@ -391,8 +390,6 @@ RSpec.describe '/donations', type: :request do
             delete donation_url(donation)
           end.to change(Donation.kept, :count).by(-1)
         end
-
-
       end
 
       context 'when the user did not create the donation' do

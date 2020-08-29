@@ -29,6 +29,8 @@ module ApplicationHelper
   end
 
   # Used from within the navigation bar, adds sign up and sign in or sign out and edit profile links.
+  # rubocop:disable Style/StringConcatenation
+  # Sting Interpolation doesn't work for embedding SVG icons.
   def user_authentication_links
     tag.ul(class: 'navbar-nav ml-auto') do
       if user_signed_in?
@@ -56,4 +58,5 @@ module ApplicationHelper
       end
     end
   end
+  # rubocop:enable Style/StringConcatenation
 end

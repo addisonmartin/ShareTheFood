@@ -13,5 +13,4 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe DonationsHelper, type: :helper do
-
 end
