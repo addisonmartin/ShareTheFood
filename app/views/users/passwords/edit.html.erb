@@ -11,7 +11,7 @@
                 label: "New password",
                 required: true,
                 autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} characters minimum." if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 label: "Confirm your new password",
@@ -20,7 +20,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password", class: 'btn btn-primary' %>
+    <div class="btn-group btn-group-lg">
+      <%= f.button :submit, "Change Password", class: 'btn btn-primary' %>
+      <%= link_to 'Back', :back, class: 'btn btn-secondary' %>
+    </div>
   </div>
 <% end %>
 
