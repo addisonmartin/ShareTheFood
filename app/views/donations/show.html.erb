@@ -1,117 +1,33 @@
-<p>
-  <strong>User:</strong>
-  <%= @donation.user_id %>
-</p>
+<h1>Donation: <%= @donation.name %></h1>
+<p><%= @donation.description %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @donation.name %>
-</p>
+<p>Donated by: <%= @donation.user.name %></p>
+<p>Available Until: <%= @donation.available_until %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @donation.description %>
-</p>
+<p>Latitude: <%= @donation.latitude %>, Longitude: <%= @donation.longitude %></p>
+<p><%= @donation.pickup_notes %></p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @donation.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @donation.longitude %>
-</p>
-
-<p>
-  <strong>Pickup notes:</strong>
-  <%= @donation.pickup_notes %>
-</p>
-
-<p>
-  <strong>Available until:</strong>
-  <%= @donation.available_until %>
-</p>
-
-<p>
-  <strong>Is perishable:</strong>
-  <%= @donation.is_perishable %>
-</p>
-
-<p>
-  <strong>Requires preparation:</strong>
-  <%= @donation.requires_preparation %>
-</p>
-
-<p>
-  <strong>Is vegetarian:</strong>
-  <%= @donation.is_vegetarian %>
-</p>
-
-<p>
-  <strong>Is vegan:</strong>
-  <%= @donation.is_vegan %>
-</p>
-
-<p>
-  <strong>Is kosher:</strong>
-  <%= @donation.is_kosher %>
-</p>
-
-<p>
-  <strong>Is halal:</strong>
-  <%= @donation.is_halal %>
-</p>
-
-<p>
-  <strong>Contains gluten:</strong>
-  <%= @donation.contains_gluten %>
-</p>
-
-<p>
-  <strong>Contains peanuts:</strong>
-  <%= @donation.contains_peanuts %>
-</p>
-
-<p>
-  <strong>Contains tree nuts:</strong>
-  <%= @donation.contains_tree_nuts %>
-</p>
-
-<p>
-  <strong>Contains dairy:</strong>
-  <%= @donation.contains_dairy %>
-</p>
-
-<p>
-  <strong>Contains soy:</strong>
-  <%= @donation.contains_soy %>
-</p>
-
-<p>
-  <strong>Contains egg:</strong>
-  <%= @donation.contains_egg %>
-</p>
-
-<p>
-  <strong>Contains fish:</strong>
-  <%= @donation.contains_fish %>
-</p>
-
-<p>
-  <strong>Contains shellfish:</strong>
-  <%= @donation.contains_shellfish %>
-</p>
-
-<p>
-  <strong>Visit:</strong>
-  <%= @donation.visit_id %>
-</p>
-
-<p>
-  <strong>Discarded at:</strong>
-  <%= @donation.discarded_at %>
-</p>
-
-<%= link_to 'Edit', edit_donation_path(@donation) %> |
-<%= link_to 'Back', donations_path %>
+<hr>
+<h2>Allergen and Dietary Restrictions Information</h2>
+<br>
+<div class="row">
+  <div class="col">
+    <p>Is Perishable? <strong><%= @donation.as_yes_or_no(@donation.is_perishable?) %></strong></p>
+    <p>Requires Preparation? <strong><%= @donation.as_yes_or_no(@donation.requires_preparation?) %></strong></p>
+    <p>Is Vegetarian? <strong><%= @donation.as_yes_or_no(@donation.is_vegetarian?) %></strong></p>
+    <p>Is Vegan? <strong><%= @donation.as_yes_or_no(@donation.is_vegan?) %></strong></p>
+    <p>Is Kosher? <strong><%= @donation.as_yes_or_no(@donation.is_kosher?) %></strong></p>
+    <p>Is Halal? <strong><%= @donation.as_yes_or_no(@donation.is_halal?) %></strong></p>
+    <p>Contains Gluten? <strong><%= @donation.as_yes_or_no(@donation.contains_gluten?) %></strong></p>
+  </div>
+  <div class="col">
+    <p>Contains Peanuts? <strong><%= @donation.as_yes_or_no(@donation.contains_peanuts?) %></strong></p>
+    <p>Contains Tree Nuts? <strong><%= @donation.as_yes_or_no(@donation.contains_tree_nuts?) %></strong></p>
+    <p>Contains Dairy? <strong><%= @donation.as_yes_or_no(@donation.contains_dairy?) %></strong></p>
+    <p>Contains Soy? <strong><%= @donation.as_yes_or_no(@donation.contains_soy?) %></strong></p>
+    <p>Contains Egg? <strong><%= @donation.as_yes_or_no(@donation.contains_egg?) %></strong></p>
+    <p>Contains Fish? <strong><%= @donation.as_yes_or_no(@donation.contains_fish?) %></strong></p>
+    <p>Contains Shellfish? <strong><%= @donation.as_yes_or_no(@donation.contains_shellfish?) %></strong></p>
+  </div>
+</div>
+<hr>

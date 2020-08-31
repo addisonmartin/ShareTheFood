@@ -3,6 +3,10 @@
 class DonationDecorator < ApplicationDecorator
   delegate_all
 
+  def as_yes_or_no(boolean)
+    boolean ? 'Yes' : 'No'
+  end
+
   def image_for_card
     return unless model.images.attached?
 
