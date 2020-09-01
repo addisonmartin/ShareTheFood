@@ -56,3 +56,6 @@ $(function () {
         minDate: 'yesterday'
     });
 })
+
+// Enables the embedded map's Javascript.
+import 'leaflet/dist/leaflet'
