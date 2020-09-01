@@ -4,6 +4,8 @@
 <p>Donated by: <%= @donation.user.name %></p>
 <p>Available Until: <%= @donation.available_until %></p>
 
+<%= render 'donations/images_carousel', donation: @donation %>
+
 <p>Latitude: <%= @donation.latitude %>, Longitude: <%= @donation.longitude %></p>
 <p><%= @donation.pickup_notes %></p>
 
