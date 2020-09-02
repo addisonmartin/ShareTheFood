@@ -57,5 +57,9 @@ $(function () {
     });
 })
 
+// Enables the embedded map's CSS. Must be loaded here, not within application.scss.
+import "leaflet/dist/leaflet.css"
 // Enables the embedded map's Javascript.
 import 'leaflet/dist/leaflet'
+// Load and display the embedded map.
+import '../source/map'
