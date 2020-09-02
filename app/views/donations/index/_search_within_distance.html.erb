@@ -1,0 +1,3 @@
+<%= simple_form_for :search_within_distance, url: donations_path, method: :get do |f| %>
+  <%= f.input :search_within_distance, as: :range, collection: 1..100, required: false, label: 'Viewing Donations Within Distance' %>
+<% end %>
