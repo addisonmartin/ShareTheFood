@@ -70,5 +70,5 @@ L.Icon.Default.mergeOptions({
 import 'leaflet/dist/leaflet.css'
 // Enables Leaflet's embedded map's Javascript.
 import 'leaflet'
-// Load and display the embedded map.
-import '../source/map'
+// Load and display the embedded map for donation's show view.
+import '../source/show_map'
