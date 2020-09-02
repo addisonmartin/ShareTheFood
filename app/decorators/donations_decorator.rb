@@ -6,6 +6,6 @@ class DonationsDecorator < Draper::CollectionDecorator
   end
 
   def from_current_location
-    h.params.dig('search', 'from_current_location') == '1'
+    h.params.dig('search', 'from_current_location') == 'true'
   end
 end
