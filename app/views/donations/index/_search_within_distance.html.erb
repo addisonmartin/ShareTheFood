@@ -1,8 +1,15 @@
 <%= simple_form_for :search, url: donations_path, method: :get do |f| %>
-  <%= f.input :within_distance, as: :range, collection: 1..100, required: false, input_html: { min: '1' } %>
+  <%= f.input :within_distance, as: :range, collection: 1..100, label: false, input_html: { min: '1', value: @donations.search_range }, required: false %>
   <div class="row">
-    <%= f.input :from, inline_label: 'From', as: :string, required: false %>
-    <%= f.button :button, 'Use My Current Location', class: 'btn btn-outline-primary' %>
+    <div class="col">
+      <div class="form-inline">
+        <%= f.check_box :from_current_location, class: 'form-control mr-2', input_html: { checked: @donations.from_current_location }, required: false %>
+        <%= f.label :from_current_location, 'Use My Current Location' %>
+      </div>
+    </div>
+    <div class="col">
+      <%= f.input :from, placeholder: 'Search From An Address', as: :string, label: false, required: false %>
+    </div>
   </div>
   <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
 <% end %>
