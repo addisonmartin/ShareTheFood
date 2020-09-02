@@ -74,3 +74,6 @@ import 'leaflet'
 import '../source/show_map'
 import '../source/form_map'
 import '../source/index_map'
+
+// Used to provide certain functionality to the search within distance form.
+import '../source/search_within_distance_helper'

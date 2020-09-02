@@ -16,7 +16,7 @@ $(function () {
         var marker = L.marker([gon.donation_latitude, gon.donation_longitude]).addTo(map);
 
         // Add a popup to the pin with the donation's pickup notes.
-        marker.bindPopup("<b>Pickup Notes:</b></br>" + gon.donation_pickup_notes).openPopup();
+        marker.bindPopup("<b>" + gon.donation_name + "</b></br>" + gon.donation_address + "</br><b>Pickup Notes:</b></br>" + gon.donation_pickup_notes).openPopup();
 
         // Center the map on the user's location, if the user allows location access.
         map.locate({setView: true, maxZoom: 19});

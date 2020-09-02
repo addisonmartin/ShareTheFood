@@ -1,8 +1,9 @@
 <%= simple_form_for :search, url: donations_path, method: :get do |f| %>
-  <%= f.input :within_distance, as: :range, collection: 1..100, label: false, input_html: { min: '1', value: @donations.search_range }, required: false %>
+  <%= f.hidden_field :location, as: :string %>
+  <%= f.input :within_distance, as: :range, collection: 1..100, label: false, input_html: { min: '1', value: search_range }, required: false %>
   <div class="row">
     <div class="col">
-      <%= f.input :from_current_location, as: :boolean, checked_value: true, unchecked_value: false, label: 'Use My Current Location', class: 'form-control mr-2', input_html: { checked: @donations.from_current_location }, required: false %>
+      <%= f.input :from_current_location, as: :boolean, checked_value: true, unchecked_value: false, label: 'Use My Current Location', class: 'form-control mr-2', input_html: { checked: from_current_location }, required: false %>
     </div>
     <div class="col">
       <%= f.input :from, placeholder: 'Search From An Address', as: :string, label: false, required: false %>

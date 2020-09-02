@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class DonationsController < ApplicationController
+  include DonationsHelper
+
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   # Redirect the user to sign in before performing any actions that require a user to be signed in.
   before_action :authenticate_user!, only: [:create, :new, :update, :edit, :destroy]
@@ -13,11 +15,11 @@ class DonationsController < ApplicationController
     # Only get donations that have not been deleted.
     @donations = authorize Donation.with_attached_images.kept
     # Return donations within the user selected range from the user selected location (or their current location).
-    #@donations = search_within_distance(@donations)
+    #search_within_distance
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
     # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
-    pass_donations_locations_to_gon(@donations)
+    pass_donations_locations_to_javascript
     # Decorate the donations so its decorator methods can be used within views.
     @donations = @donations.decorate
   end
@@ -30,6 +32,8 @@ class DonationsController < ApplicationController
     # Decorate the donation so its decorator methods can be used within views.
     @donation = @donation.decorate
     # Pass the donation's location information to Javascript, so the location can be rendered in the embedded map.
+    gon.donation_name = @donation.name
+    gon.donation_address = @donation.address
     gon.donation_latitude = @donation.latitude
     gon.donation_longitude = @donation.longitude
     gon.donation_pickup_notes = @donation.pickup_notes
@@ -100,23 +104,20 @@ class DonationsController < ApplicationController
 
   private
 
-  def search_within_distance(donations)
-
-    range = params.dig('search', 'within_distance') or 25
-    donations.near()
-
-    donations
+  def search_within_distance
+    search_distance = search_range
+    @donations = @donations.near(search_distance)
   end
 
   # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
-  def pass_donations_locations_to_gon(donations)
+  def pass_donations_locations_to_javascript
     gon.donations_locations = []
-    donations.each do |donation|
-      gon.donations_locations << { 'latitude': donation.latitude,
+    @donations.each do |donation|
+      gon.donations_locations << { 'name': donation.name,
+                                   'address': donation.address,
+                                   'latitude': donation.latitude,
                                    'longitude': donation.longitude,
-                                   'pickup_notes': donation.pickup_notes,
-                                   'name': donation.name
-      }
+                                   'pickup_notes': donation.pickup_notes }
     end
   end
 
