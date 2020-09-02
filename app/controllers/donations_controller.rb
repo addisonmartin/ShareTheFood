@@ -27,9 +27,10 @@ class DonationsController < ApplicationController
     # Decorate the donation so its decorator methods can be used within views.
     @donation = @donation.decorate
 
-    # Pass the donation's location to Javascript, so the location can be rendered in the embedded Javascript map.
+    # Pass the donation's location information to Javascript, so the location can be rendered in the embedded Javascript map.
     gon.donation_latitude = @donation.latitude
     gon.donation_longitude = @donation.longitude
+    gon.donation_pickup_notes = @donation.pickup_notes
 
     # Use conditional GET to only return the donation if the user's locally cached version is stale.
     fresh_when last_modified: @donation.updated_at.utc, etag: @donation
