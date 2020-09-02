@@ -25,7 +25,7 @@ class DonationsController < ApplicationController
     authorize @donation
     # Decorate the donation so its decorator methods can be used within views.
     @donation = @donation.decorate
-    # Pass the donation's location information to Javascript, so the location can be rendered in the embedded Javascript map.
+    # Pass the donation's location information to Javascript, so the location can be rendered in the embedded map.
     gon.donation_latitude = @donation.latitude
     gon.donation_longitude = @donation.longitude
     gon.donation_pickup_notes = @donation.pickup_notes
