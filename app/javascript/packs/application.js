@@ -73,3 +73,4 @@ import 'leaflet'
 // Load and display the embedded maps.
 import '../source/show_map'
 import '../source/form_map'
+import '../source/index_map'

@@ -14,6 +14,8 @@ class DonationsController < ApplicationController
     @donations = authorize Donation.with_attached_images.kept
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
+    # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
+    pass_donations_locations_to_gon(@donations)
     # Decorate the donations so its decorator methods can be used within views.
     @donations = @donations.decorate
   end
@@ -95,6 +97,18 @@ class DonationsController < ApplicationController
   end
 
   private
+
+  # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
+  def pass_donations_locations_to_gon(donations)
+    gon.donations_locations = []
+    donations.each do |donation|
+      gon.donations_locations << { 'latitude': donation.latitude,
+                                   'longitude': donation.longitude,
+                                   'pickup_notes': donation.pickup_notes,
+                                   'name': donation.name
+      }
+    end
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_donation
