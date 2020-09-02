@@ -57,9 +57,18 @@ $(function () {
     });
 })
 
+// Fixes an issue where Webpack cannot properly load in Leaflet's images.
+import L from 'leaflet';
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
 // Enables the embedded map's CSS. Must be loaded here, not within application.scss.
-import "leaflet/dist/leaflet.css"
+import 'leaflet/dist/leaflet.css'
 // Enables the embedded map's Javascript.
-import 'leaflet/dist/leaflet'
+import 'leaflet'
 // Load and display the embedded map.
 import '../source/map'
