@@ -6,8 +6,11 @@
   <div class="form-inputs">
     <%= f.input :name, as: :string %>
     <%= f.input :description %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
+    <%= f.full_error :latitude %>
+    <%= f.full_error :longitude %>
+    <div id="form_map"></div>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
     <%= f.input :pickup_notes, hint: 'How should this donation be picked up from the above location?' %>
     <%= f.input :available_until, as: :string %>
     <hr>

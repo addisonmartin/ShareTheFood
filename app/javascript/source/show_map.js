@@ -1,5 +1,5 @@
 $(function () {
-    if (document.getElementById("show_map") != null) {
+    if (document.getElementById('show_map') != null) {
         // Create the Leaflet embedded map.
         var map = L.map('show_map').setView([gon.donation_latitude, gon.donation_longitude], 13);
 
@@ -18,7 +18,7 @@ $(function () {
         // Add a popup to the pin with the donation's pickup notes.
         marker.bindPopup("<b>Pickup Notes:</b></br>" + gon.donation_pickup_notes).openPopup();
 
-        // Center the map on the user's location.
+        // Center the map on the user's location, if the user allows location access.
         map.locate({setView: true, maxZoom: 19});
 
         map.on('locationfound', onLocationFound);
