@@ -66,9 +66,9 @@ L.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-// Enables the embedded map's CSS. Must be loaded here, not within application.scss.
+// Enables Leaflet's embedded map's CSS. Must be loaded here, not within application.scss.
 import 'leaflet/dist/leaflet.css'
-// Enables the embedded map's Javascript.
+// Enables Leaflet's embedded map's Javascript.
 import 'leaflet'
 // Load and display the embedded map.
 import '../source/map'
