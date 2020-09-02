@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_192335) do
     t.text "description"
     t.decimal "latitude", precision: 10, scale: 6, null: false
     t.decimal "longitude", precision: 10, scale: 6, null: false
+    t.text "address"
     t.text "pickup_notes", null: false
     t.datetime "available_until", null: false
     t.boolean "is_perishable", null: false
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_192335) do
     t.boolean "discarded_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["latitude", "longitude"], name: "index_donations_on_latitude_and_longitude"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 

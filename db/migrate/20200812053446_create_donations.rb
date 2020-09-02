@@ -9,6 +9,7 @@ class CreateDonations < ActiveRecord::Migration[6.0]
       t.text :description
       t.decimal :latitude, null: false, precision: 10, scale: 6
       t.decimal :longitude, null: false, precision: 10, scale: 6
+      t.text :address
       t.text :pickup_notes, null: false
       t.datetime :available_until, null: false
       t.boolean :is_perishable, null: false
@@ -33,5 +34,7 @@ class CreateDonations < ActiveRecord::Migration[6.0]
       # Creates the created_at/updated_at columns.
       t.timestamps
     end
+
+    add_index :donations, [:latitude, :longitude]
   end
 end

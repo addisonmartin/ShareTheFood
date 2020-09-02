@@ -5,6 +5,7 @@
 # Table name: donations
 #
 #  id                   :bigint           not null, primary key
+#  address              :text
 #  available_until      :datetime         not null
 #  contains_dairy       :boolean          not null
 #  contains_egg         :boolean          not null
@@ -33,7 +34,8 @@
 #
 # Indexes
 #
-#  index_donations_on_user_id  (user_id)
+#  index_donations_on_latitude_and_longitude  (latitude,longitude)
+#  index_donations_on_user_id                 (user_id)
 #
 # Foreign Keys
 #
@@ -49,6 +51,10 @@ class Donation < ApplicationRecord
 
   # Tracks and stores changes to donations.
   has_paper_trail
+
+  # Lookup the nearest address to the donation's location.
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 
   # Links the user analytic visit when the user created the donation to the donation.
   visitable :visit, class_name: 'Visit'

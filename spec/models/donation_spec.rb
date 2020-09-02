@@ -5,6 +5,7 @@
 # Table name: donations
 #
 #  id                   :bigint           not null, primary key
+#  address              :text
 #  available_until      :datetime         not null
 #  contains_dairy       :boolean          not null
 #  contains_egg         :boolean          not null
@@ -33,7 +34,8 @@
 #
 # Indexes
 #
-#  index_donations_on_user_id  (user_id)
+#  index_donations_on_latitude_and_longitude  (latitude,longitude)
+#  index_donations_on_user_id                 (user_id)
 #
 # Foreign Keys
 #

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Layout/LineLength
-
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -55,6 +53,8 @@
 # Routes for AhoyEmail::Engine:
 #  open_message GET  /messages/:id/open(.:format)  ahoy/messages#open
 # click_message GET  /messages/:id/click(.:format) ahoy/messages#click
+
+# rubocop:disable Layout/LineLength
 
 # rubocop:enable Layout/LineLength
 
