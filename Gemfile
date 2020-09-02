@@ -75,6 +75,9 @@ gem 'ransack', '~> 2.3'
 # PG Search adds scopes that use PostgreSQL's full text search.
 # https://github.com/Casecommons/pg_search
 gem 'pg_search', '~> 2.3'
+# Geocoder adds geocoding, reverse geocoding, and geospatial queries.
+# https://github.com/alexreisner/geocoder
+gem 'geocoder', '~> 1.6'
 
 # Meta Tags adds Ruby helpers for Search Engine Optimization (SEO).
 # https://github.com/kpumuk/meta-tags

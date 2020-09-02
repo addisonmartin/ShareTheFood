@@ -428,6 +428,7 @@ DEPENDENCIES
   faker (~> 2.13)
   flamegraph (~> 0.9)
   friendly_id (~> 5.3)
+  geocoder (~> 1.6)
   gon (~> 6.3)
   groupdate (~> 5.1)
   hightop (~> 0.2)
