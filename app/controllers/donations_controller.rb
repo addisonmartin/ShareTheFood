@@ -12,6 +12,8 @@ class DonationsController < ApplicationController
     # Eager load the donation's images.
     # Only get donations that have not been deleted.
     @donations = authorize Donation.with_attached_images.kept
+    # Return donations within the user selected range from the user selected location (or their current location).
+    #@donations = search_within_distance(@donations)
     # Paginate the results.
     @pagination, @donations = pagy(@donations)
     # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
@@ -97,6 +99,14 @@ class DonationsController < ApplicationController
   end
 
   private
+
+  def search_within_distance(donations)
+
+    range = params.dig('search', 'within_distance') or 25
+    donations.near()
+
+    donations
+  end
 
   # Pass the donations' location information to Javascript, so the locations can be rendered in the embedded map.
   def pass_donations_locations_to_gon(donations)

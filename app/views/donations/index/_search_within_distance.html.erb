@@ -1,3 +1,9 @@
-<%= simple_form_for :search_within_distance, url: donations_path, method: :get do |f| %>
-  <%= f.input :search_within_distance, as: :range, collection: 1..100, required: false, label: 'Viewing Donations Within Distance' %>
+<%= simple_form_for :search, url: donations_path, method: :get do |f| %>
+  <%= f.input :within_distance, as: :range, collection: 1..100, required: false, input_html: { min: '1' } %>
+  <div class="row">
+    <%= f.input :from, inline_label: 'From', as: :string, required: false %>
+    <%= f.button :button, 'Use My Current Location', class: 'btn btn-outline-primary' %>
+  </div>
+  <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
 <% end %>
+<br>
