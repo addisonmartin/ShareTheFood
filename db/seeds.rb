@@ -11,9 +11,9 @@
 require 'faker'
 require 'open-uri'
 
-NUMBER_OF_SEED_USERS = 10
-NUMBER_OF_SEED_DONATIONS = 1_000
-MAX_NUMBER_OF_DONATION_IMAGES = 3
+NUMBER_OF_SEED_USERS = 5
+NUMBER_OF_SEED_DONATIONS = 100
+MAX_NUMBER_OF_DONATION_IMAGES = 2
 
 (0...NUMBER_OF_SEED_USERS).each do
   seed_password = Faker::Alphanumeric.alphanumeric(number: rand(8..256))
