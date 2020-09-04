@@ -33,6 +33,8 @@ $(function () {
 
             L.marker(e.latlng).addTo(map).bindPopup("<b>Your current location</b>").openPopup();
             L.circle(e.latlng, location_radius).addTo(map);
+            gon.latitude = e.latlng.lat;
+            gon.longitude = e.latlng.lng;
         }
 
         // Log the error message to the browser console.

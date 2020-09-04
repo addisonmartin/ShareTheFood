@@ -15,7 +15,7 @@ NUMBER_OF_SEED_USERS = 5
 NUMBER_OF_SEED_DONATIONS = 100
 MAX_NUMBER_OF_DONATION_IMAGES = 2
 
-(0...NUMBER_OF_SEED_USERS).each do
+(0..NUMBER_OF_SEED_USERS).each do
   seed_password = Faker::Alphanumeric.alphanumeric(number: rand(8..256))
 
   user = User.new(
@@ -29,7 +29,7 @@ MAX_NUMBER_OF_DONATION_IMAGES = 2
   user.save!
 end
 
-(0...NUMBER_OF_SEED_DONATIONS).each do
+(0..NUMBER_OF_SEED_DONATIONS).each do
   donation = Donation.new(
     user: User.find(rand(1..NUMBER_OF_SEED_USERS)),
     name: Faker::Food.dish,
@@ -54,7 +54,7 @@ end
     contains_shellfish: Faker::Boolean.boolean
   )
 
-  (0...(rand(MAX_NUMBER_OF_DONATION_IMAGES))).each do |i|
+  (0..(rand(MAX_NUMBER_OF_DONATION_IMAGES))).each do |i|
     image = URI.open(Faker::LoremFlickr.image)
     donation.images.attach(io: image, filename: "seed_image#{i + 1}.jpg")
   end
