@@ -39,6 +39,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  scope :published, -> { where(published: true) }
+
   validates :title, :user, presence: true
   validates :title, uniqueness: true
   validates :published, inclusion: { in: [true, false] }

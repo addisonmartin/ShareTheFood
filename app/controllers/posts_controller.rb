@@ -6,9 +6,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    # Only get posts that have been published.
     # Only get posts that have not been deleted.
     # Ensure the user is allowed to perform this action.
-    @posts = authorize Post.kept
+    @posts = authorize Post.kept.published
 
     # Decorate the posts so its decorator methods can be used within views.
     @posts = @posts.decorate
