@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  donation_created_flash: 'Donation was successfully created.'
+  donation_updated_flash: 'Donation was successfully updated.'
+  donation_deleted_flash: 'Donation was successfully deleted.'

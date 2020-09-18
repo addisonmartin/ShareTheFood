@@ -64,7 +64,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
+        format.html { redirect_to @donation, notice: t(:donation_created_flash) }
         format.json { render :show, status: :created, location: @donation }
       else
         format.html { render :new }
@@ -81,7 +81,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.update(donation_params)
-        format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
+        format.html { redirect_to @donation, notice: t(:donation_updated_flash) }
         format.json { render :show, status: :ok, location: @donation }
       else
         format.html { render :edit }
@@ -98,7 +98,7 @@ class DonationsController < ApplicationController
 
     @donation.discard
     respond_to do |format|
-      format.html { redirect_to donations_url, notice: 'Donation was successfully deleted.' }
+      format.html { redirect_to donations_url, notice: t(:donation_deleted_flash) }
       format.json { head :no_content }
     end
   end
