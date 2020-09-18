@@ -7,6 +7,7 @@ MIGRATION_CLASS =
     ActiveRecord::Migration
   end
 
+# This migration is used to change the display URL for some models to be based on some other attribute other than ID.
 class CreateFriendlyIdSlugs < MIGRATION_CLASS
   def change
     create_table :friendly_id_slugs do |t|

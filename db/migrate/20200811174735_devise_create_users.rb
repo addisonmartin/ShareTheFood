@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This migration creates the user for user authentication.
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|

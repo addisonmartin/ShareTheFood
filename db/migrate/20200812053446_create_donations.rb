@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This migrations creates the primary donation model with all of its attributes.
 class CreateDonations < ActiveRecord::Migration[6.0]
   def change
     create_table :donations do |t|

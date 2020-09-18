@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# This migration creates the post model and all of its attributes.
+# It is used to display posts to all users. Only admin users can create posts.
 class CreatePosts < ActiveRecord::Migration[6.0]
   def change
     create_table :posts do |t|

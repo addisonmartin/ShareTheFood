@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This migration creates user analytic's visits and events.
 class CreateVisitsAndEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :visits do |t|

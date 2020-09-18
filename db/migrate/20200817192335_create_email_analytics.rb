@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This migration is used to add analytics for sent emails.
 class CreateEmailAnalytics < ActiveRecord::Migration[6.0]
   def change
     create_table :email_analytics do |t|
