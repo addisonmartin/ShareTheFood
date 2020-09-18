@@ -25,9 +25,11 @@ class Rack::Attack
   # Throttle all requests by IP (60rpm)
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
+  # rubocop:disable Style/SymbolProc
   throttle('req/ip', limit: 300, period: 5.minutes) do |req|
     req.ip # unless req.path.start_with?('/assets')
   end
+  # rubocop:enable Style/SymbolProc
 
   ### Prevent Brute-Force Login Attacks ###
 
@@ -89,10 +91,12 @@ Rack::Attack.blocklist('fail2ban pentesters') do |req|
   Rack::Attack::Fail2Ban.filter("pentesters-#{req.ip}", maxretry: 3, findtime: 10.minutes,
                                                         bantime: 5.minutes) do
     # The count for the IP is incremented if the return value is truthy
+    # rubocop:disable Performance/StringInclude
     CGI.unescape(req.query_string) =~ %r{/etc/passwd} ||
       req.path.include?('/etc/passwd') ||
       req.path.include?('wp-admin') ||
       req.path.include?('wp-login')
+    # rubocop:enable Performance/StringInclude
   end
 end
 

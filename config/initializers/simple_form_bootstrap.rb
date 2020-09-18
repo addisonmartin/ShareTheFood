@@ -21,7 +21,9 @@ SimpleForm.setup do |config|
   config.boolean_label_class = 'form-check-label'
 
   # How the label text should be generated altogether with the required text.
+  # rubocop:disable Lint/UnusedBlockArgument
   config.label_text = ->(label, required, explicit_label) { "#{label} #{required}" }
+  # rubocop:enable Lint/UnusedBlockArgument
 
   # Define the way to render check boxes / radio buttons with labels.
   config.boolean_style = :inline
