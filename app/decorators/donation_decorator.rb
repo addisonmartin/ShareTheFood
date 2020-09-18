@@ -46,7 +46,9 @@ class DonationDecorator < ApplicationDecorator
     badges += dietary_restriction_badge('Halal') if model.is_halal?
     badges += dietary_restriction_badge('Gluten Free') unless model.contains_gluten?
 
+    # rubocop:disable Rails/OutputSafety
     badges.html_safe
+    # rubocop:enable Rails/OutputSafety
   end
 
   def available_until_in_words

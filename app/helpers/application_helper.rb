@@ -26,7 +26,9 @@ module ApplicationHelper
     # Add any of Bootstrap's class options, if provided.
     svg['class'] += " #{options[:class]}" if options[:class].present?
 
+    # rubocop:disable Rails/OutputSafety
     doc.to_html.html_safe
+    # rubocop:enable Rails/OutputSafety
   end
 
   # Used from within the navigation bar, adds sign up and sign in or sign out and edit profile links.
