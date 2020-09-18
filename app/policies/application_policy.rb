@@ -38,6 +38,7 @@ class ApplicationPolicy
     false
   end
 
+  # Passes the current user and model to every policy
   class Scope
     attr_reader :user, :scope
 
