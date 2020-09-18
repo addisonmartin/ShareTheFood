@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Layout/LineLength
+
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -54,10 +56,7 @@
 #  open_message GET  /messages/:id/open(.:format)  ahoy/messages#open
 # click_message GET  /messages/:id/click(.:format) ahoy/messages#click
 
-# rubocop:disable Layout/LineLength
-
 # rubocop:enable Layout/LineLength
-
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   # Sets the user's locale as the first part of the URL. i.e. /en/donations, /en/donations/1, /fr/donations, etc.
