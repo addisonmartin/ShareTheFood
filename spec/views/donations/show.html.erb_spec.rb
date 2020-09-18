@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 
-RSpec.describe 'donations/show', type: :view do
-end
+# RSpec.describe 'donations/show', type: :view do
+# end
