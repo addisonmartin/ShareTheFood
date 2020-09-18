@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The user authorization policy for posts.
 class PostPolicy < ApplicationPolicy
   # Everyone can view all posts.
   def index?

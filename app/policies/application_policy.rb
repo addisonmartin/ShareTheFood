@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# The user authorization policy that all model specific policies inherit from.
+# By default, the user cannot perform any actions.
 class ApplicationPolicy
   attr_reader :user, :record
 

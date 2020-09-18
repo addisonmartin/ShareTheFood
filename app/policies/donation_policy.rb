@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The user authorization policy for donations.
 class DonationPolicy < ApplicationPolicy
   # Everyone can view all donations.
   def index?
