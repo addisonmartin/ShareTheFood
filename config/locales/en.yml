@@ -33,3 +33,6 @@ en:
   donation_created_flash: 'Donation was successfully created.'
   donation_updated_flash: 'Donation was successfully updated.'
   donation_deleted_flash: 'Donation was successfully deleted.'
+  post_created_flash: 'Post was successfully created.'
+  post_updated_flash: 'Post was successfully updated.'
+  post_deleted_flash: 'Post was successfully deleted.'

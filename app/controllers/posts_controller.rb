@@ -51,7 +51,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: t(:post_created_flash) }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: t(:post_updated_flash) }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -85,7 +85,7 @@ class PostsController < ApplicationController
 
     @post.discard
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
+      format.html { redirect_to posts_url, notice: t(:post_deleted_flash) }
       format.json { head :no_content }
     end
   end
