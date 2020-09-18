@@ -41,4 +41,3 @@ class Users::PasswordsController < Devise::PasswordsController
 end
 
 # rubocop:enable Lint/UselessMethodDefinition
-
