@@ -5,7 +5,9 @@
 # NOTE: to have a dev-mode tool do its thing in production.
 if Rails.env.development?
   require 'annotate'
+  # rubocop:disable RailsI18n/DecorateString
   desc 'Automatically adds the database schema to the top of relevant files on rake db:migrate.'
+  # rubocop:enable RailsI18n/DecorateString
   task set_annotation_options: :environment do
     # You can override any of these by setting an environment variable of the same name.
     Annotate.set_defaults(
