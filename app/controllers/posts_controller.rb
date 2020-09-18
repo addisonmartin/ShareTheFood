@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The controller for posts. Connects incoming requests to models and views.
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The decorators for views that are available to all donations.
 class DonationDecorator < ApplicationDecorator
   delegate_all
 

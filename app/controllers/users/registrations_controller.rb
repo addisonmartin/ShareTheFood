@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Lint/UselessMethodDefinition
+
+# The controller for user sign ups. Inherits from Devise's registrations controller.
+# Application specific overriding of devise's defaults happens here.
 class Users::RegistrationsController < Devise::RegistrationsController
   # Don't ensure user authorization was performed.
   skip_after_action :verify_authorized
@@ -63,3 +67,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super(resource)
   end
 end
+
+# rubocop:enable Lint/UselessMethodDefinition

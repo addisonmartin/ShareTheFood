@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Lint/UselessMethodDefinition
+
+# The controller for user sign ins. Inherits from Devise's sessions controller.
+# Application specific overriding of devise's defaults happens here.
 class Users::SessionsController < Devise::SessionsController
   # Don't ensure user authorization was performed.
   skip_after_action :verify_authorized
@@ -28,3 +32,5 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 end
+
+# rubocop:enable Lint/UselessMethodDefinition

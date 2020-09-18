@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Helper methods that are available to all models.
 module ApplicationHelper
   # Enables pagination on the frontend.
   include Pagy::Frontend

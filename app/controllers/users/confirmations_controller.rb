@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Lint/UselessMethodDefinition
+
+# The controller for user email confirmations. Inherits from Devise's confirmations controller.
+# Application specific overriding of devise's defaults happens here.
 class Users::ConfirmationsController < Devise::ConfirmationsController
   # Don't ensure user authorization was performed.
   skip_after_action :verify_authorized
@@ -31,3 +35,5 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     super(resource_name, resource)
   end
 end
+
+# rubocop:enable Lint/UselessMethodDefinition

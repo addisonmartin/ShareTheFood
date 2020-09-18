@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Lint/UselessMethodDefinition
+
+# The controller for user passwords. Inherits from Devise's passwords controller.
+# Application specific overriding of devise's defaults happens here.
 class Users::PasswordsController < Devise::PasswordsController
   # Don't ensure user authorization was performed.
   skip_after_action :verify_authorized
@@ -24,7 +28,7 @@ class Users::PasswordsController < Devise::PasswordsController
     super
   end
 
-  # protected
+  protected
 
   def after_resetting_password_path_for(resource)
     super(resource)
@@ -35,3 +39,6 @@ class Users::PasswordsController < Devise::PasswordsController
     super(resource_name)
   end
 end
+
+# rubocop:enable Lint/UselessMethodDefinition
+

@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Lint/UselessMethodDefinition
+
+# The controller for user unlocking locked accounts. Inherits from Devise's unlocks controller.
+# Application specific overriding of devise's defaults happens here.
 class Users::UnlocksController < Devise::UnlocksController
   # Don't ensure user authorization was performed.
   skip_after_action :verify_authorized
@@ -31,3 +35,5 @@ class Users::UnlocksController < Devise::UnlocksController
     super(resource)
   end
 end
+
+# rubocop:enable Lint/UselessMethodDefinition

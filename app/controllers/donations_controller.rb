@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The controller for donations. Connects incoming requests to models and views.
 class DonationsController < ApplicationController
   include DonationsHelper
 
