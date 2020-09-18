@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Rack attack is used to throttle spammy or potentially abusive clients.
 class Rack::Attack
   ### Configure Cache ###
 

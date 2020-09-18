@@ -3,6 +3,7 @@
 AhoyEmail.api = true
 AhoyEmail.message_model = -> { EmailAnalytic }
 
+# Email Subscriber is used to add email opened/clicked events to user analytics.
 class EmailSubscriber
   def open(event)
     event[:controller].ahoy.track 'Email opened', message_id: event[:message].id
