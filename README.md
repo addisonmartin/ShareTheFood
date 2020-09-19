@@ -13,7 +13,7 @@ See the [Development section](https://github.com/addisonmartin/ShareTheFood/blob
 
 ## License
 
-The gem is available as open source under the terms of the [GNU General Public License 3.0 (GPL-3.0)](https://opensource.org/licenses/GPL-3.0).
+The gem is available as open source under the terms of the [GNU General Public License 3.0 (GPL-3.0)](https://github.com/addisonmartin/ShareTheFood/blob/master/LICENSE.md#).
 
 ## Code of Conduct
 
