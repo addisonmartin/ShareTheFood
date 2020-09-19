@@ -28,8 +28,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore test coverage reports.
-coverage
-
 # Ignore Jetbrains RubyMine configuration files.
 .idea/
