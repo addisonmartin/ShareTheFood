@@ -196,6 +196,9 @@ group :test do
   # Simplecov is used to calculate and report test coverage.
   # https://github.com/colszowka/simplecov
   gem 'simplecov', '~> 0.18', require: false
+  # CodeCov is used to display test coverage within the README and pull requests.
+  # https://github.com/codecov/codecov-ruby
+  gem 'codecov', '~> 0.2', require: false
 
   # Shoulda Matchers adds many, common one-line RSpec test matchers.
   # https://github.com/thoughtbot/shoulda-matchers
