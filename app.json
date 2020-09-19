@@ -6,8 +6,8 @@
         "heroku-postgresql"
       ],
       "scripts": {
-        "test": "bundle exec rubocop && bundle exec brakeman && bundle exec bundle-audit check --update && bundle exec bundle leak check --update && bundle exec database_consistency && bundle exec rspec",
-        "review:": "bundle exec rubocop && bundle exec brakeman && bundle exec bundle-audit check --update && bundle exec bundle leak check --update && bundle exec database_consistency && bundle exec rspec"
+        "test": "bundle exec rubocop && bundle exec brakeman && bundle exec bundle-audit check --update && bundle exec bundle leak check --update && bundle exec database_consistency && bundle exec rails webpacker:compile && bundle exec rspec",
+        "review:": "bundle exec rubocop && bundle exec brakeman && bundle exec bundle-audit check --update && bundle exec bundle leak check --update && bundle exec database_consistency && bundle exec rails webpacker:compile && bundle exec rspec"
       }
     }
   }
