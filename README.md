@@ -1,7 +1,6 @@
-# Share the Food
-www.sharethefood.net
+# Share the Food [![CI Build Status](https://ci-build-status.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/0643d4f8-b56d-4f75-88cf-e9de954537e9/tests)
 
-[![CI Build Status](https://ci-build-status.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/0643d4f8-b56d-4f75-88cf-e9de954537e9/tests)
+www.sharethefood.net
 
 ## Overview
 
