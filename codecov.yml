@@ -1,2 +1,0 @@
-codecov:
-  token: ENV['CODECOV_TOKEN']

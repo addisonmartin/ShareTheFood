@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+# Used to calculate test coverage.
 require 'simplecov'
+# Used to upload test coverage and display within the README and pull requests.
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 SimpleCov.start 'rails' do
   # Enable branch coverage, not just line coverage.
   enable_coverage :branch
@@ -11,9 +15,6 @@ SimpleCov.start 'rails' do
 
   add_group 'Views', 'app/views'
 end
-# Used to upload test coverage and display within the README and pull requests.
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
