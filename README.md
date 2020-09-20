@@ -2,6 +2,11 @@
 
 www.sharethefood.net
 
+Questions, Comments, Concerns?
+* Email us at: contact@sharethefood.net
+* [Submit an issue](https://github.com/addisonmartin/ShareTheFood/issues/new)
+* Fork this repo and submit a new pull request! See [the contributing section](https://github.com/addisonmartin/ShareTheFood/blob/master/README.md#Contributing)
+
 ## Overview
 
 ## Contributing
